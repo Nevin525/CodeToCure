@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Code to Cure | KCNH5 Epilepsy Foundation</title>
+<meta name="description" content="Code to Cure is a KCNH5 Epilepsy Foundation raising awareness and donor support to accelerate gene-targeted research toward a cure for KCNH5-related genetic epilepsy." />
+<meta name="theme-color" content="#7030A0" />
+<meta property="og:title" content="Code to Cure | KCNH5 Epilepsy Foundation" />
+<meta property="og:description" content="Decoding the mutation. Accelerating the science. Finding the cure." />
+<meta property="og:type" content="website" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%237030A0'/%3E%3Cpath d='M11 7c0 5 10 5 10 10s-10 5-10 10M21 7c0 5-10 5-10 10s10 5 10 10' fill='none' stroke='white' stroke-width='1.6' stroke-linecap='round'/%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #f3f4f7;
+    --bg-2: #ecedf1;
+    --surface: #ffffff;
+    --ink: #16131d;
+    --ink-2: #312c3c;
+    --muted: #5f5d6b;
+    --faint: #908e9d;
+    --line: #e4e4ec;
+    --line-soft: #ececf2;
+    --accent: #7030a0;
+    --accent-deep: #5a2682;
+    --accent-tint: #f2ecf9;
+    --accent-line: #e3d4f1;
+    --accent-soft: rgba(112, 48, 160, 0.08);
+    --r-xl: 30px;
+    --r-lg: 22px;
+    --r-md: 14px;
+    --r-pill: 999px;
+    --shadow-soft: 0 1px 2px rgba(22, 19, 29, 0.04), 0 14px 34px -16px rgba(22, 19, 29, 0.12);
+    --shadow-card: 0 1px 1px rgba(22, 19, 29, 0.03), 0 2px 4px rgba(22, 19, 29, 0.03), 0 24px 48px -28px rgba(48, 26, 70, 0.22);
+    --shadow-pop: 0 30px 60px -24px rgba(48, 26, 70, 0.28);
+    --ease: cubic-bezier(0.32, 0.72, 0, 1);
+    --ease-soft: cubic-bezier(0.16, 1, 0.3, 1);
+    --maxw: 1240px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+  body {
+    font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.6;
+    font-size: 17px;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+  }
+
+  ::selection { background: var(--accent); color: #fff; }
+
+  a { color: inherit; text-decoration: none; }
+  img, svg { display: block; max-width: 100%; }
+  h1, h2, h3, h4 { font-family: "Space Grotesk", sans-serif; font-weight: 600; letter-spacing: -0.02em; line-height: 1.04; color: var(--ink); }
+
+  .wrap { width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 28px; }
+
+  /* fixed technical grid backdrop, very subtle */
+  .grid-bg {
+    position: fixed; inset: 0; z-index: 0; pointer-events: none;
+    background-image:
+      linear-gradient(to right, rgba(22, 19, 29, 0.022) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(22, 19, 29, 0.022) 1px, transparent 1px);
+    background-size: 64px 64px;
+    mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 30%, transparent 78%);
+    -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 30%, transparent 78%);
+  }
+
+  .skip {
+    position: absolute; left: -999px; top: 0; background: var(--ink); color: #fff;
+    padding: 10px 16px; border-radius: 0 0 10px 0; z-index: 200;
+  }
+  .skip:focus { left: 0; }
+
+  /* eyebrow tag */
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: "JetBrains Mono", monospace; font-size: 11px; font-weight: 500;
+    letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent-deep);
+    background: var(--accent-tint); border: 1px solid var(--accent-line);
+    padding: 7px 13px; border-radius: var(--r-pill);
+  }
+  .eyebrow .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 4px var(--accent-soft); }
+
+  .mono { font-family: "JetBrains Mono", monospace; letter-spacing: 0.04em; }
+
+  /* ---------- NAV ---------- */
+  .nav-shell { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: center; padding: 18px 20px; }
+  .nav {
+    width: 100%; max-width: 1080px; display: flex; align-items: center; justify-content: space-between;
+    gap: 18px; padding: 9px 9px 9px 20px;
+    background: rgba(255, 255, 255, 0.72); backdrop-filter: blur(20px) saturate(1.4); -webkit-backdrop-filter: blur(20px) saturate(1.4);
+    border: 1px solid rgba(22, 19, 29, 0.07); border-radius: var(--r-pill);
+    box-shadow: var(--shadow-soft); transition: box-shadow 0.5s var(--ease), transform 0.5s var(--ease), background 0.5s var(--ease);
+  }
+  .nav.scrolled { background: rgba(255, 255, 255, 0.88); box-shadow: 0 10px 30px -14px rgba(48, 26, 70, 0.26); }
+  .brand { display: flex; align-items: center; gap: 11px; font-family: "Space Grotesk", sans-serif; font-weight: 600; font-size: 16px; letter-spacing: -0.01em; }
+  .brand .mark { width: 30px; height: 30px; border-radius: 9px; background: var(--accent); display: grid; place-items: center; flex: 0 0 auto; box-shadow: inset 0 1px 0 rgba(255,255,255,0.3), 0 4px 10px -3px rgba(112,48,160,0.5); }
+  .brand .mark svg { width: 18px; height: 18px; }
+  .brand sup { font-size: 9px; color: var(--faint); font-weight: 500; }
+  .nav-links { display: flex; align-items: center; gap: 4px; }
+  .nav-links a { font-size: 14px; font-weight: 500; color: var(--ink-2); padding: 9px 14px; border-radius: var(--r-pill); transition: background 0.3s var(--ease), color 0.3s var(--ease); }
+  .nav-links a:hover { background: var(--accent-soft); color: var(--accent-deep); }
+  .nav-right { display: flex; align-items: center; gap: 10px; }
+
+  /* island button */
+  .btn {
+    display: inline-flex; align-items: center; gap: 10px; font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: 600; font-size: 14px; border-radius: var(--r-pill); padding: 11px 14px 11px 20px;
+    cursor: pointer; border: 1px solid transparent; transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease), background 0.3s var(--ease); white-space: nowrap;
+  }
+  .btn .ico { width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center; flex: 0 0 auto; transition: transform 0.45s var(--ease); }
+  .btn .ico svg { width: 15px; height: 15px; }
+  .btn:active { transform: scale(0.975); }
+
+  .btn-primary { background: var(--accent); color: #fff; box-shadow: 0 8px 20px -8px rgba(112, 48, 160, 0.55); }
+  .btn-primary .ico { background: rgba(255, 255, 255, 0.18); }
+  .btn-primary:hover { background: var(--accent-deep); box-shadow: 0 14px 28px -10px rgba(112, 48, 160, 0.6); transform: translateY(-2px); }
+  .btn-primary:hover .ico { transform: translate(3px, -2px); }
+
+  .btn-ghost { background: var(--surface); color: var(--ink); border-color: var(--line); box-shadow: var(--shadow-soft); }
+  .btn-ghost .ico { background: var(--accent-soft); color: var(--accent-deep); }
+  .btn-ghost:hover { transform: translateY(-2px); box-shadow: var(--shadow-card); border-color: var(--accent-line); }
+  .btn-ghost:hover .ico { transform: translate(3px, -2px); }
+
+  .btn-dark { background: var(--ink); color: #fff; }
+  .btn-dark .ico { background: rgba(255,255,255,0.14); }
+  .btn-dark:hover { transform: translateY(-2px); background: #25202f; }
+  .btn-dark:hover .ico { transform: translate(3px, -2px); }
+
+  .badge-soon { font-family: "JetBrains Mono", monospace; font-size: 9.5px; letter-spacing: 0.12em; text-transform: uppercase; background: rgba(255,255,255,0.22); padding: 2px 7px; border-radius: var(--r-pill); }
+
+  /* hamburger */
+  .burger { display: none; width: 44px; height: 44px; border-radius: 50%; background: var(--surface); border: 1px solid var(--line); cursor: pointer; position: relative; box-shadow: var(--shadow-soft); }
+  .burger span { position: absolute; left: 12px; right: 12px; height: 2px; background: var(--ink); border-radius: 2px; transition: transform 0.45s var(--ease), opacity 0.3s var(--ease); }
+  .burger span:nth-child(1) { top: 17px; }
+  .burger span:nth-child(2) { bottom: 17px; }
+  body.menu-open .burger span:nth-child(1) { transform: translateY(5px) rotate(45deg); }
+  body.menu-open .burger span:nth-child(2) { transform: translateY(-5px) rotate(-45deg); }
+
+  /* mobile overlay */
+  .overlay { position: fixed; inset: 0; z-index: 95; background: rgba(243, 244, 247, 0.86); backdrop-filter: blur(26px); -webkit-backdrop-filter: blur(26px); display: flex; flex-direction: column; justify-content: center; padding: 0 32px; opacity: 0; pointer-events: none; transition: opacity 0.5s var(--ease); }
+  body.menu-open .overlay { opacity: 1; pointer-events: auto; }
+  .overlay a { font-family: "Space Grotesk", sans-serif; font-size: 34px; font-weight: 600; letter-spacing: -0.02em; padding: 12px 0; color: var(--ink); border-bottom: 1px solid var(--line); opacity: 0; transform: translateY(24px); transition: opacity 0.6s var(--ease) var(--d), transform 0.6s var(--ease) var(--d); }
+  body.menu-open .overlay a { opacity: 1; transform: translateY(0); }
+  .overlay .ov-cta { margin-top: 28px; }
+
+  /* ---------- HERO ---------- */
+  .hero { position: relative; z-index: 1; min-height: 84svh; display: flex; align-items: center; padding: 124px 0 52px; }
+  .hero-grid { display: grid; grid-template-columns: 1.08fr 0.92fr; gap: 48px; align-items: center; }
+  .hero h1 { font-size: clamp(2.5rem, 5.2vw, 4.3rem); font-weight: 600; }
+  .hero h1 .l2 { color: var(--ink-2); }
+  .hero h1 .accent { color: var(--accent); position: relative; white-space: nowrap; }
+  .hero h1 .accent::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0.06em; height: 0.09em; background: var(--accent-line); border-radius: 2px; }
+  .hero p.lead { font-size: 18px; color: var(--muted); max-width: 50ch; margin-top: 26px; }
+  .hero-cta { display: flex; gap: 13px; margin-top: 34px; flex-wrap: wrap; }
+
+  .facts { display: flex; flex-wrap: wrap; gap: 0; margin-top: 32px; border-top: 1px solid var(--line); }
+  .fact { padding: 18px 26px 4px 0; margin-right: 26px; border-right: 1px solid var(--line); }
+  .fact:last-child { border-right: none; }
+  .fact .k { font-family: "JetBrains Mono", monospace; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--faint); }
+  .fact .v { font-family: "Space Grotesk", sans-serif; font-weight: 600; font-size: 16px; color: var(--ink); margin-top: 4px; }
+  .fact .v.acc { color: var(--accent-deep); }
+
+  /* double-bezel hero visual */
+  .visual-shell { padding: 10px; background: linear-gradient(180deg, rgba(255,255,255,0.7), rgba(236,237,241,0.6)); border: 1px solid rgba(22,19,29,0.06); border-radius: var(--r-xl); box-shadow: var(--shadow-card); }
+  .visual { position: relative; border-radius: calc(var(--r-xl) - 9px); background: radial-gradient(120% 100% at 50% 0%, #ffffff 0%, #f6f4fa 60%, #f1eef7 100%); border: 1px solid var(--line-soft); box-shadow: inset 0 1px 0 rgba(255,255,255,0.8); overflow: hidden; }
+  .visual .vtag { position: absolute; top: 16px; left: 16px; z-index: 3; font-family: "JetBrains Mono", monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent-deep); background: rgba(255,255,255,0.7); border: 1px solid var(--accent-line); padding: 5px 10px; border-radius: var(--r-pill); }
+  .visual .vmeta { position: absolute; bottom: 14px; right: 16px; z-index: 3; font-family: "JetBrains Mono", monospace; font-size: 10px; letter-spacing: 0.1em; color: var(--faint); }
+  #helix { width: 100%; height: 420px; }
+  .scanline { transform-box: fill-box; }
+
+  /* ---------- SECTION SHELL ---------- */
+  section { position: relative; z-index: 1; }
+  .anchor { display: block; width: 0; height: 0; scroll-margin-top: 100px; pointer-events: none; }
+  #top { scroll-margin-top: 100px; }
+  .sec { padding: clamp(54px, 7vw, 88px) 0; }
+  .sec-head { max-width: 760px; }
+  .sec-head h2 { font-size: clamp(2rem, 3.6vw, 3.1rem); margin-top: 20px; }
+  .sec-head p { color: var(--muted); font-size: 18px; margin-top: 18px; max-width: 58ch; }
+
+  /* reveal */
+  .reveal { opacity: 0; transform: translateY(28px); filter: blur(6px); transition: opacity 0.9s var(--ease-soft), transform 0.9s var(--ease-soft), filter 0.9s var(--ease-soft); transition-delay: var(--rd, 0ms); }
+  .reveal.in { opacity: 1; transform: translateY(0); filter: blur(0); }
+
+  /* ---------- MISSION ---------- */
+  .mission { position: relative; }
+  .mission-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 60px; align-items: start; }
+  .mission h2 { font-size: clamp(2.1rem, 4vw, 3.4rem); }
+  .mission h2 .hl { color: var(--accent); }
+  .mission .support { color: var(--muted); font-size: 18px; }
+  .mission .support strong { color: var(--ink); font-weight: 600; }
+  .mission .support + .support { margin-top: 20px; }
+  .pull { font-family: "Space Grotesk", sans-serif; font-weight: 500; font-size: 22px; line-height: 1.4; color: var(--ink-2); padding-left: 24px; border-left: 3px solid var(--accent); }
+
+  /* ---------- SCIENCE BENTO ---------- */
+  .bento { display: grid; grid-template-columns: repeat(12, 1fr); gap: 18px; margin-top: 40px; }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-lg); padding: 34px; box-shadow: var(--shadow-soft); transition: transform 0.5s var(--ease), box-shadow 0.5s var(--ease), border-color 0.5s var(--ease); position: relative; overflow: hidden; }
+  .card:hover { transform: translateY(-4px); box-shadow: var(--shadow-card); border-color: var(--accent-line); }
+  .card .idx { font-family: "JetBrains Mono", monospace; font-size: 12px; letter-spacing: 0.1em; color: var(--accent); }
+  .card .c-ico { width: 52px; height: 52px; border-radius: 14px; background: var(--accent-tint); border: 1px solid var(--accent-line); display: grid; place-items: center; margin-bottom: 22px; }
+  .card .c-ico svg { width: 26px; height: 26px; stroke: var(--accent-deep); }
+  .card h3 { font-size: 22px; margin-bottom: 12px; }
+  .card p { color: var(--muted); font-size: 15.5px; }
+  .card .tag { display: inline-block; margin-top: 18px; font-family: "JetBrains Mono", monospace; font-size: 10.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent-deep); background: var(--accent-soft); padding: 5px 11px; border-radius: var(--r-pill); }
+  .span-6 { grid-column: span 6; }
+  .span-4 { grid-column: span 4; }
+  .span-8 { grid-column: span 8; }
+  .pillar { background: linear-gradient(170deg, #ffffff 0%, #fbf9fd 100%); }
+  .pillar .glow { position: absolute; top: -40%; right: -20%; width: 300px; height: 300px; background: radial-gradient(circle, rgba(112,48,160,0.10), transparent 68%); pointer-events: none; }
+  .bridge { background: var(--ink); color: #fff; display: flex; flex-direction: column; justify-content: space-between; }
+  .bridge h3 { color: #fff; }
+  .bridge p { color: rgba(255,255,255,0.66); }
+  .bridge .idx { color: #b98fdc; }
+  .bridge .c-ico { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.14); }
+  .bridge .c-ico svg { stroke: #cdb0e8; }
+
+  /* ---------- KCNH5 ---------- */
+  .kcnh { position: relative; }
+  .kcnh-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 56px; align-items: center; }
+  .spec { border-top: 1px solid var(--line); }
+  .spec .row { display: grid; grid-template-columns: 1fr 1.4fr; gap: 20px; padding: 20px 4px; border-bottom: 1px solid var(--line); align-items: baseline; }
+  .spec .row .k { font-family: "JetBrains Mono", monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--faint); }
+  .spec .row .v { font-family: "Space Grotesk", sans-serif; font-weight: 500; font-size: 17px; color: var(--ink); }
+  .eeg-shell { padding: 10px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-xl); box-shadow: var(--shadow-card); }
+  .eeg-inner { border-radius: calc(var(--r-xl) - 9px); background: radial-gradient(120% 120% at 50% 0%, #fbf9fd, #f4f0fa); border: 1px solid var(--line-soft); padding: 26px; }
+  .eeg-inner .lab { display: flex; justify-content: space-between; font-family: "JetBrains Mono", monospace; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--faint); margin-bottom: 8px; }
+  #eeg { width: 100%; height: 150px; }
+
+  /* ---------- STORY ---------- */
+  .story-card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-xl); padding: clamp(40px, 6vw, 76px); box-shadow: var(--shadow-card); position: relative; overflow: hidden; display: grid; grid-template-columns: 1fr auto; gap: 40px; align-items: center; }
+  .story-card .glow { position: absolute; bottom: -50%; left: 30%; width: 420px; height: 420px; background: radial-gradient(circle, rgba(112,48,160,0.08), transparent 70%); pointer-events: none; }
+  .story-card h2 { font-size: clamp(2rem, 4vw, 3rem); }
+  .story-card p { color: var(--muted); font-size: 18px; margin-top: 18px; max-width: 52ch; }
+  .soon-pill { font-family: "JetBrains Mono", monospace; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent-deep); border: 1px dashed var(--accent-line); padding: 14px 22px; border-radius: var(--r-pill); white-space: nowrap; }
+
+  /* ---------- GET INVOLVED ---------- */
+  .involve-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 40px; }
+  .ivcard { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-lg); padding: 34px; box-shadow: var(--shadow-soft); display: flex; flex-direction: column; transition: transform 0.5s var(--ease), box-shadow 0.5s var(--ease), border-color 0.5s var(--ease); }
+  .ivcard:hover { transform: translateY(-4px); box-shadow: var(--shadow-card); border-color: var(--accent-line); }
+  .ivcard .c-ico { width: 50px; height: 50px; border-radius: 14px; background: var(--accent-tint); border: 1px solid var(--accent-line); display: grid; place-items: center; margin-bottom: 22px; }
+  .ivcard .c-ico svg { width: 25px; height: 25px; stroke: var(--accent-deep); }
+  .ivcard h3 { font-size: 21px; margin-bottom: 10px; }
+  .ivcard p { color: var(--muted); font-size: 15px; flex: 1; }
+  .ivcard .link { margin-top: 22px; display: inline-flex; align-items: center; gap: 8px; font-weight: 600; font-size: 14px; color: var(--accent-deep); }
+  .ivcard .link svg { width: 16px; height: 16px; transition: transform 0.4s var(--ease); }
+  .ivcard:hover .link svg { transform: translateX(4px); }
+
+  /* ---------- CTA BAND ---------- */
+  .band { background: linear-gradient(155deg, #2a1640 0%, #4a1f6e 55%, #7030a0 130%); border-radius: var(--r-xl); padding: clamp(44px, 6vw, 76px); position: relative; overflow: hidden; box-shadow: var(--shadow-pop); }
+  .band::before { content: ""; position: absolute; inset: 0; background-image: linear-gradient(to right, rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.05) 1px, transparent 1px); background-size: 52px 52px; mask-image: radial-gradient(ellipse 70% 80% at 80% 20%, #000, transparent 70%); -webkit-mask-image: radial-gradient(ellipse 70% 80% at 80% 20%, #000, transparent 70%); }
+  .band-grid { position: relative; z-index: 2; display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+  .band .eyebrow { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2); color: #e8d8f6; }
+  .band .eyebrow .dot { background: #d9bdf2; box-shadow: 0 0 0 4px rgba(255,255,255,0.12); }
+  .band h2 { color: #fff; font-size: clamp(2rem, 3.6vw, 2.9rem); margin-top: 20px; }
+  .band p { color: rgba(255,255,255,0.74); font-size: 17px; margin-top: 16px; max-width: 44ch; }
+  .form { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14); border-radius: var(--r-lg); padding: 26px; backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); }
+  .form label { display: block; font-family: "JetBrains Mono", monospace; font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.7); margin-bottom: 9px; }
+  .form .field { display: flex; gap: 10px; }
+  .form input { flex: 1; background: rgba(255,255,255,0.95); border: 1px solid transparent; border-radius: var(--r-pill); padding: 13px 18px; font-family: inherit; font-size: 15px; color: var(--ink); outline: none; transition: box-shadow 0.3s var(--ease); }
+  .form input:focus { box-shadow: 0 0 0 3px rgba(217, 189, 242, 0.5); }
+  .form .help { font-size: 12.5px; color: rgba(255,255,255,0.55); margin-top: 12px; }
+  .form .ok { display: none; font-size: 14px; color: #e9d9f7; margin-top: 14px; align-items: center; gap: 8px; }
+  .form .ok svg { width: 16px; height: 16px; flex: 0 0 auto; }
+  .form.done .ok { display: flex; }
+  .band .donate-row { display: flex; align-items: center; gap: 14px; margin-top: 26px; flex-wrap: wrap; }
+  .band .donate-note { font-family: "JetBrains Mono", monospace; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.55); }
+  .btn-on-dark { background: #fff; color: var(--ink); }
+  .btn-on-dark .ico { background: var(--accent-soft); color: var(--accent-deep); }
+  .btn-on-dark:hover { transform: translateY(-2px); box-shadow: 0 14px 30px -10px rgba(0,0,0,0.4); }
+  .btn-on-dark:hover .ico { transform: translate(3px,-2px); }
+
+  /* ---------- CONTACT ---------- */
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+  .contact h2 { font-size: clamp(2rem, 3.6vw, 3rem); }
+  .contact p { color: var(--muted); font-size: 18px; margin-top: 18px; max-width: 46ch; }
+  .channels { display: flex; flex-direction: column; gap: 12px; }
+  .channel { display: flex; align-items: center; gap: 16px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-md); padding: 16px 20px; box-shadow: var(--shadow-soft); transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease), border-color 0.4s var(--ease); }
+  .channel:hover { transform: translateX(4px); box-shadow: var(--shadow-card); border-color: var(--accent-line); }
+  .channel .ci { width: 42px; height: 42px; border-radius: 11px; background: var(--accent-tint); border: 1px solid var(--accent-line); display: grid; place-items: center; flex: 0 0 auto; }
+  .channel .ci svg { width: 20px; height: 20px; }
+  .channel .ct { flex: 1; }
+  .channel .ct .t { font-family: "Space Grotesk", sans-serif; font-weight: 600; font-size: 15px; }
+  .channel .ct .s { font-size: 13px; color: var(--faint); }
+  .channel .arr { width: 18px; height: 18px; color: var(--faint); transition: transform 0.4s var(--ease), color 0.4s var(--ease); }
+  .channel:hover .arr { transform: translateX(3px); color: var(--accent-deep); }
+
+  /* ---------- FOOTER ---------- */
+  footer { background: var(--ink); color: rgba(255,255,255,0.7); position: relative; z-index: 1; padding: 72px 0 36px; margin-top: 0; }
+  .foot-top { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 40px; padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+  footer .brand { color: #fff; font-size: 18px; }
+  footer .brand .mark { box-shadow: none; }
+  footer .tag { margin-top: 18px; font-size: 14.5px; color: rgba(255,255,255,0.6); max-width: 34ch; }
+  footer .status { margin-top: 18px; display: inline-flex; align-items: center; gap: 8px; font-family: "JetBrains Mono", monospace; font-size: 10.5px; letter-spacing: 0.12em; text-transform: uppercase; color: #c9a9e6; }
+  footer .status .dot { width: 7px; height: 7px; border-radius: 50%; background: #9b6bce; box-shadow: 0 0 0 4px rgba(155,107,206,0.2); }
+  .foot-col h4 { color: #fff; font-family: "JetBrains Mono", monospace; font-size: 10.5px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 18px; }
+  .foot-col a { display: block; font-size: 14.5px; color: rgba(255,255,255,0.72); padding: 6px 0; transition: color 0.3s var(--ease); }
+  .foot-col a:hover { color: #fff; }
+  .socials { display: flex; gap: 10px; flex-wrap: wrap; }
+  .socials a { width: 40px; height: 40px; border-radius: 11px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); display: grid; place-items: center; transition: background 0.3s var(--ease), transform 0.3s var(--ease), border-color 0.3s var(--ease); }
+  .socials a svg { width: 18px; height: 18px; fill: rgba(255,255,255,0.8); }
+  .socials a:hover { background: var(--accent); transform: translateY(-3px); border-color: var(--accent); }
+  .socials a:hover svg { fill: #fff; }
+  .socials a.soon { opacity: 0.4; }
+  .foot-bottom { display: flex; justify-content: space-between; align-items: center; gap: 18px; padding-top: 28px; flex-wrap: wrap; }
+  .foot-bottom .copy { font-size: 13px; color: rgba(255,255,255,0.5); }
+  .foot-bottom .loc { font-family: "JetBrains Mono", monospace; font-size: 11px; letter-spacing: 0.1em; color: rgba(255,255,255,0.4); }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 980px) {
+    .hero-grid, .mission-grid, .kcnh-grid, .band-grid, .contact-grid { grid-template-columns: 1fr; gap: 32px; }
+    .involve-grid { grid-template-columns: 1fr; }
+    .bento { grid-template-columns: repeat(6, 1fr); }
+    .span-6, .span-8, .span-4 { grid-column: span 6; }
+    .visual-shell { max-width: 460px; }
+    .story-card { grid-template-columns: 1fr; }
+    .foot-top { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 768px) {
+    body { font-size: 16px; }
+    .wrap { padding: 0 20px; }
+    .nav-links { display: none; }
+    .nav-right .btn-cta-text { display: none; }
+    .burger { display: block; }
+    .hero { padding: 130px 0 60px; }
+    .facts { gap: 14px; }
+    .fact { border-right: none; padding: 14px 0 0; margin-right: 0; width: 46%; }
+    .bento { grid-template-columns: 1fr; }
+    .span-6, .span-8, .span-4 { grid-column: span 1; }
+    .foot-top { grid-template-columns: 1fr; gap: 32px; }
+    .nav { padding-left: 16px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; transition-duration: 0.01ms !important; }
+    .reveal { opacity: 1; transform: none; filter: none; }
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="grid-bg" aria-hidden="true"></div>
+
+<!-- NAV -->
+<div class="nav-shell">
+  <nav class="nav" id="nav" aria-label="Primary">
+    <a class="brand" href="#top" aria-label="Code to Cure home">
+      <span class="mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M8 3c0 5 8 5 8 9s-8 4-8 9M16 3c0 5-8 5-8 9s8 4 8 9" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/><path d="M9 7h6M8.4 11h7.2M8.4 13h7.2M9 17h6" stroke="#fff" stroke-width="1.3" stroke-linecap="round" opacity="0.85"/></svg>
+      </span>
+      <span>Code to Cure<sup>TM</sup></span>
+    </a>
+    <div class="nav-links">
+      <a href="#mission">Mission</a>
+      <a href="#science">The Science</a>
+      <a href="#kcnh5">KCNH5</a>
+      <a href="#involve">Get Involved</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="nav-right">
+      <a class="btn btn-primary" href="#join">
+        <span class="btn-cta-text">Donate</span>
+        <span class="badge-soon btn-cta-text">Fall 2026</span>
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></span>
+      </a>
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+    </div>
+  </nav>
+</div>
+
+<!-- MOBILE OVERLAY -->
+<div class="overlay" id="overlay">
+  <a href="#mission" style="--d:0.08s">Mission</a>
+  <a href="#science" style="--d:0.14s">The Science</a>
+  <a href="#kcnh5" style="--d:0.20s">KCNH5</a>
+  <a href="#involve" style="--d:0.26s">Get Involved</a>
+  <a href="#contact" style="--d:0.32s">Contact</a>
+  <a class="btn btn-primary ov-cta" href="#join" style="--d:0.38s; width:max-content;">Support the science <span class="ico"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+</div>
+
+<main id="main">
+<span id="top"></span>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <span class="eyebrow reveal"><span class="dot"></span> KCNH5 Epilepsy Foundation</span>
+        <h1 class="reveal" style="--rd:80ms; margin-top:22px;">
+          Decoding the mutation.<br />
+          <span class="l2">Accelerating the science.</span><br />
+          Finding the <span class="accent">cure</span>.
+        </h1>
+        <p class="lead reveal" style="--rd:160ms;">Code to Cure was born from a family's refusal to wait. We raise awareness for KCNH5-related genetic epilepsy and rally the donors and supporters whose funding can accelerate the science toward a cure.</p>
+        <div class="hero-cta reveal" style="--rd:240ms;">
+          <a class="btn btn-primary" href="#join">Support the science <span class="ico"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+          <a class="btn btn-ghost" href="#contact">Get in touch <span class="ico"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+        </div>
+        <div class="facts reveal" style="--rd:320ms;">
+          <div class="fact"><div class="k">Established</div><div class="v">2026 / Florida</div></div>
+          <div class="fact"><div class="k">Status</div><div class="v">501(c)(3) in formation</div></div>
+          <div class="fact"><div class="k">Public launch</div><div class="v acc">Fall 2026</div></div>
+        </div>
+      </div>
+      <div class="hero-visual reveal" style="--rd:200ms;">
+        <div class="visual-shell">
+          <div class="visual">
+            <span class="vtag">Target / KCNH5</span>
+            <svg id="helix" viewBox="0 0 320 420" aria-label="Stylized DNA double helix with one base pair highlighted as the KCNH5 mutation target" role="img"></svg>
+            <span class="vmeta">DECODING THE CODE</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- MISSION -->
+<section class="sec mission">
+  <div class="wrap">
+    <span class="anchor" id="mission"></span>
+    <div class="mission-grid">
+      <div>
+        <span class="eyebrow reveal"><span class="dot"></span> Our Mission</span>
+        <h2 class="reveal" style="--rd:80ms; margin-top:22px;">We refuse to wait <span class="hl">for a cure</span>.</h2>
+      </div>
+      <div>
+        <p class="support reveal" style="--rd:120ms;">As a <strong>501(c)(3) public charity in formation</strong>, our mission is to raise awareness for KCNH5-related genetic epilepsy and secure the donor support that accelerates research toward a cure.</p>
+        <p class="support reveal" style="--rd:200ms;">We bring families, advocates, and donors together, turning a community's determination into real momentum for the science.</p>
+        <p class="pull reveal" style="--rd:280ms; margin-top:30px;">Born from one family's resolve, built for every family waiting.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SCIENCE -->
+<section class="sec">
+  <div class="wrap">
+    <span class="anchor" id="science"></span>
+    <div class="sec-head">
+      <span class="eyebrow reveal"><span class="dot"></span> The Science</span>
+      <h2 class="reveal" style="--rd:80ms;">Engineering a cure at the source.</h2>
+      <p class="reveal" style="--rd:140ms;">KCNH5 mutation-related epilepsy is a rare, severe neurological disorder that causes early-onset seizures and developmental delays. We rally awareness and donor support behind targeted, translation-ready research that addresses the root cause, not just the symptoms.</p>
+    </div>
+    <div class="bento">
+      <div class="card pillar span-6 reveal">
+        <div class="glow" aria-hidden="true"></div>
+        <div class="idx">01 / APPROACH</div>
+        <div class="c-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7c4 0 4 10 8 10s4-10 8-10"/><path d="M4 17c4 0 4-10 8-10s4 10 8 10" opacity="0.45"/><circle cx="12" cy="12" r="1.6" fill="currentColor" stroke="none"/></svg></div>
+        <h3>Antisense Oligonucleotide (ASO) therapeutics</h3>
+        <p>Programmable genetic medicine designed to intercept the faulty instructions behind KCNH5 seizures and quiet them before they ever reach the cell, silencing the root cause rather than masking it.</p>
+        <span class="tag">Silence the signal</span>
+      </div>
+      <div class="card pillar span-6 reveal" style="--rd:90ms;">
+        <div class="glow" aria-hidden="true"></div>
+        <div class="idx">02 / APPROACH</div>
+        <div class="c-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3v7M7 14v7M17 3v7M17 14v7"/><path d="M7 8h10M7 16h10"/><circle cx="7" cy="12" r="1.4" fill="currentColor" stroke="none"/><circle cx="17" cy="12" r="1.4" fill="currentColor" stroke="none"/></svg></div>
+        <h3>CRISPR-based gene correction</h3>
+        <p>Gene-correction models that work toward rewriting the mutated code itself, restoring healthy function where the disorder begins so therapies can reach the children waiting for them.</p>
+        <span class="tag">Rewrite the code</span>
+      </div>
+      <div class="card span-8 reveal">
+        <div class="idx">BENCH TO BEDSIDE</div>
+        <h3 style="margin-top:16px;">Bridging laboratory data and patient care.</h3>
+        <p style="max-width:60ch;">Breakthroughs stall in the gap between the lab and the clinic. The donor funding we help secure moves that work forward, so promising science becomes a therapy a child can actually receive.</p>
+      </div>
+      <div class="card bridge span-4 reveal" style="--rd:90ms;">
+        <div>
+          <div class="idx">FOCUS</div>
+          <div class="c-ico" aria-hidden="true" style="margin-top:16px;"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3.4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg></div>
+        </div>
+        <div>
+          <h3 style="margin-top:22px;">Translation-ready research only.</h3>
+          <p style="margin-top:10px;">Every dollar raised is directed toward science with a credible path to patients.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KCNH5 -->
+<section class="sec kcnh">
+  <div class="wrap">
+    <span class="anchor" id="kcnh5"></span>
+    <div class="kcnh-grid">
+      <div>
+        <span class="eyebrow reveal"><span class="dot"></span> What is KCNH5?</span>
+        <h2 class="reveal" style="--rd:80ms; font-size:clamp(2rem,3.6vw,3rem); margin-top:22px;">A rare mutation with severe consequences.</h2>
+        <p class="reveal" style="--rd:140ms; color:var(--muted); font-size:17px; margin-top:18px; max-width:46ch;">A change in a single gene reshapes a child's earliest years. Understanding it precisely is the first step toward correcting it.</p>
+        <div class="spec reveal" style="--rd:200ms; margin-top:34px;">
+          <div class="row"><div class="k">Classification</div><div class="v">Rare genetic epilepsy</div></div>
+          <div class="row"><div class="k">Onset</div><div class="v">Early childhood</div></div>
+          <div class="row"><div class="k">Hallmarks</div><div class="v">Recurrent seizures, developmental delay</div></div>
+          <div class="row"><div class="k">Root cause</div><div class="v">KCNH5 gene mutation</div></div>
+          <div class="row"><div class="k">Strategy</div><div class="v">Gene-targeted therapy</div></div>
+        </div>
+      </div>
+      <div class="reveal" style="--rd:160ms;">
+        <div class="eeg-shell">
+          <div class="eeg-inner">
+            <div class="lab"><span>Neural activity / illustrative</span><span>KCNH5</span></div>
+            <svg id="eeg" viewBox="0 0 520 150" aria-label="Illustrative neural activity waveform with one highlighted burst" role="img"></svg>
+            <div class="lab" style="margin-top:8px; margin-bottom:0;"><span>Onset</span><span style="color:var(--accent-deep);">Targeted intervention</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STORY -->
+<section class="sec" id="story" style="padding-top:0;">
+  <div class="wrap">
+    <div class="story-card reveal">
+      <div class="glow" aria-hidden="true"></div>
+      <div>
+        <span class="eyebrow"><span class="dot"></span> Our Story</span>
+        <h2 style="margin-top:20px;">The family behind the mission.</h2>
+        <p>Every breakthrough starts with a reason. Ours has names. The full story of how Code to Cure began is on its way, and we cannot wait to share it.</p>
+      </div>
+      <div class="soon-pill">Coming soon</div>
+    </div>
+  </div>
+</section>
+
+<!-- GET INVOLVED -->
+<section class="sec mission">
+  <div class="wrap">
+    <span class="anchor" id="involve"></span>
+    <div class="sec-head">
+      <span class="eyebrow reveal"><span class="dot"></span> Get Involved</span>
+      <h2 class="reveal" style="--rd:80ms;">Three ways to move the science forward.</h2>
+      <p class="reveal" style="--rd:140ms;">Whether you are living this fight, researching it, or ready to back it, there is a place for you here.</p>
+    </div>
+    <div class="involve-grid">
+      <div class="ivcard reveal">
+        <div class="c-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 18a4 4 0 0 0-8 0"/><circle cx="12" cy="8" r="3.2"/><path d="M3.5 19a3.3 3.3 0 0 1 5-3M20.5 19a3.3 3.3 0 0 0-5-3"/></svg></div>
+        <h3>KCNH5 families</h3>
+        <p>Looking for community? Connect with other families and advocates walking the same path, and find people who understand.</p>
+        <a class="link" href="#contact">Find your community <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+      <div class="ivcard reveal" style="--rd:90ms;">
+        <div class="c-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3v5.5L4.5 17a2 2 0 0 0 1.8 3h11.4a2 2 0 0 0 1.8-3L15 8.5V3"/><path d="M8 3h8M9 13h6"/></svg></div>
+        <h3>Researchers</h3>
+        <p>Have a collaborative pipeline to pitch? We help connect translation-ready science with the awareness and donor funding to advance it.</p>
+        <a class="link" href="#contact">Pitch your pipeline <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+      <div class="ivcard reveal" style="--rd:180ms;">
+        <div class="c-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.3-7-9.2A3.8 3.8 0 0 1 12 8a3.8 3.8 0 0 1 7 2.8C19 15.7 12 20 12 20Z"/></svg></div>
+        <h3>Donors</h3>
+        <p>Ready to back the science? Your donation funds the precise breakthroughs that bring a cure within reach for children waiting now.</p>
+        <a class="link" href="#join">Back the science <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<section class="sec">
+  <div class="wrap">
+    <span class="anchor" id="join"></span>
+    <div class="band reveal">
+      <div class="band-grid">
+        <div>
+          <span class="eyebrow"><span class="dot"></span> Join the mission</span>
+          <h2>Be first when the cure can't wait.</h2>
+          <p>Hear about awareness campaigns, research milestones, and our public launch this Fall 2026. Donations open at launch.</p>
+          <div class="donate-row">
+            <a class="btn btn-on-dark" href="#join" aria-disabled="true">Donate <span class="ico"><svg viewBox="0 0 24 24" fill="none"><path d="M12 20s-7-4.3-7-9.2A3.8 3.8 0 0 1 12 8a3.8 3.8 0 0 1 7 2.8C19 15.7 12 20 12 20Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></span></a>
+            <span class="donate-note">Opening Fall 2026</span>
+          </div>
+        </div>
+        <div>
+          <form class="form" id="subscribe" novalidate>
+            <label for="email">Join the mailing list</label>
+            <div class="field">
+              <input id="email" name="email" type="email" placeholder="you@email.com" autocomplete="email" required />
+              <button class="btn btn-primary" type="submit" aria-label="Subscribe">Subscribe <span class="ico"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            </div>
+            <p class="help">No spam. Updates on the science and our launch only.</p>
+            <p class="ok"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#e9d9f7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Thank you. Sign-ups go live at our Fall 2026 launch, and we will be in touch.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="sec" style="padding-top:0;">
+  <div class="wrap">
+    <span class="anchor" id="contact"></span>
+    <div class="contact-grid">
+      <div class="contact">
+        <span class="eyebrow reveal"><span class="dot"></span> Get in Touch</span>
+        <h2 class="reveal" style="--rd:80ms; margin-top:22px;">We want to hear from you.</h2>
+        <p class="reveal" style="--rd:140ms;">A family looking for community, a researcher with a pipeline to pitch, or a donor ready to back the cause. Reach out through any channel below.</p>
+      </div>
+      <div class="channels reveal" style="--rd:160ms;">
+        <a class="channel" href="https://www.instagram.com/codetocureorg" target="_blank" rel="noopener">
+          <span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="#5a2682" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1.1" fill="#5a2682" stroke="none"/></svg></span>
+          <span class="ct"><span class="t">Instagram</span><span class="s">@codetocureorg</span></span>
+          <svg class="arr" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M9 7h8v8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a class="channel" href="https://www.facebook.com/share/17sRUYioMF/" target="_blank" rel="noopener">
+          <span class="ci"><svg viewBox="0 0 24 24" fill="#5a2682"><path d="M13.5 21v-7h2.4l.4-2.9h-2.8V9.2c0-.84.26-1.42 1.47-1.42h1.43V5.18A20 20 0 0 0 14.2 5c-2.07 0-3.5 1.27-3.5 3.6v2.5H8.3V14h2.4v7h2.8Z"/></svg></span>
+          <span class="ct"><span class="t">Facebook</span><span class="s">Follow our page</span></span>
+          <svg class="arr" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M9 7h8v8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a class="channel" href="https://www.facebook.com/share/g/1bpcRvuJsh/" target="_blank" rel="noopener">
+          <span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="#5a2682" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="9" r="3"/><path d="M3 19a6 6 0 0 1 12 0"/><circle cx="17" cy="10" r="2.2"/><path d="M15.5 19a4.5 4.5 0 0 1 6.5-4"/></svg></span>
+          <span class="ct"><span class="t">Facebook Group</span><span class="s">Connect with families</span></span>
+          <svg class="arr" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M9 7h8v8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <div class="brand">
+          <span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M8 3c0 5 8 5 8 9s-8 4-8 9M16 3c0 5-8 5-8 9s8 4 8 9" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/><path d="M9 7h6M8.4 11h7.2M8.4 13h7.2M9 17h6" stroke="#fff" stroke-width="1.3" stroke-linecap="round" opacity="0.85"/></svg></span>
+          <span>Code to Cure<sup style="color:rgba(255,255,255,0.5)">TM</sup></span>
+        </div>
+        <p class="tag">Decoding the mutation. Accelerating the science. Finding the cure for KCNH5-related genetic epilepsy.</p>
+        <span class="status"><span class="dot"></span> 501(c)(3) public charity in formation</span>
+      </div>
+      <div class="foot-col">
+        <h4>Explore</h4>
+        <a href="#mission">Mission</a>
+        <a href="#science">The Science</a>
+        <a href="#kcnh5">What is KCNH5</a>
+        <a href="#involve">Get Involved</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="foot-col">
+        <h4>Connect</h4>
+        <div class="socials">
+          <a href="https://www.instagram.com/codetocureorg" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s0 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58 0-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.2 15.58 2.2 15.2 2.2 12s0-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.2 8.8 2.2 12 2.2Zm0 1.8c-3.14 0-3.51.01-4.75.07-.9.04-1.38.19-1.7.32-.43.16-.74.36-1.06.68-.32.32-.52.63-.68 1.06-.13.32-.28.8-.32 1.7C3.21 8.49 3.2 8.86 3.2 12s.01 3.51.07 4.75c.04.9.19 1.38.32 1.7.16.43.36.74.68 1.06.32.32.63.52 1.06.68.32.13.8.28 1.7.32 1.24.06 1.61.07 4.75.07s3.51-.01 4.75-.07c.9-.04 1.38-.19 1.7-.32.43-.16.74-.36 1.06-.68.32-.32.52-.63.68-1.06.13-.32.28-.8.32-1.7.06-1.24.07-1.61.07-4.75s-.01-3.51-.07-4.75c-.04-.9-.19-1.38-.32-1.7a2.85 2.85 0 0 0-.68-1.06 2.85 2.85 0 0 0-1.06-.68c-.32-.13-.8-.28-1.7-.32C15.51 4.01 15.14 4 12 4Zm0 3.06A4.94 4.94 0 1 1 12 16.94 4.94 4.94 0 0 1 12 7.06Zm0 1.8a3.14 3.14 0 1 0 0 6.28 3.14 3.14 0 0 0 0-6.28Zm5.13-.33a1.15 1.15 0 1 1-2.3 0 1.15 1.15 0 0 1 2.3 0Z"/></svg></a>
+          <a href="https://www.facebook.com/share/17sRUYioMF/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M13.5 21v-7h2.4l.4-2.9h-2.8V9.2c0-.84.26-1.42 1.47-1.42h1.43V5.18A20 20 0 0 0 14.2 5c-2.07 0-3.5 1.27-3.5 3.6v2.5H8.3V14h2.4v7h2.8Z"/></svg></a>
+          <a href="https://www.facebook.com/share/g/1bpcRvuJsh/" target="_blank" rel="noopener" aria-label="Facebook Group"><svg viewBox="0 0 24 24"><path d="M9 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm8 .5a2.3 2.3 0 1 0 0-4.6 2.3 2.3 0 0 0 0 4.6ZM3 18.5a6 6 0 0 1 12 0V20H3v-1.5Zm13.2-3.2A4.5 4.5 0 0 1 22 19.5V20h-5v-1.5c0-1.2-.32-2.33-.8-3.2Z"/></svg></a>
+          <a class="soon" href="#contact" aria-label="LinkedIn (coming soon)"><svg viewBox="0 0 24 24"><path d="M4.98 3.5A2 2 0 1 1 5 7.5a2 2 0 0 1-.02-4ZM3.5 9h3v11.5h-3V9Zm5 0h2.87v1.57h.04c.4-.76 1.38-1.57 2.84-1.57 3.04 0 3.6 2 3.6 4.6v6.9h-3v-6.12c0-1.46-.03-3.34-2.03-3.34-2.03 0-2.34 1.59-2.34 3.23v6.23h-3V9Z"/></svg></a>
+          <a class="soon" href="#contact" aria-label="X (coming soon)"><svg viewBox="0 0 24 24"><path d="M17.7 3h3.3l-7.2 8.2L22 21h-6.6l-5.2-6.8L4.3 21H1l7.7-8.8L2 3h6.8l4.7 6.2L17.7 3Zm-1.16 16h1.83L7.5 4.9H5.55L16.54 19Z"/></svg></a>
+          <a class="soon" href="#contact" aria-label="TikTok (coming soon)"><svg viewBox="0 0 24 24"><path d="M16.5 3c.3 2.2 1.55 3.6 3.7 3.74v2.5c-1.25.12-2.34-.28-3.6-1.04v4.96c0 4.3-3.2 6.6-6.3 5.86-3.34-.8-4.44-4.86-2.2-7.2 1-1.05 2.5-1.5 4-1.27v2.6c-.4-.13-.83-.16-1.26-.05-1.1.27-1.7 1.35-1.4 2.42.3 1.1 1.74 1.6 2.74.85.62-.46.82-1.12.82-2.06V3h3.3Z"/></svg></a>
+        </div>
+        <a href="#join" style="margin-top:18px;">Donate (Fall 2026)</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span class="copy">&copy; 2026 Code to Cure KCNH5 Epilepsy Foundation. All Rights Reserved.</span>
+      <span class="loc">BASED IN FLORIDA, USA</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  "use strict";
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* nav scroll state */
+  var nav = document.getElementById("nav");
+  function onScroll() {
+    if (window.scrollY > 20) nav.classList.add("scrolled");
+    else nav.classList.remove("scrolled");
+  }
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
+
+  /* mobile menu */
+  var burger = document.getElementById("burger");
+  var overlay = document.getElementById("overlay");
+  function closeMenu() { document.body.classList.remove("menu-open"); burger.setAttribute("aria-expanded", "false"); burger.setAttribute("aria-label", "Open menu"); }
+  burger.addEventListener("click", function () {
+    var open = document.body.classList.toggle("menu-open");
+    burger.setAttribute("aria-expanded", open ? "true" : "false");
+    burger.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+  });
+  overlay.querySelectorAll("a").forEach(function (a) { a.addEventListener("click", closeMenu); });
+
+  /* reveal on scroll */
+  var reveals = document.querySelectorAll(".reveal");
+  if (reduce || !("IntersectionObserver" in window)) {
+    reveals.forEach(function (el) { el.classList.add("in"); });
+  } else {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
+    }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
+    reveals.forEach(function (el) { io.observe(el); });
+  }
+
+  /* subscribe form (presentational, coming soon) */
+  var form = document.getElementById("subscribe");
+  if (form) {
+    form.addEventListener("submit", function (ev) {
+      ev.preventDefault();
+      var email = document.getElementById("email");
+      if (!email.value || email.value.indexOf("@") === -1) { email.focus(); return; }
+      form.classList.add("done");
+      email.value = "";
+      email.setAttribute("placeholder", "Subscribed");
+    });
+  }
+
+  /* build DNA helix */
+  var helix = document.getElementById("helix");
+  if (helix) {
+    var W = 320, H = 420, cx = 160, amp = 96, turns = 2.15, N = 26;
+    var svgns = "http://www.w3.org/2000/svg";
+    var ptsA = [], ptsB = [];
+    for (var i = 0; i < N; i++) {
+      var t = i / (N - 1);
+      var y = 24 + t * (H - 48);
+      var ang = t * turns * Math.PI * 2;
+      var xA = cx + Math.sin(ang) * amp;
+      var xB = cx - Math.sin(ang) * amp;
+      ptsA.push([xA, y]); ptsB.push([xB, y]);
+    }
+    function pathFrom(pts) {
+      var d = "M" + pts[0][0].toFixed(1) + " " + pts[0][1].toFixed(1);
+      for (var k = 1; k < pts.length; k++) {
+        var p0 = pts[k - 1], p1 = pts[k];
+        var my = (p0[1] + p1[1]) / 2;
+        d += " C" + p0[0].toFixed(1) + " " + my.toFixed(1) + " " + p1[0].toFixed(1) + " " + my.toFixed(1) + " " + p1[0].toFixed(1) + " " + p1[1].toFixed(1);
+      }
+      return d;
+    }
+    var mutationIndex = Math.round(N * 0.5);
+    // rungs
+    for (var j = 0; j < N; j++) {
+      var a = ptsA[j], b = ptsB[j];
+      var isMut = (j === mutationIndex);
+      var depth = (Math.sin(j / (N - 1) * turns * Math.PI * 2) + 1) / 2; // 0..1 front/back
+      var line = document.createElementNS(svgns, "line");
+      line.setAttribute("x1", a[0].toFixed(1)); line.setAttribute("y1", a[1].toFixed(1));
+      line.setAttribute("x2", b[0].toFixed(1)); line.setAttribute("y2", b[1].toFixed(1));
+      line.setAttribute("stroke", isMut ? "#7030a0" : "#c9c6d4");
+      line.setAttribute("stroke-width", isMut ? "3.4" : "1.6");
+      line.setAttribute("stroke-linecap", "round");
+      line.setAttribute("opacity", isMut ? "1" : (0.28 + depth * 0.5).toFixed(2));
+      if (!reduce) {
+        line.style.animation = "rungpulse 3.6s ease-in-out infinite";
+        line.style.animationDelay = (j * 0.09).toFixed(2) + "s";
+      }
+      helix.appendChild(line);
+    }
+    // strands
+    [ptsA, ptsB].forEach(function (pts, idx) {
+      var p = document.createElementNS(svgns, "path");
+      p.setAttribute("d", pathFrom(pts));
+      p.setAttribute("fill", "none");
+      p.setAttribute("stroke", idx === 0 ? "#7030a0" : "#a07cc4");
+      p.setAttribute("stroke-width", "3");
+      p.setAttribute("stroke-linecap", "round");
+      p.setAttribute("opacity", idx === 0 ? "0.92" : "0.62");
+      helix.appendChild(p);
+    });
+    // nodes
+    [ptsA, ptsB].forEach(function (pts, idx) {
+      pts.forEach(function (pt, j2) {
+        var c = document.createElementNS(svgns, "circle");
+        c.setAttribute("cx", pt[0].toFixed(1)); c.setAttribute("cy", pt[1].toFixed(1));
+        c.setAttribute("r", j2 === mutationIndex ? "4.2" : "2.6");
+        c.setAttribute("fill", j2 === mutationIndex ? "#7030a0" : (idx === 0 ? "#7e58aa" : "#b6a0d2"));
+        helix.appendChild(c);
+      });
+    });
+    // mutation marker ring
+    var mr = document.createElementNS(svgns, "circle");
+    mr.setAttribute("cx", cx); mr.setAttribute("cy", ptsA[mutationIndex][1].toFixed(1));
+    mr.setAttribute("r", "16"); mr.setAttribute("fill", "none");
+    mr.setAttribute("stroke", "#7030a0"); mr.setAttribute("stroke-width", "1.4");
+    mr.setAttribute("opacity", "0.5");
+    if (!reduce) mr.style.animation = "ring 3s ease-in-out infinite";
+    helix.appendChild(mr);
+    // scan line
+    if (!reduce) {
+      var scan = document.createElementNS(svgns, "rect");
+      scan.setAttribute("x", "30"); scan.setAttribute("width", "260"); scan.setAttribute("height", "2");
+      scan.setAttribute("y", "24"); scan.setAttribute("rx", "1");
+      scan.setAttribute("fill", "#7030a0"); scan.setAttribute("opacity", "0.22");
+      scan.setAttribute("class", "scanline");
+      scan.style.animation = "scan 5.5s cubic-bezier(0.45,0,0.55,1) infinite";
+      helix.appendChild(scan);
+    }
+  }
+
+  /* build EEG waveform */
+  var eeg = document.getElementById("eeg");
+  if (eeg) {
+    var ew = 520, eh = 150, mid = 78, svn = "http://www.w3.org/2000/svg";
+    // baseline grid
+    for (var gx = 0; gx <= ew; gx += 40) {
+      var gl = document.createElementNS(svn, "line");
+      gl.setAttribute("x1", gx); gl.setAttribute("y1", 14); gl.setAttribute("x2", gx); gl.setAttribute("y2", eh - 14);
+      gl.setAttribute("stroke", "#eadff5"); gl.setAttribute("stroke-width", "1");
+      eeg.appendChild(gl);
+    }
+    var d = "M0 " + mid;
+    var x = 0;
+    function seg(dx, dy) { x += dx; d += " L" + x + " " + (mid - dy); }
+    // calm
+    for (var s = 0; s < 5; s++) { seg(10, 6); seg(10, -6); seg(12, 3); seg(8, -3); }
+    // burst (highlighted region starts ~ x=190)
+    var burstStart = x;
+    seg(8, 40); seg(8, -52); seg(7, 46); seg(8, -44); seg(7, 50); seg(8, -40); seg(8, 44); seg(7, -48);
+    var burstEnd = x;
+    // settle after intervention
+    seg(14, 10); seg(14, -10); seg(16, 5); seg(16, -5);
+    for (var s2 = 0; s2 < 6; s2++) { seg(14, 4); seg(14, -4); }
+    d += " L" + ew + " " + mid;
+
+    // highlight band under burst
+    var band = document.createElementNS(svn, "rect");
+    band.setAttribute("x", burstStart); band.setAttribute("y", "14");
+    band.setAttribute("width", (burstEnd - burstStart)); band.setAttribute("height", eh - 28);
+    band.setAttribute("fill", "rgba(112,48,160,0.08)"); band.setAttribute("rx", "6");
+    eeg.appendChild(band);
+
+    var path = document.createElementNS(svn, "path");
+    path.setAttribute("d", d);
+    path.setAttribute("fill", "none");
+    path.setAttribute("stroke", "#7030a0");
+    path.setAttribute("stroke-width", "2.4");
+    path.setAttribute("stroke-linecap", "round");
+    path.setAttribute("stroke-linejoin", "round");
+    eeg.appendChild(path);
+
+    if (!reduce) {
+      var len = path.getTotalLength();
+      path.style.setProperty("--len", len);
+      path.style.strokeDasharray = len;
+      path.style.strokeDashoffset = len;
+      path.style.animation = "draw 4.5s ease-in-out infinite";
+    }
+    // moving pulse dot
+    if (!reduce) {
+      var dot = document.createElementNS(svn, "circle");
+      dot.setAttribute("r", "3.5"); dot.setAttribute("fill", "#7030a0");
+      var mp = document.createElementNS(svn, "animateMotion");
+      mp.setAttribute("dur", "4.5s"); mp.setAttribute("repeatCount", "indefinite");
+      mp.setAttribute("path", d); mp.setAttribute("keyPoints", "0;1"); mp.setAttribute("keyTimes", "0;1"); mp.setAttribute("calcMode", "linear");
+      dot.appendChild(mp);
+      eeg.appendChild(dot);
+    }
+  }
+})();
+</script>
+<style>
+  @keyframes rungpulse { 0%, 100% { opacity: 0.3; } 50% { opacity: 0.85; } }
+  @keyframes ring { 0%, 100% { transform: scale(1); opacity: 0.5; } 50% { transform: scale(1.25); opacity: 0.15; } }
+  #helix .scanline { transform-origin: center; }
+  @keyframes scan { 0% { transform: translateY(0); opacity: 0; } 12% { opacity: 0.28; } 50% { transform: translateY(372px); opacity: 0.28; } 62% { opacity: 0; } 100% { transform: translateY(0); opacity: 0; } }
+  @keyframes draw { 0% { stroke-dashoffset: var(--len, 1600); } 55% { stroke-dashoffset: 0; } 100% { stroke-dashoffset: 0; } }
+  #helix circle, #helix line, #helix path { transform-box: fill-box; }
+</style>
+</body>
+</html>
