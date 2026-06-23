@@ -3,39 +3,58 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Code to Cure | KCNH5 Epilepsy Foundation</title>
-<meta name="description" content="Code to Cure is a KCNH5 Epilepsy Foundation raising awareness and donor support to accelerate gene-targeted research toward a cure for KCNH5-related genetic epilepsy." />
-<meta name="theme-color" content="#7030A0" />
-<meta property="og:title" content="Code to Cure | KCNH5 Epilepsy Foundation" />
+<title>Code to Cure KCNH5 Epilepsy Foundation</title>
+<meta name="description" content="Code to Cure KCNH5 Epilepsy Foundation raises awareness and donor support to accelerate gene-targeted research toward a cure for KCNH5-related genetic epilepsy." />
+<meta name="theme-color" content="#562B97" />
+<meta property="og:title" content="Code to Cure KCNH5 Epilepsy Foundation" />
 <meta property="og:description" content="Decoding the mutation. Accelerating the science. Finding the cure." />
 <meta property="og:type" content="website" />
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%237030A0'/%3E%3Cpath d='M11 7c0 5 10 5 10 10s-10 5-10 10M21 7c0 5-10 5-10 10s10 5 10 10' fill='none' stroke='white' stroke-width='1.6' stroke-linecap='round'/%3E%3C/svg%3E" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23562B97'/%3E%3Cpath d='M11 7c0 5 10 5 10 10s-10 5-10 10M21 7c0 5-10 5-10 10s10 5 10 10' fill='none' stroke='white' stroke-width='1.6' stroke-linecap='round'/%3E%3C/svg%3E" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <style>
   :root {
-    --bg: #f3f4f7;
-    --bg-2: #ecedf1;
-    --surface: #ffffff;
-    --ink: #16131d;
-    --ink-2: #312c3c;
-    --muted: #5f5d6b;
-    --faint: #908e9d;
-    --line: #e4e4ec;
-    --line-soft: #ececf2;
-    --accent: #7030a0;
-    --accent-deep: #5a2682;
-    --accent-tint: #f2ecf9;
-    --accent-line: #e3d4f1;
-    --accent-soft: rgba(112, 48, 160, 0.08);
-    --r-xl: 30px;
-    --r-lg: 22px;
-    --r-md: 14px;
+    --bg: #fbf5ee;
+    --bg-2: #f6ece0;
+    --surface: #fffdfb;
+    --ink: #3a2d34;
+    --ink-2: #5f5057;
+    --muted: #857873;
+    --faint: #a89a90;
+    --line: #ece0d3;
+    --line-soft: #f3ebe1;
+    --accent: #562b97;
+    --accent-deep: #3f2071;
+    --accent-tint: #efeafa;
+    --accent-line: #d8ccee;
+    --accent-soft: rgba(86, 43, 151, 0.08);
+    --coral: #ee6c5a;
+    --coral-deep: #d9543f;
+    --coral-tint: #fdeae3;
+    --coral-line: #f6d3c9;
+    --gold: #eaa53c;
+    --gold-tint: #fbeed1;
+    /* brand trio */
+    --navy: #003057;
+    --navy-tint: #e8eef3;
+    --navy-line: #c8d6e1;
+    --teal: #0095a9;
+    --teal-tint: #e3f4f6;
+    --teal-line: #bce5ea;
+    --purple: #562b97;
+    --purple-tint: #efeafa;
+    --purple-line: #d8ccee;
+    --blue: #003057;
+    --blue-tint: #e8eef3;
+    --blue-line: #c8d6e1;
+    --r-xl: 34px;
+    --r-lg: 26px;
+    --r-md: 18px;
     --r-pill: 999px;
-    --shadow-soft: 0 1px 2px rgba(22, 19, 29, 0.04), 0 14px 34px -16px rgba(22, 19, 29, 0.12);
-    --shadow-card: 0 1px 1px rgba(22, 19, 29, 0.03), 0 2px 4px rgba(22, 19, 29, 0.03), 0 24px 48px -28px rgba(48, 26, 70, 0.22);
-    --shadow-pop: 0 30px 60px -24px rgba(48, 26, 70, 0.28);
+    --shadow-soft: 0 2px 4px rgba(120, 72, 40, 0.05), 0 16px 32px -16px rgba(120, 72, 40, 0.16);
+    --shadow-card: 0 2px 6px rgba(120, 72, 40, 0.05), 0 26px 52px -26px rgba(110, 60, 50, 0.22);
+    --shadow-pop: 0 34px 64px -24px rgba(110, 55, 60, 0.30);
     --ease: cubic-bezier(0.32, 0.72, 0, 1);
     --ease-soft: cubic-bezier(0.16, 1, 0.3, 1);
     --maxw: 1240px;
@@ -60,19 +79,17 @@
 
   a { color: inherit; text-decoration: none; }
   img, svg { display: block; max-width: 100%; }
-  h1, h2, h3, h4 { font-family: "Space Grotesk", sans-serif; font-weight: 600; letter-spacing: -0.02em; line-height: 1.04; color: var(--ink); }
+  h1, h2, h3, h4 { font-family: "Fraunces", serif; font-weight: 600; letter-spacing: -0.01em; line-height: 1.1; color: var(--navy); font-optical-sizing: auto; }
 
   .wrap { width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 28px; }
 
-  /* fixed technical grid backdrop, very subtle */
+  /* soft warm glows backdrop */
   .grid-bg {
     position: fixed; inset: 0; z-index: 0; pointer-events: none;
-    background-image:
-      linear-gradient(to right, rgba(22, 19, 29, 0.022) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(22, 19, 29, 0.022) 1px, transparent 1px);
-    background-size: 64px 64px;
-    mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 30%, transparent 78%);
-    -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 30%, transparent 78%);
+    background:
+      radial-gradient(38% 28% at 10% 6%, rgba(238, 108, 90, 0.10), transparent 70%),
+      radial-gradient(42% 32% at 90% 12%, rgba(112, 48, 160, 0.08), transparent 72%),
+      radial-gradient(55% 42% at 50% 102%, rgba(234, 165, 60, 0.08), transparent 76%);
   }
 
   .skip {
@@ -84,14 +101,14 @@
   /* eyebrow tag */
   .eyebrow {
     display: inline-flex; align-items: center; gap: 8px;
-    font-family: "JetBrains Mono", monospace; font-size: 11px; font-weight: 500;
-    letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent-deep);
+    font-family: "Plus Jakarta Sans", sans-serif; font-size: 11px; font-weight: 600;
+    letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent-deep);
     background: var(--accent-tint); border: 1px solid var(--accent-line);
     padding: 7px 13px; border-radius: var(--r-pill);
   }
-  .eyebrow .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 4px var(--accent-soft); }
+  .eyebrow .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--coral); box-shadow: 0 0 0 4px var(--coral-tint); }
 
-  .mono { font-family: "JetBrains Mono", monospace; letter-spacing: 0.04em; }
+  .mono { font-family: "Plus Jakarta Sans", sans-serif; letter-spacing: 0.04em; }
 
   /* ---------- NAV ---------- */
   .nav-shell { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: center; padding: 18px 20px; }
@@ -103,7 +120,7 @@
     box-shadow: var(--shadow-soft); transition: box-shadow 0.5s var(--ease), transform 0.5s var(--ease), background 0.5s var(--ease);
   }
   .nav.scrolled { background: rgba(255, 255, 255, 0.88); box-shadow: 0 10px 30px -14px rgba(48, 26, 70, 0.26); }
-  .brand { display: flex; align-items: center; gap: 11px; font-family: "Space Grotesk", sans-serif; font-weight: 600; font-size: 16px; letter-spacing: -0.01em; }
+  .brand { display: flex; align-items: center; gap: 11px; font-family: "Fraunces", serif; font-weight: 600; font-size: 16px; letter-spacing: -0.01em; }
   .brand .mark { width: 30px; height: 30px; border-radius: 9px; background: var(--accent); display: grid; place-items: center; flex: 0 0 auto; box-shadow: inset 0 1px 0 rgba(255,255,255,0.3), 0 4px 10px -3px rgba(112,48,160,0.5); }
   .brand .mark svg { width: 18px; height: 18px; }
   .brand sup { font-size: 9px; color: var(--faint); font-weight: 500; }
@@ -137,7 +154,7 @@
   .btn-dark:hover { transform: translateY(-2px); background: #25202f; }
   .btn-dark:hover .ico { transform: translate(3px, -2px); }
 
-  .badge-soon { font-family: "JetBrains Mono", monospace; font-size: 9.5px; letter-spacing: 0.12em; text-transform: uppercase; background: rgba(255,255,255,0.22); padding: 2px 7px; border-radius: var(--r-pill); }
+  .badge-soon { font-family: "Plus Jakarta Sans", sans-serif; font-size: 9.5px; letter-spacing: 0.12em; text-transform: uppercase; background: rgba(255,255,255,0.22); padding: 2px 7px; border-radius: var(--r-pill); }
 
   /* hamburger */
   .burger { display: none; width: 44px; height: 44px; border-radius: 50%; background: var(--surface); border: 1px solid var(--line); cursor: pointer; position: relative; box-shadow: var(--shadow-soft); }
@@ -150,34 +167,39 @@
   /* mobile overlay */
   .overlay { position: fixed; inset: 0; z-index: 95; background: rgba(243, 244, 247, 0.86); backdrop-filter: blur(26px); -webkit-backdrop-filter: blur(26px); display: flex; flex-direction: column; justify-content: center; padding: 0 32px; opacity: 0; pointer-events: none; transition: opacity 0.5s var(--ease); }
   body.menu-open .overlay { opacity: 1; pointer-events: auto; }
-  .overlay a { font-family: "Space Grotesk", sans-serif; font-size: 34px; font-weight: 600; letter-spacing: -0.02em; padding: 12px 0; color: var(--ink); border-bottom: 1px solid var(--line); opacity: 0; transform: translateY(24px); transition: opacity 0.6s var(--ease) var(--d), transform 0.6s var(--ease) var(--d); }
+  .overlay a { font-family: "Fraunces", serif; font-size: 34px; font-weight: 600; letter-spacing: -0.02em; padding: 12px 0; color: var(--ink); border-bottom: 1px solid var(--line); opacity: 0; transform: translateY(24px); transition: opacity 0.6s var(--ease) var(--d), transform 0.6s var(--ease) var(--d); }
   body.menu-open .overlay a { opacity: 1; transform: translateY(0); }
   .overlay .ov-cta { margin-top: 28px; }
 
   /* ---------- HERO ---------- */
-  .hero { position: relative; z-index: 1; min-height: 84svh; display: flex; align-items: center; padding: 124px 0 52px; }
-  .hero-grid { display: grid; grid-template-columns: 1.08fr 0.92fr; gap: 48px; align-items: center; }
-  .hero h1 { font-size: clamp(2.5rem, 5.2vw, 4.3rem); font-weight: 600; }
-  .hero h1 .l2 { color: var(--ink-2); }
-  .hero h1 .accent { color: var(--accent); position: relative; white-space: nowrap; }
-  .hero h1 .accent::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0.06em; height: 0.09em; background: var(--accent-line); border-radius: 2px; }
-  .hero p.lead { font-size: 18px; color: var(--muted); max-width: 50ch; margin-top: 26px; }
-  .hero-cta { display: flex; gap: 13px; margin-top: 34px; flex-wrap: wrap; }
+  /* ---------- HERO (large banner) ---------- */
+  .hero { position: relative; z-index: 1; padding: 104px 0 40px; }
+  .hero-banner { position: relative; overflow: hidden; border-radius: var(--r-xl); min-height: clamp(440px, 64vh, 600px); display: flex; align-items: flex-end; box-shadow: var(--shadow-card); background: linear-gradient(115deg, #002240 0%, #003057 26%, #562b97 66%, #0095a9 110%); }
+  .hero-banner::before { content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none; background: radial-gradient(42% 52% at 86% 16%, rgba(0,149,169,0.42), transparent 60%), radial-gradient(46% 56% at 10% 96%, rgba(86,43,151,0.5), transparent 64%); }
+  .hero-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 30%; z-index: 1; }
+  .hero-banner::after { content: ""; position: absolute; inset: 0; z-index: 2; pointer-events: none; background: linear-gradient(to top, rgba(30,14,40,0.92) 0%, rgba(30,14,40,0.55) 22%, rgba(30,14,40,0.12) 48%, transparent 70%); }
+  .hero-content { position: relative; z-index: 3; padding: clamp(28px, 4.5vw, 60px); max-width: 680px; }
+  .hero-content h1 { color: #fff; font-size: clamp(2.2rem, 4.6vw, 4rem); }
+  .hero-content .lead { color: rgba(255,255,255,0.92); font-size: clamp(16px, 1.5vw, 19px); max-width: 50ch; margin-top: 22px; }
+  .hero-content .hero-cta { display: flex; gap: 13px; margin-top: 30px; flex-wrap: wrap; }
+  .hero-banner .accent { color: #7fe0ec; white-space: nowrap; font-style: italic; position: relative; }
+  .hero-banner .accent::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0.02em; height: 0.09em; background: rgba(127,224,236,0.55); border-radius: 2px; }
+  .eyebrow-on-dark { background: rgba(255,255,255,0.16); border-color: rgba(255,255,255,0.3); color: #fff; }
+  .hero-photo-note { position: absolute; top: 16px; right: 16px; z-index: 3; display: inline-flex; align-items: center; gap: 7px; font-family: "Plus Jakarta Sans", sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.04em; color: #fff; background: rgba(0,0,0,0.24); border: 1px solid rgba(255,255,255,0.28); padding: 7px 12px; border-radius: var(--r-pill); -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); }
+  .hero-photo-note svg { width: 15px; height: 15px; }
 
-  .facts { display: flex; flex-wrap: wrap; gap: 0; margin-top: 32px; border-top: 1px solid var(--line); }
-  .fact { padding: 18px 26px 4px 0; margin-right: 26px; border-right: 1px solid var(--line); }
+  .facts { display: flex; flex-wrap: wrap; gap: 0; margin-top: 26px; }
+  .fact { padding: 6px 26px 4px 0; margin-right: 26px; border-right: 1px solid var(--line); }
   .fact:last-child { border-right: none; }
-  .fact .k { font-family: "JetBrains Mono", monospace; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--faint); }
-  .fact .v { font-family: "Space Grotesk", sans-serif; font-weight: 600; font-size: 16px; color: var(--ink); margin-top: 4px; }
-  .fact .v.acc { color: var(--accent-deep); }
+  .fact .k { font-family: "Plus Jakarta Sans", sans-serif; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--faint); }
+  .fact .v { font-family: "Fraunces", serif; font-weight: 600; font-size: 16px; color: var(--ink); margin-top: 4px; }
+  .fact .v.acc { color: var(--coral-deep); }
 
-  /* double-bezel hero visual */
-  .visual-shell { padding: 10px; background: linear-gradient(180deg, rgba(255,255,255,0.7), rgba(236,237,241,0.6)); border: 1px solid rgba(22,19,29,0.06); border-radius: var(--r-xl); box-shadow: var(--shadow-card); }
-  .visual { position: relative; border-radius: calc(var(--r-xl) - 9px); background: radial-gradient(120% 100% at 50% 0%, #ffffff 0%, #f6f4fa 60%, #f1eef7 100%); border: 1px solid var(--line-soft); box-shadow: inset 0 1px 0 rgba(255,255,255,0.8); overflow: hidden; }
-  .visual .vtag { position: absolute; top: 16px; left: 16px; z-index: 3; font-family: "JetBrains Mono", monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent-deep); background: rgba(255,255,255,0.7); border: 1px solid var(--accent-line); padding: 5px 10px; border-radius: var(--r-pill); }
-  .visual .vmeta { position: absolute; bottom: 14px; right: 16px; z-index: 3; font-family: "JetBrains Mono", monospace; font-size: 10px; letter-spacing: 0.1em; color: var(--faint); }
-  #helix { width: 100%; height: 420px; }
-  .scanline { transform-box: fill-box; }
+  .btn-outline-light { background: rgba(255,255,255,0.08); color: #fff; border-color: rgba(255,255,255,0.55); }
+  .btn-outline-light .ico { background: rgba(255,255,255,0.18); }
+  .btn-outline-light:hover { background: rgba(255,255,255,0.16); transform: translateY(-2px); }
+  .btn-outline-light:hover .ico { transform: translate(3px,-2px); }
+  #helix { width: 100%; height: auto; }
 
   /* ---------- SECTION SHELL ---------- */
   section { position: relative; z-index: 1; }
@@ -196,28 +218,28 @@
   .mission { position: relative; }
   .mission-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 60px; align-items: start; }
   .mission h2 { font-size: clamp(2.1rem, 4vw, 3.4rem); }
-  .mission h2 .hl { color: var(--accent); }
+  .mission h2 .hl { color: var(--teal); font-style: italic; }
   .mission .support { color: var(--muted); font-size: 18px; }
   .mission .support strong { color: var(--ink); font-weight: 600; }
   .mission .support + .support { margin-top: 20px; }
-  .pull { font-family: "Space Grotesk", sans-serif; font-weight: 500; font-size: 22px; line-height: 1.4; color: var(--ink-2); padding-left: 24px; border-left: 3px solid var(--accent); }
+  .pull { font-family: "Fraunces", serif; font-weight: 500; font-size: 22px; line-height: 1.4; color: var(--ink-2); padding-left: 24px; border-left: 3px solid var(--accent); }
 
   /* ---------- SCIENCE BENTO ---------- */
   .bento { display: grid; grid-template-columns: repeat(12, 1fr); gap: 18px; margin-top: 40px; }
   .card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-lg); padding: 34px; box-shadow: var(--shadow-soft); transition: transform 0.5s var(--ease), box-shadow 0.5s var(--ease), border-color 0.5s var(--ease); position: relative; overflow: hidden; }
   .card:hover { transform: translateY(-4px); box-shadow: var(--shadow-card); border-color: var(--accent-line); }
-  .card .idx { font-family: "JetBrains Mono", monospace; font-size: 12px; letter-spacing: 0.1em; color: var(--accent); }
+  .card .idx { font-family: "Plus Jakarta Sans", sans-serif; font-size: 12px; letter-spacing: 0.1em; color: var(--accent); }
   .card .c-ico { width: 52px; height: 52px; border-radius: 14px; background: var(--accent-tint); border: 1px solid var(--accent-line); display: grid; place-items: center; margin-bottom: 22px; }
   .card .c-ico svg { width: 26px; height: 26px; stroke: var(--accent-deep); }
   .card h3 { font-size: 22px; margin-bottom: 12px; }
   .card p { color: var(--muted); font-size: 15.5px; }
-  .card .tag { display: inline-block; margin-top: 18px; font-family: "JetBrains Mono", monospace; font-size: 10.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent-deep); background: var(--accent-soft); padding: 5px 11px; border-radius: var(--r-pill); }
+  .card .tag { display: inline-block; margin-top: 18px; font-family: "Plus Jakarta Sans", sans-serif; font-size: 10.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent-deep); background: var(--accent-soft); padding: 5px 11px; border-radius: var(--r-pill); }
   .span-6 { grid-column: span 6; }
   .span-4 { grid-column: span 4; }
   .span-8 { grid-column: span 8; }
   .pillar { background: linear-gradient(170deg, #ffffff 0%, #fbf9fd 100%); }
   .pillar .glow { position: absolute; top: -40%; right: -20%; width: 300px; height: 300px; background: radial-gradient(circle, rgba(112,48,160,0.10), transparent 68%); pointer-events: none; }
-  .bridge { background: var(--ink); color: #fff; display: flex; flex-direction: column; justify-content: space-between; }
+  .bridge { background: linear-gradient(162deg, #562b97 0%, #7c3a86 100%); color: #fff; display: flex; flex-direction: column; justify-content: space-between; }
   .bridge h3 { color: #fff; }
   .bridge p { color: rgba(255,255,255,0.66); }
   .bridge .idx { color: #b98fdc; }
@@ -229,26 +251,29 @@
   .kcnh-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 56px; align-items: center; }
   .spec { border-top: 1px solid var(--line); }
   .spec .row { display: grid; grid-template-columns: 1fr 1.4fr; gap: 20px; padding: 20px 4px; border-bottom: 1px solid var(--line); align-items: baseline; }
-  .spec .row .k { font-family: "JetBrains Mono", monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--faint); }
-  .spec .row .v { font-family: "Space Grotesk", sans-serif; font-weight: 500; font-size: 17px; color: var(--ink); }
+  .spec .row .k { font-family: "Plus Jakarta Sans", sans-serif; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--faint); }
+  .spec .row .v { font-family: "Fraunces", serif; font-weight: 500; font-size: 17px; color: var(--ink); }
   .eeg-shell { padding: 10px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-xl); box-shadow: var(--shadow-card); }
   .eeg-inner { border-radius: calc(var(--r-xl) - 9px); background: radial-gradient(120% 120% at 50% 0%, #fbf9fd, #f4f0fa); border: 1px solid var(--line-soft); padding: 26px; }
-  .eeg-inner .lab { display: flex; justify-content: space-between; font-family: "JetBrains Mono", monospace; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--faint); margin-bottom: 8px; }
-  #eeg { width: 100%; height: 150px; }
+  .eeg-inner .lab { display: flex; justify-content: space-between; font-family: "Plus Jakarta Sans", sans-serif; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--faint); margin-bottom: 8px; }
+  #eeg { width: 100%; height: 104px; }
 
   /* ---------- STORY ---------- */
-  .story-card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-xl); padding: clamp(40px, 6vw, 76px); box-shadow: var(--shadow-card); position: relative; overflow: hidden; display: grid; grid-template-columns: 1fr auto; gap: 40px; align-items: center; }
-  .story-card .glow { position: absolute; bottom: -50%; left: 30%; width: 420px; height: 420px; background: radial-gradient(circle, rgba(112,48,160,0.08), transparent 70%); pointer-events: none; }
+  .story-card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-xl); padding: clamp(36px, 5vw, 60px); box-shadow: var(--shadow-card); position: relative; overflow: hidden; display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 44px; align-items: center; }
+  .story-card .glow { position: absolute; bottom: -50%; left: 30%; width: 420px; height: 420px; background: radial-gradient(circle, rgba(0,149,169,0.10), transparent 70%); pointer-events: none; }
   .story-card h2 { font-size: clamp(2rem, 4vw, 3rem); }
   .story-card p { color: var(--muted); font-size: 18px; margin-top: 18px; max-width: 52ch; }
-  .soon-pill { font-family: "JetBrains Mono", monospace; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent-deep); border: 1px dashed var(--accent-line); padding: 14px 22px; border-radius: var(--r-pill); white-space: nowrap; }
+  .soon-pill { display: inline-block; font-family: "Plus Jakarta Sans", sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--coral-deep); background: var(--coral-tint); border: 1px solid var(--coral-line); padding: 9px 16px; border-radius: var(--r-pill); white-space: nowrap; }
+  .photo-frame { border-radius: var(--r-lg); background: linear-gradient(150deg, var(--coral-tint), var(--accent-tint)); border: 1.5px dashed var(--coral-line); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; color: var(--coral-deep); text-align: center; padding: 40px 24px; min-height: 250px; }
+  .photo-frame svg { width: 40px; height: 40px; }
+  .photo-frame .cap { font-family: "Plus Jakarta Sans", sans-serif; font-size: 11.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
 
   /* ---------- GET INVOLVED ---------- */
   .involve-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 40px; }
   .ivcard { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-lg); padding: 34px; box-shadow: var(--shadow-soft); display: flex; flex-direction: column; transition: transform 0.5s var(--ease), box-shadow 0.5s var(--ease), border-color 0.5s var(--ease); }
   .ivcard:hover { transform: translateY(-4px); box-shadow: var(--shadow-card); border-color: var(--accent-line); }
-  .ivcard .c-ico { width: 50px; height: 50px; border-radius: 14px; background: var(--accent-tint); border: 1px solid var(--accent-line); display: grid; place-items: center; margin-bottom: 22px; }
-  .ivcard .c-ico svg { width: 25px; height: 25px; stroke: var(--accent-deep); }
+  .ivcard .c-ico { width: 52px; height: 52px; border-radius: 16px; background: var(--coral-tint); border: 1px solid var(--coral-line); display: grid; place-items: center; margin-bottom: 22px; }
+  .ivcard .c-ico svg { width: 25px; height: 25px; stroke: var(--coral-deep); }
   .ivcard h3 { font-size: 21px; margin-bottom: 10px; }
   .ivcard p { color: var(--muted); font-size: 15px; flex: 1; }
   .ivcard .link { margin-top: 22px; display: inline-flex; align-items: center; gap: 8px; font-weight: 600; font-size: 14px; color: var(--accent-deep); }
@@ -256,15 +281,15 @@
   .ivcard:hover .link svg { transform: translateX(4px); }
 
   /* ---------- CTA BAND ---------- */
-  .band { background: linear-gradient(155deg, #2a1640 0%, #4a1f6e 55%, #7030a0 130%); border-radius: var(--r-xl); padding: clamp(44px, 6vw, 76px); position: relative; overflow: hidden; box-shadow: var(--shadow-pop); }
-  .band::before { content: ""; position: absolute; inset: 0; background-image: linear-gradient(to right, rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.05) 1px, transparent 1px); background-size: 52px 52px; mask-image: radial-gradient(ellipse 70% 80% at 80% 20%, #000, transparent 70%); -webkit-mask-image: radial-gradient(ellipse 70% 80% at 80% 20%, #000, transparent 70%); }
+  .band { background: linear-gradient(120deg, #003057 0%, #562b97 54%, #0095a9 120%); border-radius: var(--r-xl); padding: clamp(48px, 6vw, 80px); position: relative; overflow: hidden; box-shadow: var(--shadow-pop); }
+  .band::before { content: ""; position: absolute; inset: 0; pointer-events: none; background: radial-gradient(55% 75% at 86% 12%, rgba(255,255,255,0.22), transparent 62%), radial-gradient(50% 65% at 8% 106%, rgba(0,149,169,0.4), transparent 70%); }
   .band-grid { position: relative; z-index: 2; display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
   .band .eyebrow { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2); color: #e8d8f6; }
   .band .eyebrow .dot { background: #d9bdf2; box-shadow: 0 0 0 4px rgba(255,255,255,0.12); }
   .band h2 { color: #fff; font-size: clamp(2rem, 3.6vw, 2.9rem); margin-top: 20px; }
   .band p { color: rgba(255,255,255,0.74); font-size: 17px; margin-top: 16px; max-width: 44ch; }
   .form { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14); border-radius: var(--r-lg); padding: 26px; backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); }
-  .form label { display: block; font-family: "JetBrains Mono", monospace; font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.7); margin-bottom: 9px; }
+  .form label { display: block; font-family: "Plus Jakarta Sans", sans-serif; font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.7); margin-bottom: 9px; }
   .form .field { display: flex; gap: 10px; }
   .form input { flex: 1; background: rgba(255,255,255,0.95); border: 1px solid transparent; border-radius: var(--r-pill); padding: 13px 18px; font-family: inherit; font-size: 15px; color: var(--ink); outline: none; transition: box-shadow 0.3s var(--ease); }
   .form input:focus { box-shadow: 0 0 0 3px rgba(217, 189, 242, 0.5); }
@@ -273,7 +298,7 @@
   .form .ok svg { width: 16px; height: 16px; flex: 0 0 auto; }
   .form.done .ok { display: flex; }
   .band .donate-row { display: flex; align-items: center; gap: 14px; margin-top: 26px; flex-wrap: wrap; }
-  .band .donate-note { font-family: "JetBrains Mono", monospace; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.55); }
+  .band .donate-note { font-family: "Plus Jakarta Sans", sans-serif; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.55); }
   .btn-on-dark { background: #fff; color: var(--ink); }
   .btn-on-dark .ico { background: var(--accent-soft); color: var(--accent-deep); }
   .btn-on-dark:hover { transform: translateY(-2px); box-shadow: 0 14px 30px -10px rgba(0,0,0,0.4); }
@@ -289,8 +314,8 @@
   .channel .ci { width: 42px; height: 42px; border-radius: 11px; background: var(--accent-tint); border: 1px solid var(--accent-line); display: grid; place-items: center; flex: 0 0 auto; }
   .channel .ci svg { width: 20px; height: 20px; }
   .channel .ct { flex: 1; }
-  .channel .ct .t { font-family: "Space Grotesk", sans-serif; font-weight: 600; font-size: 15px; }
-  .channel .ct .s { font-size: 13px; color: var(--faint); }
+  .channel .ct .t { font-family: "Fraunces", serif; font-weight: 600; font-size: 15px; }
+  .channel .ct .s { font-size: 13px; color: var(--faint); margin-left: 6px; }
   .channel .arr { width: 18px; height: 18px; color: var(--faint); transition: transform 0.4s var(--ease), color 0.4s var(--ease); }
   .channel:hover .arr { transform: translateX(3px); color: var(--accent-deep); }
 
@@ -300,9 +325,9 @@
   footer .brand { color: #fff; font-size: 18px; }
   footer .brand .mark { box-shadow: none; }
   footer .tag { margin-top: 18px; font-size: 14.5px; color: rgba(255,255,255,0.6); max-width: 34ch; }
-  footer .status { margin-top: 18px; display: inline-flex; align-items: center; gap: 8px; font-family: "JetBrains Mono", monospace; font-size: 10.5px; letter-spacing: 0.12em; text-transform: uppercase; color: #c9a9e6; }
+  footer .status { margin-top: 18px; display: inline-flex; align-items: center; gap: 8px; font-family: "Plus Jakarta Sans", sans-serif; font-size: 10.5px; letter-spacing: 0.12em; text-transform: uppercase; color: #c9a9e6; }
   footer .status .dot { width: 7px; height: 7px; border-radius: 50%; background: #9b6bce; box-shadow: 0 0 0 4px rgba(155,107,206,0.2); }
-  .foot-col h4 { color: #fff; font-family: "JetBrains Mono", monospace; font-size: 10.5px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 18px; }
+  .foot-col h4 { color: #fff; font-family: "Plus Jakarta Sans", sans-serif; font-size: 10.5px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 18px; }
   .foot-col a { display: block; font-size: 14.5px; color: rgba(255,255,255,0.72); padding: 6px 0; transition: color 0.3s var(--ease); }
   .foot-col a:hover { color: #fff; }
   .socials { display: flex; gap: 10px; flex-wrap: wrap; }
@@ -313,11 +338,48 @@
   .socials a.soon { opacity: 0.4; }
   .foot-bottom { display: flex; justify-content: space-between; align-items: center; gap: 18px; padding-top: 28px; flex-wrap: wrap; }
   .foot-bottom .copy { font-size: 13px; color: rgba(255,255,255,0.5); }
-  .foot-bottom .loc { font-family: "JetBrains Mono", monospace; font-size: 11px; letter-spacing: 0.1em; color: rgba(255,255,255,0.4); }
+  .foot-bottom .loc { font-family: "Plus Jakarta Sans", sans-serif; font-size: 11px; letter-spacing: 0.1em; color: rgba(255,255,255,0.4); }
+
+  /* ---------- BRAND-COLOR THEMING ---------- */
+  .c-navy { --th: var(--navy); --th-tint: var(--navy-tint); --th-line: var(--navy-line); }
+  .c-purple { --th: var(--purple); --th-tint: var(--purple-tint); --th-line: var(--purple-line); }
+  .c-teal { --th: var(--teal); --th-tint: var(--teal-tint); --th-line: var(--teal-line); }
+  .sec[class*="c-"] .eyebrow { background: var(--th-tint); border-color: var(--th-line); color: var(--th); }
+  .sec[class*="c-"] .eyebrow .dot { background: var(--th); box-shadow: 0 0 0 4px var(--th-tint); }
+  .sec[class*="c-"] h2 { color: var(--th); }
+  .sec.bg-soft { background: var(--th-tint); }
+  .sec[class*="c-"] .c-ico { background: var(--th-tint); border-color: var(--th-line); }
+  .sec[class*="c-"] .c-ico svg { stroke: var(--th); }
+  .sec[class*="c-"] .card .idx { color: var(--th); }
+  .sec[class*="c-"] .card .tag { color: var(--th); background: var(--th-tint); }
+  .sec[class*="c-"] .ivcard .link { color: var(--th); }
+
+  /* prominent donate band */
+  .donate-band { text-align: center; }
+  .donate-band .band-inner { position: relative; z-index: 2; max-width: 660px; margin: 0 auto; }
+  .donate-band h2 { color: #fff; font-size: clamp(2.2rem, 4.4vw, 3.3rem); margin-top: 16px; }
+  .donate-band p { color: rgba(255,255,255,0.9); font-size: 18px; margin: 16px auto 0; max-width: 44ch; }
+  .donate-band .eyebrow { background: rgba(255,255,255,0.18); border-color: rgba(255,255,255,0.34); color: #fff; }
+  .donate-band .eyebrow .dot { background: #fff; box-shadow: 0 0 0 4px rgba(255,255,255,0.2); }
+  .donate-band .donate-row { display: flex; align-items: center; justify-content: center; gap: 16px; margin-top: 28px; flex-wrap: wrap; }
+  .donate-band .donate-note { font-family: "Plus Jakarta Sans", sans-serif; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.7); }
+  .btn-lg { font-size: 16px; padding: 16px 18px 16px 28px; }
+  .btn-lg .ico { width: 32px; height: 32px; }
+
+  /* small email signup strip */
+  .family-inner { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 28px; align-items: center; background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-lg); padding: clamp(24px, 3.5vw, 38px); box-shadow: var(--shadow-soft); }
+  .family-inner .ft h3 { font-size: clamp(1.4rem, 2.6vw, 1.9rem); }
+  .family-inner .ft p { color: var(--muted); font-size: 15px; margin-top: 8px; }
+  .form-lite .field { display: flex; gap: 10px; }
+  .form-lite input { flex: 1; min-width: 0; background: var(--bg); border: 1px solid var(--line); border-radius: var(--r-pill); padding: 13px 18px; font-family: inherit; font-size: 15px; color: var(--ink); outline: none; transition: box-shadow 0.3s var(--ease), border-color 0.3s var(--ease); }
+  .form-lite input:focus { border-color: var(--accent-line); box-shadow: 0 0 0 3px var(--accent-soft); }
+  .form-lite .ok { display: none; font-size: 13.5px; color: var(--accent-deep); margin-top: 12px; align-items: center; gap: 8px; }
+  .form-lite .ok svg { width: 16px; height: 16px; flex: 0 0 auto; stroke: var(--accent-deep); }
+  .form-lite.done .ok { display: flex; }
 
   /* ---------- RESPONSIVE ---------- */
   @media (max-width: 980px) {
-    .hero-grid, .mission-grid, .kcnh-grid, .band-grid, .contact-grid { grid-template-columns: 1fr; gap: 32px; }
+    .hero-grid, .mission-grid, .kcnh-grid, .band-grid, .contact-grid, .family-inner { grid-template-columns: 1fr; gap: 28px; }
     .involve-grid { grid-template-columns: 1fr; }
     .bento { grid-template-columns: repeat(6, 1fr); }
     .span-6, .span-8, .span-4 { grid-column: span 6; }
@@ -329,15 +391,45 @@
     body { font-size: 16px; }
     .wrap { padding: 0 20px; }
     .nav-links { display: none; }
-    .nav-right .btn-cta-text { display: none; }
+    .nav-right .nav-badge { display: none; }
     .burger { display: block; }
-    .hero { padding: 130px 0 60px; }
-    .facts { gap: 14px; }
+    .nav-shell { padding: 12px 14px; }
+    .nav { padding: 8px 8px 8px 16px; gap: 10px; }
+    .brand { font-size: 15px; gap: 9px; }
+    .brand .mark { width: 28px; height: 28px; }
+    .hero { padding: 92px 0 36px; }
+    .hero-banner { min-height: clamp(420px, 76vh, 540px); border-radius: var(--r-lg); }
+    .hero-art { display: none; }
+    .hero-content { padding: 30px 24px; }
+    .hero-content h1 { font-size: clamp(1.8rem, 7.4vw, 2.6rem); }
+    .hero-content .lead { font-size: 16px; margin-top: 18px; max-width: none; }
+    .hero-content .hero-cta { gap: 10px; margin-top: 24px; width: 100%; }
+    .hero-content .hero-cta .btn { width: 100%; justify-content: space-between; padding: 14px 16px 14px 22px; font-size: 15px; }
+    .facts { gap: 0 14px; margin-top: 22px; }
     .fact { border-right: none; padding: 14px 0 0; margin-right: 0; width: 46%; }
-    .bento { grid-template-columns: 1fr; }
+    .sec-head p { font-size: 16px; }
+    .bento { grid-template-columns: 1fr; gap: 14px; }
     .span-6, .span-8, .span-4 { grid-column: span 1; }
+    .card, .ivcard { padding: 26px; }
+    .involve-grid { gap: 14px; }
+    .kcnh-grid { gap: 28px; }
+    .spec .row { grid-template-columns: 1fr; gap: 4px; padding: 14px 2px; }
+    .band-grid { gap: 30px; }
+    .form { padding: 20px; }
+    .form .field { flex-direction: column; }
+    .form input { width: 100%; }
+    .form .field .btn { width: 100%; justify-content: center; }
+    .channels { gap: 10px; }
+    .story-card { gap: 24px; }
     .foot-top { grid-template-columns: 1fr; gap: 32px; }
-    .nav { padding-left: 16px; }
+    .foot-bottom { flex-direction: column; align-items: flex-start; gap: 8px; }
+  }
+  @media (max-width: 420px) {
+    .wrap { padding: 0 16px; }
+    .brand sup { display: none; }
+    .fact { width: 100%; }
+    .eyebrow { font-size: 10px; letter-spacing: 0.12em; }
+    #helix { height: 250px; }
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -360,17 +452,15 @@
       <span>Code to Cure<sup>TM</sup></span>
     </a>
     <div class="nav-links">
-      <a href="#mission">Mission</a>
-      <a href="#science">The Science</a>
-      <a href="#kcnh5">KCNH5</a>
+      <a href="#top">Home</a>
+      <a href="#science">Research</a>
       <a href="#involve">Get Involved</a>
       <a href="#contact">Contact</a>
     </div>
     <div class="nav-right">
-      <a class="btn btn-primary" href="#join">
-        <span class="btn-cta-text">Donate</span>
-        <span class="badge-soon btn-cta-text">Fall 2026</span>
-        <span class="ico"><svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></span>
+      <a class="btn btn-primary" href="#join" aria-label="Donate">
+        <span>Donate</span>
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none"><path d="M12 20s-7-4.3-7-9.2A3.8 3.8 0 0 1 12 8a3.8 3.8 0 0 1 7 2.8C19 15.7 12 20 12 20Z" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/></svg></span>
       </a>
       <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
     </div>
@@ -379,12 +469,11 @@
 
 <!-- MOBILE OVERLAY -->
 <div class="overlay" id="overlay">
-  <a href="#mission" style="--d:0.08s">Mission</a>
-  <a href="#science" style="--d:0.14s">The Science</a>
-  <a href="#kcnh5" style="--d:0.20s">KCNH5</a>
-  <a href="#involve" style="--d:0.26s">Get Involved</a>
+  <a href="#top" style="--d:0.08s">Home</a>
+  <a href="#science" style="--d:0.16s">Research</a>
+  <a href="#involve" style="--d:0.24s">Get Involved</a>
   <a href="#contact" style="--d:0.32s">Contact</a>
-  <a class="btn btn-primary ov-cta" href="#join" style="--d:0.38s; width:max-content;">Support the science <span class="ico"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+  <a class="btn btn-primary ov-cta" href="#join" style="--d:0.40s; width:max-content;">Donate <span class="ico"><svg viewBox="0 0 24 24" fill="none"><path d="M12 20s-7-4.3-7-9.2A3.8 3.8 0 0 1 12 8a3.8 3.8 0 0 1 7 2.8C19 15.7 12 20 12 20Z" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/></svg></span></a>
 </div>
 
 <main id="main">
@@ -393,40 +482,53 @@
 <!-- HERO -->
 <header class="hero">
   <div class="wrap">
-    <div class="hero-grid">
-      <div class="hero-copy">
-        <span class="eyebrow reveal"><span class="dot"></span> KCNH5 Epilepsy Foundation</span>
-        <h1 class="reveal" style="--rd:80ms; margin-top:22px;">
-          Decoding the mutation.<br />
-          <span class="l2">Accelerating the science.</span><br />
-          Finding the <span class="accent">cure</span>.
-        </h1>
-        <p class="lead reveal" style="--rd:160ms;">Code to Cure was born from a family's refusal to wait. We raise awareness for KCNH5-related genetic epilepsy and rally the donors and supporters whose funding can accelerate the science toward a cure.</p>
+    <div class="hero-banner reveal">
+      <img class="hero-photo" src="assets/hero.jpg" alt="A joyful young child laughing outdoors, hands covered in bright finger paint" onerror="this.remove()" />
+      <div class="hero-content">
+        <span class="eyebrow eyebrow-on-dark reveal"><span class="dot"></span> Code to Cure KCNH5 Epilepsy Foundation</span>
+        <h1 class="reveal" style="--rd:80ms; margin-top:18px;">Hope for every child, born from a family's <span class="accent">love</span>.</h1>
+        <p class="lead reveal" style="--rd:160ms;">A family-founded foundation raising awareness and support to find a cure for KCNH5 genetic epilepsy, for every child waiting.</p>
         <div class="hero-cta reveal" style="--rd:240ms;">
-          <a class="btn btn-primary" href="#join">Support the science <span class="ico"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
-          <a class="btn btn-ghost" href="#contact">Get in touch <span class="ico"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
-        </div>
-        <div class="facts reveal" style="--rd:320ms;">
-          <div class="fact"><div class="k">Established</div><div class="v">2026 / Florida</div></div>
-          <div class="fact"><div class="k">Status</div><div class="v">501(c)(3) in formation</div></div>
-          <div class="fact"><div class="k">Public launch</div><div class="v acc">Fall 2026</div></div>
-        </div>
-      </div>
-      <div class="hero-visual reveal" style="--rd:200ms;">
-        <div class="visual-shell">
-          <div class="visual">
-            <span class="vtag">Target / KCNH5</span>
-            <svg id="helix" viewBox="0 0 320 420" aria-label="Stylized DNA double helix with one base pair highlighted as the KCNH5 mutation target" role="img"></svg>
-            <span class="vmeta">DECODING THE CODE</span>
-          </div>
+          <a class="btn btn-on-dark" href="#join">Donate <span class="ico"><svg viewBox="0 0 24 24" fill="none"><path d="M12 20s-7-4.3-7-9.2A3.8 3.8 0 0 1 12 8a3.8 3.8 0 0 1 7 2.8C19 15.7 12 20 12 20Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></span></a>
+          <a class="btn btn-outline-light" href="#contact">Get in touch <span class="ico"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
         </div>
       </div>
     </div>
   </div>
 </header>
 
+<!-- WHAT IS KCNH5 -->
+<section class="sec c-teal">
+  <div class="wrap">
+    <span class="anchor" id="kcnh5"></span>
+    <div class="kcnh-grid">
+      <div>
+        <span class="eyebrow reveal"><span class="dot"></span> What is KCNH5?</span>
+        <h2 class="reveal" style="--rd:80ms; margin-top:18px; font-size:clamp(2rem,3.6vw,3rem);">What our children are up against.</h2>
+        <p class="reveal" style="--rd:140ms; color:var(--muted); font-size:17px; margin-top:16px; max-width:46ch;">KCNH5 epilepsy is rare and severe. A change in a single gene can reshape a child's earliest years with seizures and developmental delays. Understanding it is the first step toward changing it.</p>
+        <div class="spec reveal" style="--rd:200ms; margin-top:30px;">
+          <div class="row"><div class="k">What it is</div><div class="v">Rare genetic epilepsy</div></div>
+          <div class="row"><div class="k">When it starts</div><div class="v">Early childhood</div></div>
+          <div class="row"><div class="k">What it brings</div><div class="v">Recurrent seizures, developmental delay</div></div>
+          <div class="row"><div class="k">Why it happens</div><div class="v">A change in the KCNH5 gene</div></div>
+          <div class="row"><div class="k">How we fight it</div><div class="v">Gene-targeted therapy</div></div>
+        </div>
+      </div>
+      <div class="reveal" style="--rd:160ms;">
+        <div class="eeg-shell">
+          <div class="eeg-inner">
+            <div class="lab"><span>Illustrative neural activity</span><span>KCNH5</span></div>
+            <svg id="eeg" viewBox="0 0 520 150" aria-label="Illustrative neural activity waveform with one highlighted burst" role="img"></svg>
+            <div class="lab" style="margin-top:8px; margin-bottom:0;"><span>Seizure</span><span style="color:var(--teal);">Where treatment steps in</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- MISSION -->
-<section class="sec mission">
+<section class="sec mission c-purple">
   <div class="wrap">
     <span class="anchor" id="mission"></span>
     <div class="mission-grid">
@@ -435,161 +537,107 @@
         <h2 class="reveal" style="--rd:80ms; margin-top:22px;">We refuse to wait <span class="hl">for a cure</span>.</h2>
       </div>
       <div>
-        <p class="support reveal" style="--rd:120ms;">As a <strong>501(c)(3) public charity in formation</strong>, our mission is to raise awareness for KCNH5-related genetic epilepsy and secure the donor support that accelerates research toward a cure.</p>
-        <p class="support reveal" style="--rd:200ms;">We bring families, advocates, and donors together, turning a community's determination into real momentum for the science.</p>
+        <p class="support reveal" style="--rd:120ms;">As a <strong>501(c)(3) public charity in formation</strong>, we exist to raise awareness for KCNH5 epilepsy and rally the support that brings a cure closer for the children who need it.</p>
+        <p class="support reveal" style="--rd:200ms;">We bring families, advocates, and donors together, so no family has to face this alone, and so a community's love becomes real progress.</p>
         <p class="pull reveal" style="--rd:280ms; margin-top:30px;">Born from one family's resolve, built for every family waiting.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- SCIENCE -->
-<section class="sec">
+<!-- RESEARCH -->
+<section class="sec c-navy">
   <div class="wrap">
     <span class="anchor" id="science"></span>
     <div class="sec-head">
-      <span class="eyebrow reveal"><span class="dot"></span> The Science</span>
-      <h2 class="reveal" style="--rd:80ms;">Engineering a cure at the source.</h2>
-      <p class="reveal" style="--rd:140ms;">KCNH5 mutation-related epilepsy is a rare, severe neurological disorder that causes early-onset seizures and developmental delays. We rally awareness and donor support behind targeted, translation-ready research that addresses the root cause, not just the symptoms.</p>
+      <span class="eyebrow reveal"><span class="dot"></span> Research</span>
+      <h2 class="reveal" style="--rd:80ms;">Two paths to a cure.</h2>
+      <p class="reveal" style="--rd:140ms;">Your support helps fund research that goes after the root cause of KCNH5 epilepsy, not just the symptoms, so children have a real chance at a healthier future.</p>
     </div>
     <div class="bento">
-      <div class="card pillar span-6 reveal">
+      <div class="card pillar span-6 c-purple reveal">
         <div class="glow" aria-hidden="true"></div>
-        <div class="idx">01 / APPROACH</div>
+        <div class="idx">Approach one</div>
         <div class="c-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7c4 0 4 10 8 10s4-10 8-10"/><path d="M4 17c4 0 4-10 8-10s4 10 8 10" opacity="0.45"/><circle cx="12" cy="12" r="1.6" fill="currentColor" stroke="none"/></svg></div>
-        <h3>Antisense Oligonucleotide (ASO) therapeutics</h3>
-        <p>Programmable genetic medicine designed to intercept the faulty instructions behind KCNH5 seizures and quiet them before they ever reach the cell, silencing the root cause rather than masking it.</p>
+        <h3>Antisense oligonucleotide (ASO) therapy</h3>
+        <p>A medicine designed to quiet the faulty genetic instructions behind KCNH5 seizures before they ever start, treating the cause instead of masking it.</p>
         <span class="tag">Silence the signal</span>
       </div>
-      <div class="card pillar span-6 reveal" style="--rd:90ms;">
+      <div class="card pillar span-6 c-teal reveal" style="--rd:90ms;">
         <div class="glow" aria-hidden="true"></div>
-        <div class="idx">02 / APPROACH</div>
+        <div class="idx">Approach two</div>
         <div class="c-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3v7M7 14v7M17 3v7M17 14v7"/><path d="M7 8h10M7 16h10"/><circle cx="7" cy="12" r="1.4" fill="currentColor" stroke="none"/><circle cx="17" cy="12" r="1.4" fill="currentColor" stroke="none"/></svg></div>
-        <h3>CRISPR-based gene correction</h3>
-        <p>Gene-correction models that work toward rewriting the mutated code itself, restoring healthy function where the disorder begins so therapies can reach the children waiting for them.</p>
+        <h3>CRISPR gene correction</h3>
+        <p>Research working toward gently rewriting the changed gene itself, restoring healthy function right where the disorder begins.</p>
         <span class="tag">Rewrite the code</span>
-      </div>
-      <div class="card span-8 reveal">
-        <div class="idx">BENCH TO BEDSIDE</div>
-        <h3 style="margin-top:16px;">Bridging laboratory data and patient care.</h3>
-        <p style="max-width:60ch;">Breakthroughs stall in the gap between the lab and the clinic. The donor funding we help secure moves that work forward, so promising science becomes a therapy a child can actually receive.</p>
-      </div>
-      <div class="card bridge span-4 reveal" style="--rd:90ms;">
-        <div>
-          <div class="idx">FOCUS</div>
-          <div class="c-ico" aria-hidden="true" style="margin-top:16px;"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3.4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg></div>
-        </div>
-        <div>
-          <h3 style="margin-top:22px;">Translation-ready research only.</h3>
-          <p style="margin-top:10px;">Every dollar raised is directed toward science with a credible path to patients.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- KCNH5 -->
-<section class="sec kcnh">
-  <div class="wrap">
-    <span class="anchor" id="kcnh5"></span>
-    <div class="kcnh-grid">
-      <div>
-        <span class="eyebrow reveal"><span class="dot"></span> What is KCNH5?</span>
-        <h2 class="reveal" style="--rd:80ms; font-size:clamp(2rem,3.6vw,3rem); margin-top:22px;">A rare mutation with severe consequences.</h2>
-        <p class="reveal" style="--rd:140ms; color:var(--muted); font-size:17px; margin-top:18px; max-width:46ch;">A change in a single gene reshapes a child's earliest years. Understanding it precisely is the first step toward correcting it.</p>
-        <div class="spec reveal" style="--rd:200ms; margin-top:34px;">
-          <div class="row"><div class="k">Classification</div><div class="v">Rare genetic epilepsy</div></div>
-          <div class="row"><div class="k">Onset</div><div class="v">Early childhood</div></div>
-          <div class="row"><div class="k">Hallmarks</div><div class="v">Recurrent seizures, developmental delay</div></div>
-          <div class="row"><div class="k">Root cause</div><div class="v">KCNH5 gene mutation</div></div>
-          <div class="row"><div class="k">Strategy</div><div class="v">Gene-targeted therapy</div></div>
-        </div>
-      </div>
-      <div class="reveal" style="--rd:160ms;">
-        <div class="eeg-shell">
-          <div class="eeg-inner">
-            <div class="lab"><span>Neural activity / illustrative</span><span>KCNH5</span></div>
-            <svg id="eeg" viewBox="0 0 520 150" aria-label="Illustrative neural activity waveform with one highlighted burst" role="img"></svg>
-            <div class="lab" style="margin-top:8px; margin-bottom:0;"><span>Onset</span><span style="color:var(--accent-deep);">Targeted intervention</span></div>
-          </div>
-        </div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- STORY -->
-<section class="sec" id="story" style="padding-top:0;">
+<section class="sec c-teal" id="story" style="padding-top:0;">
   <div class="wrap">
     <div class="story-card reveal">
       <div class="glow" aria-hidden="true"></div>
       <div>
         <span class="eyebrow"><span class="dot"></span> Our Story</span>
         <h2 style="margin-top:20px;">The family behind the mission.</h2>
-        <p>Every breakthrough starts with a reason. Ours has names. The full story of how Code to Cure began is on its way, and we cannot wait to share it.</p>
+        <p>Every fight for a cure starts with a reason. Ours has names and faces. The full story of how Code to Cure began is on its way, and we can't wait to share it with you.</p>
+        <span class="soon-pill" style="margin-top:24px;">Our story, coming soon</span>
       </div>
-      <div class="soon-pill">Coming soon</div>
+      <div class="photo-frame" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 20s-7-4.3-7-9.2A3.8 3.8 0 0 1 12 8a3.8 3.8 0 0 1 7 2.8C19 15.7 12 20 12 20Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+        <span class="cap">A family photo will live here</span>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- GET INVOLVED -->
-<section class="sec mission">
+<section class="sec c-purple">
   <div class="wrap">
     <span class="anchor" id="involve"></span>
     <div class="sec-head">
       <span class="eyebrow reveal"><span class="dot"></span> Get Involved</span>
-      <h2 class="reveal" style="--rd:80ms;">Three ways to move the science forward.</h2>
-      <p class="reveal" style="--rd:140ms;">Whether you are living this fight, researching it, or ready to back it, there is a place for you here.</p>
+      <h2 class="reveal" style="--rd:80ms;">Join the families fighting for a cure.</h2>
+      <p class="reveal" style="--rd:140ms;">Whether you're ready to give, living this every day, or researching it, you belong here. No one should have to do this alone.</p>
     </div>
     <div class="involve-grid">
-      <div class="ivcard reveal">
+      <div class="ivcard c-teal reveal">
+        <div class="c-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.3-7-9.2A3.8 3.8 0 0 1 12 8a3.8 3.8 0 0 1 7 2.8C19 15.7 12 20 12 20Z"/></svg></div>
+        <h3>Donors</h3>
+        <p>Your gift goes straight to the research that brings a cure closer for children waiting right now. No amount is too small.</p>
+        <a class="link" href="#join">Donate now <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+      <div class="ivcard c-navy reveal" style="--rd:90ms;">
         <div class="c-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 18a4 4 0 0 0-8 0"/><circle cx="12" cy="8" r="3.2"/><path d="M3.5 19a3.3 3.3 0 0 1 5-3M20.5 19a3.3 3.3 0 0 0-5-3"/></svg></div>
         <h3>KCNH5 families</h3>
         <p>Looking for community? Connect with other families and advocates walking the same path, and find people who understand.</p>
         <a class="link" href="#contact">Find your community <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       </div>
-      <div class="ivcard reveal" style="--rd:90ms;">
+      <div class="ivcard c-purple reveal" style="--rd:180ms;">
         <div class="c-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3v5.5L4.5 17a2 2 0 0 0 1.8 3h11.4a2 2 0 0 0 1.8-3L15 8.5V3"/><path d="M8 3h8M9 13h6"/></svg></div>
         <h3>Researchers</h3>
-        <p>Have a collaborative pipeline to pitch? We help connect translation-ready science with the awareness and donor funding to advance it.</p>
+        <p>Have a collaborative pipeline to pitch? We want to help connect promising science with the awareness and support to move it forward.</p>
         <a class="link" href="#contact">Pitch your pipeline <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-      </div>
-      <div class="ivcard reveal" style="--rd:180ms;">
-        <div class="c-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.3-7-9.2A3.8 3.8 0 0 1 12 8a3.8 3.8 0 0 1 7 2.8C19 15.7 12 20 12 20Z"/></svg></div>
-        <h3>Donors</h3>
-        <p>Ready to back the science? Your donation funds the precise breakthroughs that bring a cure within reach for children waiting now.</p>
-        <a class="link" href="#join">Back the science <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CTA BAND -->
+<!-- DONATE (prominent) -->
 <section class="sec">
   <div class="wrap">
     <span class="anchor" id="join"></span>
-    <div class="band reveal">
-      <div class="band-grid">
-        <div>
-          <span class="eyebrow"><span class="dot"></span> Join the mission</span>
-          <h2>Be first when the cure can't wait.</h2>
-          <p>Hear about awareness campaigns, research milestones, and our public launch this Fall 2026. Donations open at launch.</p>
-          <div class="donate-row">
-            <a class="btn btn-on-dark" href="#join" aria-disabled="true">Donate <span class="ico"><svg viewBox="0 0 24 24" fill="none"><path d="M12 20s-7-4.3-7-9.2A3.8 3.8 0 0 1 12 8a3.8 3.8 0 0 1 7 2.8C19 15.7 12 20 12 20Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></span></a>
-            <span class="donate-note">Opening Fall 2026</span>
-          </div>
-        </div>
-        <div>
-          <form class="form" id="subscribe" novalidate>
-            <label for="email">Join the mailing list</label>
-            <div class="field">
-              <input id="email" name="email" type="email" placeholder="you@email.com" autocomplete="email" required />
-              <button class="btn btn-primary" type="submit" aria-label="Subscribe">Subscribe <span class="ico"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
-            </div>
-            <p class="help">No spam. Updates on the science and our launch only.</p>
-            <p class="ok"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#e9d9f7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Thank you. Sign-ups go live at our Fall 2026 launch, and we will be in touch.</p>
-          </form>
+    <div class="band donate-band reveal">
+      <div class="band-inner">
+        <span class="eyebrow"><span class="dot"></span> Donate</span>
+        <h2>Every gift brings a cure closer.</h2>
+        <p>Your donation will fund the research that can change a child's life. Donations open with our public launch this Fall 2026.</p>
+        <div class="donate-row">
+          <a class="btn btn-on-dark btn-lg" href="#family">Donate <span class="ico"><svg viewBox="0 0 24 24" fill="none"><path d="M12 20s-7-4.3-7-9.2A3.8 3.8 0 0 1 12 8a3.8 3.8 0 0 1 7 2.8C19 15.7 12 20 12 20Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></span></a>
+          <span class="donate-note">Opening Fall 2026</span>
         </div>
       </div>
     </div>
@@ -597,32 +645,52 @@
 </section>
 
 <!-- CONTACT -->
-<section class="sec" style="padding-top:0;">
+<section class="sec c-teal" style="padding-top:0;">
   <div class="wrap">
     <span class="anchor" id="contact"></span>
     <div class="contact-grid">
       <div class="contact">
         <span class="eyebrow reveal"><span class="dot"></span> Get in Touch</span>
         <h2 class="reveal" style="--rd:80ms; margin-top:22px;">We want to hear from you.</h2>
-        <p class="reveal" style="--rd:140ms;">A family looking for community, a researcher with a pipeline to pitch, or a donor ready to back the cause. Reach out through any channel below.</p>
+        <p class="reveal" style="--rd:140ms;">A family looking for community, a researcher with a pipeline to pitch, or someone ready to help. However you found us, we're so glad you're here.</p>
       </div>
       <div class="channels reveal" style="--rd:160ms;">
         <a class="channel" href="https://www.instagram.com/codetocureorg" target="_blank" rel="noopener">
-          <span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="#5a2682" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1.1" fill="#5a2682" stroke="none"/></svg></span>
+          <span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="#562b97" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1.1" fill="#562b97" stroke="none"/></svg></span>
           <span class="ct"><span class="t">Instagram</span><span class="s">@codetocureorg</span></span>
           <svg class="arr" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M9 7h8v8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
-        <a class="channel" href="https://www.facebook.com/share/17sRUYioMF/" target="_blank" rel="noopener">
-          <span class="ci"><svg viewBox="0 0 24 24" fill="#5a2682"><path d="M13.5 21v-7h2.4l.4-2.9h-2.8V9.2c0-.84.26-1.42 1.47-1.42h1.43V5.18A20 20 0 0 0 14.2 5c-2.07 0-3.5 1.27-3.5 3.6v2.5H8.3V14h2.4v7h2.8Z"/></svg></span>
+        <a class="channel" href="https://www.facebook.com/people/Code-to-Cure/61590799396182/?mibextid=wwXIfr&amp;rdid=CYi9gRs99Em7S5QY" target="_blank" rel="noopener">
+          <span class="ci"><svg viewBox="0 0 24 24" fill="#562b97"><path d="M13.5 21v-7h2.4l.4-2.9h-2.8V9.2c0-.84.26-1.42 1.47-1.42h1.43V5.18A20 20 0 0 0 14.2 5c-2.07 0-3.5 1.27-3.5 3.6v2.5H8.3V14h2.4v7h2.8Z"/></svg></span>
           <span class="ct"><span class="t">Facebook</span><span class="s">Follow our page</span></span>
           <svg class="arr" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M9 7h8v8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
-        <a class="channel" href="https://www.facebook.com/share/g/1bpcRvuJsh/" target="_blank" rel="noopener">
-          <span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="#5a2682" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="9" r="3"/><path d="M3 19a6 6 0 0 1 12 0"/><circle cx="17" cy="10" r="2.2"/><path d="M15.5 19a4.5 4.5 0 0 1 6.5-4"/></svg></span>
+        <a class="channel" href="https://www.facebook.com/groups/250204047029924" target="_blank" rel="noopener">
+          <span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="#562b97" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="9" r="3"/><path d="M3 19a6 6 0 0 1 12 0"/><circle cx="17" cy="10" r="2.2"/><path d="M15.5 19a4.5 4.5 0 0 1 6.5-4"/></svg></span>
           <span class="ct"><span class="t">Facebook Group</span><span class="s">Connect with families</span></span>
           <svg class="arr" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M9 7h8v8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- JOIN OUR FAMILY (email signup) -->
+<section class="sec" style="padding-top:0;">
+  <div class="wrap">
+    <span class="anchor" id="family"></span>
+    <div class="family-inner">
+      <div class="ft">
+        <h3>Join our family</h3>
+        <p>Be the first to hear about our story, milestones, and our launch this Fall 2026.</p>
+      </div>
+      <form class="form-lite" id="subscribe" novalidate>
+        <div class="field">
+          <input id="email" name="email" type="email" placeholder="you@email.com" autocomplete="email" required aria-label="Email address" />
+          <button class="btn btn-primary" type="submit">Subscribe <span class="ico"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+        </div>
+        <p class="ok"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Thank you. Sign-ups go live at our Fall 2026 launch, and we'll be in touch.</p>
+      </form>
     </div>
   </div>
 </section>
@@ -642,9 +710,8 @@
       </div>
       <div class="foot-col">
         <h4>Explore</h4>
-        <a href="#mission">Mission</a>
-        <a href="#science">The Science</a>
-        <a href="#kcnh5">What is KCNH5</a>
+        <a href="#top">Home</a>
+        <a href="#science">Research</a>
         <a href="#involve">Get Involved</a>
         <a href="#contact">Contact</a>
       </div>
@@ -652,8 +719,8 @@
         <h4>Connect</h4>
         <div class="socials">
           <a href="https://www.instagram.com/codetocureorg" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s0 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58 0-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.2 15.58 2.2 15.2 2.2 12s0-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.2 8.8 2.2 12 2.2Zm0 1.8c-3.14 0-3.51.01-4.75.07-.9.04-1.38.19-1.7.32-.43.16-.74.36-1.06.68-.32.32-.52.63-.68 1.06-.13.32-.28.8-.32 1.7C3.21 8.49 3.2 8.86 3.2 12s.01 3.51.07 4.75c.04.9.19 1.38.32 1.7.16.43.36.74.68 1.06.32.32.63.52 1.06.68.32.13.8.28 1.7.32 1.24.06 1.61.07 4.75.07s3.51-.01 4.75-.07c.9-.04 1.38-.19 1.7-.32.43-.16.74-.36 1.06-.68.32-.32.52-.63.68-1.06.13-.32.28-.8.32-1.7.06-1.24.07-1.61.07-4.75s-.01-3.51-.07-4.75c-.04-.9-.19-1.38-.32-1.7a2.85 2.85 0 0 0-.68-1.06 2.85 2.85 0 0 0-1.06-.68c-.32-.13-.8-.28-1.7-.32C15.51 4.01 15.14 4 12 4Zm0 3.06A4.94 4.94 0 1 1 12 16.94 4.94 4.94 0 0 1 12 7.06Zm0 1.8a3.14 3.14 0 1 0 0 6.28 3.14 3.14 0 0 0 0-6.28Zm5.13-.33a1.15 1.15 0 1 1-2.3 0 1.15 1.15 0 0 1 2.3 0Z"/></svg></a>
-          <a href="https://www.facebook.com/share/17sRUYioMF/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M13.5 21v-7h2.4l.4-2.9h-2.8V9.2c0-.84.26-1.42 1.47-1.42h1.43V5.18A20 20 0 0 0 14.2 5c-2.07 0-3.5 1.27-3.5 3.6v2.5H8.3V14h2.4v7h2.8Z"/></svg></a>
-          <a href="https://www.facebook.com/share/g/1bpcRvuJsh/" target="_blank" rel="noopener" aria-label="Facebook Group"><svg viewBox="0 0 24 24"><path d="M9 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm8 .5a2.3 2.3 0 1 0 0-4.6 2.3 2.3 0 0 0 0 4.6ZM3 18.5a6 6 0 0 1 12 0V20H3v-1.5Zm13.2-3.2A4.5 4.5 0 0 1 22 19.5V20h-5v-1.5c0-1.2-.32-2.33-.8-3.2Z"/></svg></a>
+          <a href="https://www.facebook.com/people/Code-to-Cure/61590799396182/?mibextid=wwXIfr&amp;rdid=CYi9gRs99Em7S5QY" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M13.5 21v-7h2.4l.4-2.9h-2.8V9.2c0-.84.26-1.42 1.47-1.42h1.43V5.18A20 20 0 0 0 14.2 5c-2.07 0-3.5 1.27-3.5 3.6v2.5H8.3V14h2.4v7h2.8Z"/></svg></a>
+          <a href="https://www.facebook.com/groups/250204047029924" target="_blank" rel="noopener" aria-label="Facebook Group"><svg viewBox="0 0 24 24"><path d="M9 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm8 .5a2.3 2.3 0 1 0 0-4.6 2.3 2.3 0 0 0 0 4.6ZM3 18.5a6 6 0 0 1 12 0V20H3v-1.5Zm13.2-3.2A4.5 4.5 0 0 1 22 19.5V20h-5v-1.5c0-1.2-.32-2.33-.8-3.2Z"/></svg></a>
           <a class="soon" href="#contact" aria-label="LinkedIn (coming soon)"><svg viewBox="0 0 24 24"><path d="M4.98 3.5A2 2 0 1 1 5 7.5a2 2 0 0 1-.02-4ZM3.5 9h3v11.5h-3V9Zm5 0h2.87v1.57h.04c.4-.76 1.38-1.57 2.84-1.57 3.04 0 3.6 2 3.6 4.6v6.9h-3v-6.12c0-1.46-.03-3.34-2.03-3.34-2.03 0-2.34 1.59-2.34 3.23v6.23h-3V9Z"/></svg></a>
           <a class="soon" href="#contact" aria-label="X (coming soon)"><svg viewBox="0 0 24 24"><path d="M17.7 3h3.3l-7.2 8.2L22 21h-6.6l-5.2-6.8L4.3 21H1l7.7-8.8L2 3h6.8l4.7 6.2L17.7 3Zm-1.16 16h1.83L7.5 4.9H5.55L16.54 19Z"/></svg></a>
           <a class="soon" href="#contact" aria-label="TikTok (coming soon)"><svg viewBox="0 0 24 24"><path d="M16.5 3c.3 2.2 1.55 3.6 3.7 3.74v2.5c-1.25.12-2.34-.28-3.6-1.04v4.96c0 4.3-3.2 6.6-6.3 5.86-3.34-.8-4.44-4.86-2.2-7.2 1-1.05 2.5-1.5 4-1.27v2.6c-.4-.13-.83-.16-1.26-.05-1.1.27-1.7 1.35-1.4 2.42.3 1.1 1.74 1.6 2.74.85.62-.46.82-1.12.82-2.06V3h3.3Z"/></svg></a>
@@ -749,7 +816,7 @@
       var line = document.createElementNS(svgns, "line");
       line.setAttribute("x1", a[0].toFixed(1)); line.setAttribute("y1", a[1].toFixed(1));
       line.setAttribute("x2", b[0].toFixed(1)); line.setAttribute("y2", b[1].toFixed(1));
-      line.setAttribute("stroke", isMut ? "#7030a0" : "#c9c6d4");
+      line.setAttribute("stroke", isMut ? "#0095a9" : "#c9c6d4");
       line.setAttribute("stroke-width", isMut ? "3.4" : "1.6");
       line.setAttribute("stroke-linecap", "round");
       line.setAttribute("opacity", isMut ? "1" : (0.28 + depth * 0.5).toFixed(2));
@@ -764,7 +831,7 @@
       var p = document.createElementNS(svgns, "path");
       p.setAttribute("d", pathFrom(pts));
       p.setAttribute("fill", "none");
-      p.setAttribute("stroke", idx === 0 ? "#7030a0" : "#a07cc4");
+      p.setAttribute("stroke", idx === 0 ? "#0095a9" : "#a07cc4");
       p.setAttribute("stroke-width", "3");
       p.setAttribute("stroke-linecap", "round");
       p.setAttribute("opacity", idx === 0 ? "0.92" : "0.62");
@@ -776,7 +843,7 @@
         var c = document.createElementNS(svgns, "circle");
         c.setAttribute("cx", pt[0].toFixed(1)); c.setAttribute("cy", pt[1].toFixed(1));
         c.setAttribute("r", j2 === mutationIndex ? "4.2" : "2.6");
-        c.setAttribute("fill", j2 === mutationIndex ? "#7030a0" : (idx === 0 ? "#7e58aa" : "#b6a0d2"));
+        c.setAttribute("fill", j2 === mutationIndex ? "#0095a9" : (idx === 0 ? "#7e58aa" : "#b6a0d2"));
         helix.appendChild(c);
       });
     });
@@ -784,7 +851,7 @@
     var mr = document.createElementNS(svgns, "circle");
     mr.setAttribute("cx", cx); mr.setAttribute("cy", ptsA[mutationIndex][1].toFixed(1));
     mr.setAttribute("r", "16"); mr.setAttribute("fill", "none");
-    mr.setAttribute("stroke", "#7030a0"); mr.setAttribute("stroke-width", "1.4");
+    mr.setAttribute("stroke", "#0095a9"); mr.setAttribute("stroke-width", "1.4");
     mr.setAttribute("opacity", "0.5");
     if (!reduce) mr.style.animation = "ring 3s ease-in-out infinite";
     helix.appendChild(mr);
@@ -793,7 +860,7 @@
       var scan = document.createElementNS(svgns, "rect");
       scan.setAttribute("x", "30"); scan.setAttribute("width", "260"); scan.setAttribute("height", "2");
       scan.setAttribute("y", "24"); scan.setAttribute("rx", "1");
-      scan.setAttribute("fill", "#7030a0"); scan.setAttribute("opacity", "0.22");
+      scan.setAttribute("fill", "#0095a9"); scan.setAttribute("opacity", "0.22");
       scan.setAttribute("class", "scanline");
       scan.style.animation = "scan 5.5s cubic-bezier(0.45,0,0.55,1) infinite";
       helix.appendChild(scan);
@@ -808,7 +875,7 @@
     for (var gx = 0; gx <= ew; gx += 40) {
       var gl = document.createElementNS(svn, "line");
       gl.setAttribute("x1", gx); gl.setAttribute("y1", 14); gl.setAttribute("x2", gx); gl.setAttribute("y2", eh - 14);
-      gl.setAttribute("stroke", "#eadff5"); gl.setAttribute("stroke-width", "1");
+      gl.setAttribute("stroke", "#d6edf0"); gl.setAttribute("stroke-width", "1");
       eeg.appendChild(gl);
     }
     var d = "M0 " + mid;
@@ -829,13 +896,13 @@
     var band = document.createElementNS(svn, "rect");
     band.setAttribute("x", burstStart); band.setAttribute("y", "14");
     band.setAttribute("width", (burstEnd - burstStart)); band.setAttribute("height", eh - 28);
-    band.setAttribute("fill", "rgba(112,48,160,0.08)"); band.setAttribute("rx", "6");
+    band.setAttribute("fill", "rgba(0,149,169,0.10)"); band.setAttribute("rx", "6");
     eeg.appendChild(band);
 
     var path = document.createElementNS(svn, "path");
     path.setAttribute("d", d);
     path.setAttribute("fill", "none");
-    path.setAttribute("stroke", "#7030a0");
+    path.setAttribute("stroke", "#0095a9");
     path.setAttribute("stroke-width", "2.4");
     path.setAttribute("stroke-linecap", "round");
     path.setAttribute("stroke-linejoin", "round");
@@ -851,7 +918,7 @@
     // moving pulse dot
     if (!reduce) {
       var dot = document.createElementNS(svn, "circle");
-      dot.setAttribute("r", "3.5"); dot.setAttribute("fill", "#7030a0");
+      dot.setAttribute("r", "3.5"); dot.setAttribute("fill", "#0095a9");
       var mp = document.createElementNS(svn, "animateMotion");
       mp.setAttribute("dur", "4.5s"); mp.setAttribute("repeatCount", "indefinite");
       mp.setAttribute("path", d); mp.setAttribute("keyPoints", "0;1"); mp.setAttribute("keyTimes", "0;1"); mp.setAttribute("calcMode", "linear");
@@ -869,5 +936,121 @@
   @keyframes draw { 0% { stroke-dashoffset: var(--len, 1600); } 55% { stroke-dashoffset: 0; } 100% { stroke-dashoffset: 0; } }
   #helix circle, #helix line, #helix path { transform-box: fill-box; }
 </style>
+
+<!-- ===================== ACCESSIBILITY WIDGET ===================== -->
+<style>
+  .a11y-fab { position: fixed; left: 20px; bottom: 20px; z-index: 300; width: 54px; height: 54px; border-radius: 50%; background: var(--accent); color: #fff; border: 2px solid #fff; box-shadow: 0 10px 26px -8px rgba(90,38,130,0.55); cursor: pointer; display: grid; place-items: center; transition: transform 0.3s var(--ease); }
+  .a11y-fab:hover { transform: scale(1.06); }
+  .a11y-fab svg { width: 28px; height: 28px; fill: none; stroke: #fff; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+  .a11y-panel { position: fixed; left: 20px; bottom: 86px; z-index: 301; width: min(346px, calc(100vw - 40px)); max-height: min(78vh, 660px); overflow-y: auto; background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-lg); box-shadow: var(--shadow-pop); padding: 18px; opacity: 0; transform: translateY(10px) scale(0.98); transform-origin: bottom left; pointer-events: none; transition: opacity 0.3s var(--ease), transform 0.3s var(--ease); }
+  .a11y-panel.open { opacity: 1; transform: none; pointer-events: auto; }
+  .a11y-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; }
+  .a11y-head h2 { font-size: 19px; }
+  .a11y-close { width: 32px; height: 32px; border-radius: 50%; border: 1px solid var(--line); background: var(--bg); cursor: pointer; display: grid; place-items: center; }
+  .a11y-close svg { width: 16px; height: 16px; fill: none; stroke: var(--ink); stroke-width: 2; stroke-linecap: round; }
+  .a11y-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .a11y-opt { display: flex; flex-direction: column; align-items: center; gap: 7px; text-align: center; padding: 15px 8px 12px; border-radius: var(--r-md); border: 1.5px solid var(--line); background: var(--bg); color: var(--ink); font-family: inherit; font-size: 12.5px; font-weight: 600; cursor: pointer; transition: border-color 0.2s var(--ease), background 0.2s var(--ease), transform 0.2s var(--ease); }
+  .a11y-opt svg { width: 24px; height: 24px; fill: none; stroke: var(--accent-deep); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+  .a11y-opt:hover { transform: translateY(-2px); border-color: var(--accent-line); }
+  .a11y-opt[aria-pressed="true"] { background: var(--accent-tint); border-color: var(--accent); color: var(--accent-deep); }
+  .a11y-opt .state { font-size: 10px; font-weight: 700; color: var(--faint); letter-spacing: 0.06em; text-transform: uppercase; }
+  .a11y-opt[aria-pressed="true"] .state { color: var(--accent); }
+  .a11y-reset { width: 100%; margin-top: 12px; padding: 13px; border-radius: var(--r-pill); border: none; background: var(--ink); color: #fff; font-family: inherit; font-weight: 600; font-size: 14px; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 9px; }
+  .a11y-reset svg { width: 17px; height: 17px; fill: none; stroke: #fff; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+  .a11y-reset:hover { background: #2c2230; }
+  .a11y-note { font-size: 11px; color: var(--faint); text-align: center; margin-top: 11px; line-height: 1.5; }
+
+  /* accessibility state styles */
+  html.a11y-text1 { zoom: 1.1; }
+  html.a11y-text2 { zoom: 1.22; }
+  html.a11y-line p, html.a11y-line li, html.a11y-line .lead, html.a11y-line .support, html.a11y-line .card p, html.a11y-line .ivcard p, html.a11y-line .spec .row { line-height: 2 !important; }
+  html.a11y-letter p, html.a11y-letter li, html.a11y-letter .lead, html.a11y-letter .support, html.a11y-letter .card p, html.a11y-letter .ivcard p { letter-spacing: 0.06em !important; word-spacing: 0.16em !important; }
+  html.a11y-links a:not(.btn):not(.a11y-fab):not(.a11y-close):not(.a11y-reset):not(.brand) { text-decoration: underline !important; text-decoration-thickness: 2px !important; text-underline-offset: 2px; outline: 1px dashed currentColor; outline-offset: 3px; border-radius: 3px; }
+  html.a11y-contrast { --bg:#ffffff; --bg-2:#ededed; --surface:#ffffff; --ink:#000000; --ink-2:#161616; --muted:#242424; --faint:#3a3a3a; --line:#444444; --line-soft:#777777; --accent:#56198a; --accent-deep:#3c1060; --accent-tint:#efe6f6; --accent-line:#8f63ba; --coral:#a8311c; --coral-deep:#7c1f11; --coral-tint:#f7e3df; --coral-line:#d2a195; --teal:#0e6b62; --gold:#9a6912; }
+  html.a11y-contrast a:not(.btn) { text-decoration: underline; }
+  html.a11y-noanim *, html.a11y-noanim *::before, html.a11y-noanim *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+  html.a11y-noanim .reveal { opacity: 1 !important; transform: none !important; filter: none !important; }
+  html.a11y-dyslexia, html.a11y-dyslexia h1, html.a11y-dyslexia h2, html.a11y-dyslexia h3, html.a11y-dyslexia h4, html.a11y-dyslexia p, html.a11y-dyslexia a, html.a11y-dyslexia span, html.a11y-dyslexia div, html.a11y-dyslexia label, html.a11y-dyslexia button, html.a11y-dyslexia input, html.a11y-dyslexia li { font-family: 'Atkinson Hyperlegible', 'Plus Jakarta Sans', sans-serif !important; letter-spacing: 0.01em; }
+  html.a11y-cursor, html.a11y-cursor * { cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cpath d='M7 4l24 13-10.5 2.2L16 32z' fill='%23ffffff' stroke='%23000000' stroke-width='2.5' stroke-linejoin='round'/%3E%3C/svg%3E") 5 3, auto !important; }
+
+  a:focus-visible, button:focus-visible, input:focus-visible, [tabindex]:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; border-radius: 6px; }
+
+  @media (max-width: 520px) {
+    .a11y-fab { width: 50px; height: 50px; left: 14px; bottom: 14px; }
+    .a11y-panel { left: 14px; right: 14px; width: auto; bottom: 74px; }
+  }
+</style>
+
+<button class="a11y-fab" id="a11yFab" aria-label="Accessibility options" aria-expanded="false" aria-controls="a11yPanel" title="Accessibility options">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="4" r="2"/><path d="M3.5 8.4c2.5 1 5.4 1.5 8.5 1.5s6-.5 8.5-1.5M12 9.5V15M12 15l-3.5 5.5M12 15l3.5 5.5"/></svg>
+</button>
+<div class="a11y-panel" id="a11yPanel" role="dialog" aria-label="Accessibility options" aria-modal="false">
+  <div class="a11y-head">
+    <h2>Accessibility</h2>
+    <button class="a11y-close" id="a11yClose" aria-label="Close accessibility menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  </div>
+  <div class="a11y-grid">
+    <button class="a11y-opt" data-opt="text" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 18L9 6l5 12M5.7 14h6.6"/><path d="M18 13v7M15 16l3-3 3 3"/></svg><span>Bigger Text</span><span class="state">Off</span></button>
+    <button class="a11y-opt" data-opt="line" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6h11M9 12h11M9 18h11"/><path d="M4 5v14M4 5L2.6 6.4M4 5l1.4 1.4M4 19l-1.4-1.4M4 19l1.4-1.4"/></svg><span>Line Spacing</span><span class="state">Off</span></button>
+    <button class="a11y-opt" data-opt="letter" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6v12M15 6v12"/><path d="M6 12H3M21 12h-3"/><path d="M4.4 10.6L3 12l1.4 1.4M19.6 10.6L21 12l-1.4 1.4"/></svg><span>Letter Spacing</span><span class="state">Off</span></button>
+    <button class="a11y-opt" data-opt="links" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 14a3.6 3.6 0 0 0 5.1 0l2.8-2.8a3.6 3.6 0 0 0-5.1-5.1l-1.4 1.4"/><path d="M14 10a3.6 3.6 0 0 0-5.1 0L6.1 12.8a3.6 3.6 0 0 0 5.1 5.1l1.4-1.4"/></svg><span>Highlight Links</span><span class="state">Off</span></button>
+    <button class="a11y-opt" data-opt="contrast" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor" stroke="none"/></svg><span>High Contrast</span><span class="state">Off</span></button>
+    <button class="a11y-opt" data-opt="noanim" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5v14M15 5v14"/></svg><span>Pause Motion</span><span class="state">Off</span></button>
+    <button class="a11y-opt" data-opt="dyslexia" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5A1.5 1.5 0 0 1 5.5 4H11v16H5.5A1.5 1.5 0 0 0 4 21.5zM20 5.5A1.5 1.5 0 0 0 18.5 4H13v16h5.5A1.5 1.5 0 0 1 20 21.5z"/></svg><span>Readable Font</span><span class="state">Off</span></button>
+    <button class="a11y-opt" data-opt="cursor" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4l13 7.4-5.4 1.3L11 20z"/></svg><span>Big Cursor</span><span class="state">Off</span></button>
+  </div>
+  <button class="a11y-reset" id="a11yReset"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4v5h5M20 20v-5h-5"/><path d="M19 9a8 8 0 0 0-14.3-2.3M5 15a8 8 0 0 0 14.3 2.3"/></svg> Reset all</button>
+  <p class="a11y-note">Settings are saved on this device. For certified WCAG/ADA coverage you can also add a service like UserWay.</p>
+</div>
+<script>
+(function () {
+  "use strict";
+  var root = document.documentElement;
+  var KEY = "c2c_a11y_v1";
+  var toggles = { line: "a11y-line", letter: "a11y-letter", links: "a11y-links", contrast: "a11y-contrast", noanim: "a11y-noanim", dyslexia: "a11y-dyslexia", cursor: "a11y-cursor" };
+  var state = {};
+  try { state = JSON.parse(localStorage.getItem(KEY) || "{}") || {}; } catch (e) { state = {}; }
+
+  var fab = document.getElementById("a11yFab");
+  var panel = document.getElementById("a11yPanel");
+  if (!fab || !panel) return;
+
+  function save() { try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {} }
+  var dysLoaded = false;
+  function loadDys() { if (dysLoaded) return; dysLoaded = true; var l = document.createElement("link"); l.rel = "stylesheet"; l.href = "https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap"; document.head.appendChild(l); }
+  function applyText(n) { root.classList.remove("a11y-text1", "a11y-text2"); if (n === 1) root.classList.add("a11y-text1"); else if (n === 2) root.classList.add("a11y-text2"); }
+  function updateUI() {
+    panel.querySelectorAll("[data-opt]").forEach(function (b) {
+      var k = b.getAttribute("data-opt"), on = k === "text" ? (state.text || 0) > 0 : !!state[k];
+      b.setAttribute("aria-pressed", on ? "true" : "false");
+      var s = b.querySelector(".state");
+      if (s) s.textContent = k === "text" ? ["Off", "Large", "Larger"][state.text || 0] : (on ? "On" : "Off");
+    });
+  }
+  function apply() {
+    Object.keys(toggles).forEach(function (k) { root.classList.toggle(toggles[k], !!state[k]); });
+    applyText(state.text || 0);
+    if (state.dyslexia) loadDys();
+    updateUI();
+  }
+  panel.addEventListener("click", function (e) {
+    var b = e.target.closest("[data-opt]"); if (!b) return;
+    var k = b.getAttribute("data-opt");
+    if (k === "text") { state.text = ((state.text || 0) + 1) % 3; applyText(state.text); }
+    else { state[k] = !state[k]; root.classList.toggle(toggles[k], !!state[k]); if (k === "dyslexia" && state[k]) loadDys(); }
+    save(); updateUI();
+  });
+  document.getElementById("a11yReset").addEventListener("click", function () {
+    state = {}; Object.keys(toggles).forEach(function (k) { root.classList.remove(toggles[k]); }); applyText(0); save(); updateUI();
+  });
+  function openPanel(o) { panel.classList.toggle("open", o); fab.setAttribute("aria-expanded", o ? "true" : "false"); }
+  fab.addEventListener("click", function () { openPanel(!panel.classList.contains("open")); });
+  document.getElementById("a11yClose").addEventListener("click", function () { openPanel(false); fab.focus(); });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape" && panel.classList.contains("open")) { openPanel(false); fab.focus(); } });
+  document.addEventListener("click", function (e) { if (panel.classList.contains("open") && !panel.contains(e.target) && !fab.contains(e.target)) openPanel(false); });
+
+  apply();
+})();
+</script>
 </body>
 </html>
