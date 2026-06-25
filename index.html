@@ -360,7 +360,7 @@
   }
 
   /* ---------- accessibility widget ---------- */
-  .a11y-fab { position: fixed; left: 20px; bottom: 20px; z-index: 300; width: 54px; height: 54px; border-radius: 50%; background: var(--purple); color: #fff; border: 2px solid #fff; box-shadow: 0 10px 26px -8px rgba(90,38,130,.55); cursor: pointer; display: grid; place-items: center; transition: transform .3s var(--ease); }
+  .a11y-fab { position: fixed; left: 20px; bottom: 20px; z-index: 300; width: 54px; height: 54px; border-radius: 50%; background: var(--purple); color: #fff; border: 2px solid #fff; box-shadow: 0 10px 26px -8px rgba(86,43,151,.5); cursor: pointer; display: grid; place-items: center; transition: transform .3s var(--ease); }
   .a11y-fab:hover { transform: scale(1.06); }
   .a11y-fab svg { width: 28px; height: 28px; fill: none; stroke: #fff; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
   .a11y-panel { position: fixed; left: 20px; bottom: 86px; z-index: 301; width: min(346px, calc(100vw - 40px)); max-height: min(78vh, 660px); overflow-y: auto; background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-lg); box-shadow: var(--shadow-pop); padding: 18px; opacity: 0; transform: translateY(10px) scale(.98); transform-origin: bottom left; pointer-events: none; transition: opacity .3s var(--ease), transform .3s var(--ease); }
@@ -376,9 +376,9 @@
   .a11y-opt[aria-pressed="true"] { background: var(--purple-tint); border-color: var(--purple); color: var(--purple-deep); }
   .a11y-opt .state { font-size: 10px; font-weight: 700; color: var(--muted); letter-spacing: .06em; text-transform: uppercase; }
   .a11y-opt[aria-pressed="true"] .state { color: var(--purple); }
-  .a11y-reset { width: 100%; margin-top: 12px; padding: 13px; border-radius: var(--r-pill); border: none; background: var(--ink); color: #fff; font-family: inherit; font-weight: 600; font-size: 14px; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 9px; }
+  .a11y-reset { width: 100%; margin-top: 12px; padding: 13px; border-radius: var(--r-pill); border: none; background: var(--navy); color: #fff; font-family: inherit; font-weight: 600; font-size: 14px; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 9px; }
   .a11y-reset svg { width: 17px; height: 17px; fill: none; stroke: #fff; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
-  .a11y-reset:hover { background: #2c2230; }
+  .a11y-reset:hover { background: #00263f; }
   .a11y-note { font-size: 11px; color: var(--muted); text-align: center; margin-top: 11px; line-height: 1.5; }
 
   html.a11y-text1 { zoom: 1.1; }
