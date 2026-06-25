@@ -5,518 +5,478 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Code to Cure KCNH5 Epilepsy Foundation</title>
 <meta name="description" content="Code to Cure KCNH5 Epilepsy Foundation raises awareness and donor support to accelerate gene-targeted research toward a cure for KCNH5-related genetic epilepsy." />
-<meta name="theme-color" content="#562B97" />
+<meta name="theme-color" content="#3a2070" />
 <meta property="og:title" content="Code to Cure KCNH5 Epilepsy Foundation" />
-<meta property="og:description" content="Decoding the mutation. Accelerating the science. Finding the cure." />
+<meta property="og:description" content="A single gene change causes KCNH5 epilepsy. We're funding the cure." />
 <meta property="og:type" content="website" />
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23562B97'/%3E%3Cpath d='M11 7c0 5 10 5 10 10s-10 5-10 10M21 7c0 5-10 5-10 10s10 5 10 10' fill='none' stroke='white' stroke-width='1.6' stroke-linecap='round'/%3E%3C/svg%3E" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <style>
   :root {
-    --bg: #fbf5ee;
-    --bg-2: #f6ece0;
-    --surface: #fffdfb;
-    --ink: #3a2d34;
-    --ink-2: #5f5057;
-    --muted: #857873;
-    --faint: #a89a90;
-    --line: #ece0d3;
-    --line-soft: #f3ebe1;
-    --accent: #562b97;
-    --accent-deep: #3f2071;
-    --accent-tint: #efeafa;
-    --accent-line: #d8ccee;
-    --accent-soft: rgba(86, 43, 151, 0.08);
-    --coral: #ee6c5a;
-    --coral-deep: #d9543f;
-    --coral-tint: #fdeae3;
-    --coral-line: #f6d3c9;
-    --gold: #eaa53c;
-    --gold-tint: #fbeed1;
-    /* brand trio */
+    /* warm, light surfaces */
+    --paper: #faf4ea;          /* warm ivory */
+    --surface: #fffdf8;        /* warm white card */
+    --ink: #3b332b;            /* warm charcoal body text */
+    --ink-2: #5e5448;          /* warm secondary text */
+    --muted: #8a7e6f;          /* warm muted */
+    --line: #ece1d1;
+    --line-2: #ddcfba;
+
+    /* brand trio: titles, headlines, accents, details */
     --navy: #003057;
-    --navy-tint: #e8eef3;
-    --navy-line: #c8d6e1;
-    --teal: #0095a9;
-    --teal-tint: #e3f4f6;
-    --teal-line: #bce5ea;
+    --navy-tint: #e6eef3;
     --purple: #562b97;
+    --purple-deep: #3f2071;
+    --purple-bright: #7a4fc0;
     --purple-tint: #efeafa;
-    --purple-line: #d8ccee;
-    --blue: #003057;
-    --blue-tint: #e8eef3;
-    --blue-line: #c8d6e1;
-    --r-xl: 34px;
-    --r-lg: 26px;
-    --r-md: 18px;
+    --teal: #0095a9;
+    --teal-deep: #007081;
+    --teal-tint: #e3f4f6;
+
+    /* signal: warm highlight (gene variant + donate) */
+    --signal: #f4a623;
+    --signal-deep: #d98a08;
+    --signal-tint: #fdeed2;
+
+    /* gradient stops + hero accent */
+    --g-navy: #003057;
+    --g-purple: #562b97;
+    --g-teal: #0095a9;
+    --teal-glow: #7fe0ec;
+
+    --r-xl: 30px;
+    --r-lg: 22px;
+    --r-md: 14px;
     --r-pill: 999px;
-    --shadow-soft: 0 2px 4px rgba(120, 72, 40, 0.05), 0 16px 32px -16px rgba(120, 72, 40, 0.16);
-    --shadow-card: 0 2px 6px rgba(120, 72, 40, 0.05), 0 26px 52px -26px rgba(110, 60, 50, 0.22);
-    --shadow-pop: 0 34px 64px -24px rgba(110, 55, 60, 0.30);
-    --ease: cubic-bezier(0.32, 0.72, 0, 1);
-    --ease-soft: cubic-bezier(0.16, 1, 0.3, 1);
-    --maxw: 1240px;
+    --maxw: 1180px;
+    --ease: cubic-bezier(0.22, 0.61, 0.18, 1);
+    --shadow: 0 1px 2px rgba(60,40,90,.05), 0 24px 48px -28px rgba(70,40,120,.26);
+    --shadow-lift: 0 2px 6px rgba(60,40,90,.07), 0 40px 70px -34px rgba(80,44,150,.34);
+    --shadow-pop: 0 40px 80px -30px rgba(40,24,90,.5);
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
-
-  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
-
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; scroll-padding-top: 94px; }
   body {
-    font-family: "Plus Jakarta Sans", system-ui, sans-serif;
-    background: var(--bg);
+    font-family: "Inter", system-ui, sans-serif;
+    background: var(--paper);
     color: var(--ink);
-    line-height: 1.6;
+    line-height: 1.62;
     font-size: 17px;
     -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
     overflow-x: hidden;
   }
-
-  ::selection { background: var(--accent); color: #fff; }
-
+  ::selection { background: var(--signal); color: #2a1700; }
   a { color: inherit; text-decoration: none; }
   img, svg { display: block; max-width: 100%; }
-  h1, h2, h3, h4 { font-family: "Fraunces", serif; font-weight: 600; letter-spacing: -0.01em; line-height: 1.1; color: var(--navy); font-optical-sizing: auto; }
 
-  .wrap { width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 28px; }
-
-  /* soft warm glows backdrop */
-  .grid-bg {
-    position: fixed; inset: 0; z-index: 0; pointer-events: none;
-    background:
-      radial-gradient(38% 28% at 10% 6%, rgba(238, 108, 90, 0.10), transparent 70%),
-      radial-gradient(42% 32% at 90% 12%, rgba(112, 48, 160, 0.08), transparent 72%),
-      radial-gradient(55% 42% at 50% 102%, rgba(234, 165, 60, 0.08), transparent 76%);
+  h1, h2, h3, h4 {
+    font-family: "Bricolage Grotesque", system-ui, sans-serif;
+    font-weight: 700; line-height: 1.05; letter-spacing: -0.02em;
+    color: var(--navy); font-optical-sizing: auto;
   }
+  .mono { font-family: "JetBrains Mono", monospace; }
 
-  .skip {
-    position: absolute; left: -999px; top: 0; background: var(--ink); color: #fff;
-    padding: 10px 16px; border-radius: 0 0 10px 0; z-index: 200;
-  }
+  .shell { width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 26px; }
+  .section { padding: clamp(60px, 8.5vw, 112px) 0; position: relative; }
+  .section-tight { padding: clamp(36px, 5.5vw, 64px) 0; }
+
+  .skip { position: absolute; left: -999px; top: 0; background: var(--ink); color:#fff; padding: 10px 16px; border-radius: 0 0 10px 0; z-index: 400; }
   .skip:focus { left: 0; }
 
-  /* eyebrow tag */
+  /* ---------- eyebrow ---------- */
   .eyebrow {
-    display: inline-flex; align-items: center; gap: 8px;
-    font-family: "Plus Jakarta Sans", sans-serif; font-size: 11px; font-weight: 600;
-    letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent-deep);
-    background: var(--accent-tint); border: 1px solid var(--accent-line);
-    padding: 7px 13px; border-radius: var(--r-pill);
+    display: inline-flex; align-items: center; gap: 9px;
+    font-family: "JetBrains Mono", monospace; font-size: 12px; font-weight: 500;
+    letter-spacing: 0.06em; text-transform: uppercase; color: var(--purple);
   }
-  .eyebrow .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--teal); box-shadow: 0 0 0 4px var(--teal-tint); }
+  .eyebrow::before { content: ""; width: 18px; height: 1.5px; background: var(--signal); display: inline-block; }
+  .eyebrow.on-dark { color: var(--signal); }
+  .eyebrow.center { justify-content: center; }
 
-  .mono { font-family: "Plus Jakarta Sans", sans-serif; letter-spacing: 0.04em; }
-
-  /* ---------- NAV ---------- */
-  .nav-shell { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: center; padding: 18px 20px; }
-  .nav {
-    width: 100%; max-width: 1080px; display: flex; align-items: center; justify-content: space-between;
-    gap: 18px; padding: 9px 9px 9px 20px;
-    background: rgba(255, 255, 255, 0.72); backdrop-filter: blur(20px) saturate(1.4); -webkit-backdrop-filter: blur(20px) saturate(1.4);
-    border: 1px solid rgba(22, 19, 29, 0.07); border-radius: var(--r-pill);
-    box-shadow: var(--shadow-soft); transition: box-shadow 0.5s var(--ease), transform 0.5s var(--ease), background 0.5s var(--ease);
-  }
-  .nav.scrolled { background: rgba(255, 255, 255, 0.88); box-shadow: 0 10px 30px -14px rgba(48, 26, 70, 0.26); }
-  .brand { display: flex; align-items: center; gap: 11px; font-family: "Fraunces", serif; font-weight: 600; font-size: 16px; letter-spacing: -0.01em; }
-  .brand .mark { width: 30px; height: 30px; border-radius: 9px; background: var(--accent); display: grid; place-items: center; flex: 0 0 auto; box-shadow: inset 0 1px 0 rgba(255,255,255,0.3), 0 4px 10px -3px rgba(112,48,160,0.5); }
-  .brand .mark svg { width: 18px; height: 18px; }
-  .brand sup { font-size: 9px; color: var(--faint); font-weight: 500; }
-  .nav-links { display: flex; align-items: center; gap: 4px; }
-  .nav-links a { font-size: 14px; font-weight: 500; color: var(--ink-2); padding: 9px 14px; border-radius: var(--r-pill); transition: background 0.3s var(--ease), color 0.3s var(--ease); }
-  .nav-links a:hover { background: var(--accent-soft); color: var(--accent-deep); }
-  .nav-right { display: flex; align-items: center; gap: 10px; }
-
-  /* island button */
+  /* ---------- buttons ---------- */
   .btn {
-    display: inline-flex; align-items: center; gap: 10px; font-family: "Plus Jakarta Sans", sans-serif;
-    font-weight: 600; font-size: 14px; border-radius: var(--r-pill); padding: 11px 14px 11px 20px;
-    cursor: pointer; border: 1px solid transparent; transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease), background 0.3s var(--ease); white-space: nowrap;
+    display: inline-flex; align-items: center; gap: 9px;
+    font-family: "Inter", sans-serif; font-weight: 600; font-size: 15px;
+    padding: 13px 22px; border-radius: var(--r-pill); border: 1.5px solid transparent; cursor: pointer;
+    transition: transform .25s var(--ease), background .25s var(--ease), box-shadow .25s var(--ease), border-color .25s var(--ease);
+    white-space: nowrap;
   }
-  .btn .ico { width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center; flex: 0 0 auto; transition: transform 0.45s var(--ease); }
-  .btn .ico svg { width: 15px; height: 15px; }
-  .btn:active { transform: scale(0.975); }
+  .btn .ico { width: 17px; height: 17px; display: grid; place-items: center; }
+  .btn .ico svg { width: 17px; height: 17px; }
+  .btn-signal { background: var(--signal); color: #2a1700; }
+  .btn-signal:hover { transform: translateY(-2px); box-shadow: 0 14px 30px -12px rgba(244,166,35,.6); }
+  .btn-purple { background: var(--purple); color: #fff; }
+  .btn-purple:hover { transform: translateY(-2px); background: var(--purple-deep); }
+  .btn-ghost-light { background: rgba(255,255,255,.12); color: #fff; border-color: rgba(255,255,255,.45); }
+  .btn-ghost-light:hover { border-color: #fff; background: rgba(255,255,255,.2); }
+  .btn-lg { padding: 16px 28px; font-size: 16px; }
 
-  .btn-primary { background: var(--accent); color: #fff; box-shadow: 0 8px 20px -8px rgba(112, 48, 160, 0.55); }
-  .btn-primary .ico { background: rgba(255, 255, 255, 0.18); }
-  .btn-primary:hover { background: var(--accent-deep); box-shadow: 0 14px 28px -10px rgba(112, 48, 160, 0.6); transform: translateY(-2px); }
-  .btn-primary:hover .ico { transform: translate(3px, -2px); }
+  a:focus-visible, button:focus-visible, input:focus-visible, [tabindex]:focus-visible { outline: 3px solid var(--signal); outline-offset: 3px; border-radius: 8px; }
 
-  .btn-ghost { background: var(--surface); color: var(--ink); border-color: var(--line); box-shadow: var(--shadow-soft); }
-  .btn-ghost .ico { background: var(--accent-soft); color: var(--accent-deep); }
-  .btn-ghost:hover { transform: translateY(-2px); box-shadow: var(--shadow-card); border-color: var(--accent-line); }
-  .btn-ghost:hover .ico { transform: translate(3px, -2px); }
+  /* ---------- NAV (transparent over hero, fades into a pill on scroll) ---------- */
+  .nav-shell { position: fixed; top: 0; left: 0; right: 0; z-index: 200; display: flex; justify-content: center; padding: 16px 18px; }
+  .nav {
+    width: 100%; max-width: 980px; display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    padding: 9px 9px 9px 18px; border-radius: var(--r-pill);
+    background: transparent; border: 1px solid transparent; box-shadow: none;
+    backdrop-filter: none; -webkit-backdrop-filter: none;
+    transition: background .45s var(--ease), box-shadow .45s var(--ease), border-color .45s var(--ease), backdrop-filter .45s var(--ease);
+    animation: navIn 1s var(--ease) .2s both;
+  }
+  @keyframes navIn { from { opacity: 0; transform: translateY(-16px); } to { opacity: 1; transform: none; } }
+  .nav.scrolled {
+    background: rgba(255,255,255,.9); border-color: rgba(70,40,120,.1);
+    box-shadow: 0 2px 6px rgba(60,40,90,.06), 0 14px 34px -18px rgba(70,40,120,.34);
+    backdrop-filter: blur(18px) saturate(1.5); -webkit-backdrop-filter: blur(18px) saturate(1.5);
+  }
+  .brand { display: inline-flex; align-items: center; gap: 10px; font-family: "Bricolage Grotesque", sans-serif; font-weight: 700; font-size: 17px; letter-spacing: -0.02em; color: #fff; transition: color .45s var(--ease); }
+  .nav.scrolled .brand { color: var(--ink); }
+  .brand .mk { background: var(--purple); width: 34px; height: 34px; border-radius: 9px; display: grid; place-items: center; flex: none; }
+  .brand .mk svg { width: 22px; height: 22px; }
+  .brand sup { font-size: 9px; opacity: .6; }
+  .nav-links { display: flex; gap: 4px; }
+  .nav-links a { font-size: 14px; font-weight: 500; color: rgba(255,255,255,.92); padding: 9px 14px; border-radius: var(--r-pill); transition: background .25s, color .25s; text-shadow: 0 1px 8px rgba(0,0,0,.4); }
+  .nav-links a:hover { background: rgba(255,255,255,.16); }
+  .nav.scrolled .nav-links a { color: var(--ink-2); text-shadow: none; }
+  .nav.scrolled .nav-links a:hover { background: var(--purple-tint); color: var(--purple-deep); }
+  .nav-right { display: flex; align-items: center; gap: 10px; }
+  .burger { display: none; width: 40px; height: 40px; border: 1.5px solid rgba(255,255,255,.5); border-radius: var(--r-pill); background: rgba(255,255,255,.14); flex-direction: column; gap: 4px; align-items: center; justify-content: center; cursor: pointer; }
+  .burger span { width: 16px; height: 2px; background: #fff; border-radius: 2px; }
+  .nav.scrolled .burger { border-color: var(--line-2); background: #fff; }
+  .nav.scrolled .burger span { background: var(--ink); }
+  .overlay { position: fixed; inset: 0; z-index: 199; background: linear-gradient(150deg, var(--g-navy), var(--g-purple)); display: flex; flex-direction: column; justify-content: center; gap: 4px; padding: 0 40px; transform: translateY(-100%); transition: transform .5s var(--ease); }
+  .overlay.open { transform: translateY(0); }
+  .overlay a { color: #fff; font-family: "Bricolage Grotesque", sans-serif; font-size: 30px; font-weight: 600; padding: 10px 0; }
+  .overlay a.btn { font-size: 16px; width: max-content; margin-top: 14px; }
 
-  .btn-dark { background: var(--ink); color: #fff; }
-  .btn-dark .ico { background: rgba(255,255,255,0.14); }
-  .btn-dark:hover { transform: translateY(-2px); background: #25202f; }
-  .btn-dark:hover .ico { transform: translate(3px, -2px); }
+  /* ---------- HERO (full-screen, full-bleed) ---------- */
+  .hero { position: relative; min-height: 100svh; display: flex; align-items: flex-end; overflow: hidden; background: linear-gradient(120deg, #003057, #00405f 42%, #562b97); }
+  .hero-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 26%; z-index: 0; }
+  .hero::before {
+    content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+    background:
+      linear-gradient(to bottom, rgba(22,11,44,.55) 0%, rgba(22,11,44,.12) 16%, transparent 40%, rgba(30,14,58,.5) 70%, rgba(24,11,50,.88) 100%);
+  }
+  .hero-shell { position: relative; z-index: 2; width: 100%; padding-top: 120px; padding-bottom: clamp(52px, 9vh, 104px); }
+  .hero-content { max-width: 760px; }
+  .hero-content .eyebrow { color: #fff; text-shadow: 0 1px 12px rgba(0,0,0,.65); }
+  .hero-content .eyebrow::before { background: var(--signal); }
+  .hero-content h1 { color: #fff; font-size: clamp(2.3rem, 5.2vw, 4.4rem); margin-top: 18px; text-shadow: 0 2px 28px rgba(12,5,22,.55); }
+  .hero-content h1 .accent { color: var(--teal-glow); white-space: nowrap; position: relative; }
+  .hero-content h1 .accent::after { content: ""; position: absolute; left: 0; right: 0; bottom: .04em; height: .08em; background: rgba(127,224,236,.6); border-radius: 2px; }
+  .hero-content .lead { color: rgba(255,255,255,.94); font-size: clamp(16px, 1.5vw, 19px); max-width: 52ch; margin-top: 22px; text-shadow: 0 1px 16px rgba(12,5,22,.6); }
+  .hero-content .hero-cta { display: flex; gap: 13px; margin-top: 32px; flex-wrap: wrap; }
+  .scroll-cue { position: absolute; left: 50%; bottom: 22px; transform: translateX(-50%); z-index: 2; display: grid; place-items: center; gap: 6px; color: rgba(255,255,255,.7); font-family: "JetBrains Mono", monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; }
+  .scroll-cue svg { width: 18px; height: 18px; animation: bob 2s var(--ease) infinite; }
+  @keyframes bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(5px); } }
 
-  .badge-soon { font-family: "Plus Jakarta Sans", sans-serif; font-size: 9.5px; letter-spacing: 0.12em; text-transform: uppercase; background: rgba(255,255,255,0.22); padding: 2px 7px; border-radius: var(--r-pill); }
+  /* ---------- GENOME (full-bleed signature band) ---------- */
+  .genome { background: linear-gradient(135deg, #00263f 0%, #003057 32%, #562b97 100%); color: #fff; position: relative; overflow: hidden; }
+  .genome::before { content: ""; position: absolute; inset: 0; pointer-events: none; background: radial-gradient(46% 60% at 84% 0%, rgba(139,83,221,.4), transparent 64%), radial-gradient(40% 50% at 6% 100%, rgba(244,166,35,.12), transparent 70%); }
+  .genome-inner { position: relative; z-index: 2; text-align: center; max-width: 760px; margin: 0 auto; }
+  .genome h2 { color: #fff; font-size: clamp(1.9rem, 3.8vw, 2.9rem); margin-top: 16px; }
+  .genome-sub { color: rgba(255,255,255,.8); margin: 16px auto 0; max-width: 50ch; }
 
-  /* hamburger */
-  .burger { display: none; width: 44px; height: 44px; border-radius: 50%; background: var(--surface); border: 1px solid var(--line); cursor: pointer; position: relative; box-shadow: var(--shadow-soft); }
-  .burger span { position: absolute; left: 12px; right: 12px; height: 2px; background: var(--ink); border-radius: 2px; transition: transform 0.45s var(--ease), opacity 0.3s var(--ease); }
-  .burger span:nth-child(1) { top: 17px; }
-  .burger span:nth-child(2) { bottom: 17px; }
-  body.menu-open .burger span:nth-child(1) { transform: translateY(5px) rotate(45deg); }
-  body.menu-open .burger span:nth-child(2) { transform: translateY(-5px) rotate(-45deg); }
+  .strip { display: flex; justify-content: center; flex-wrap: nowrap; gap: clamp(2px, 1vw, 10px); margin: 46px auto 0; font-family: "JetBrains Mono", monospace; font-weight: 600; font-size: clamp(15px, 3.4vw, 34px); }
+  .strip .b { color: rgba(255,255,255,.38); transition: color .35s var(--ease), opacity .35s var(--ease); opacity: 0; }
+  .strip .b.lit { opacity: 1; color: rgba(255,255,255,.82); }
+  .strip .b.mut { color: #2a1700; background: var(--signal); font-weight: 700; opacity: 1; padding: .08em .26em; border-radius: 9px; position: relative; box-shadow: 0 0 0 0 rgba(244,166,35,.5); }
+  .strip .b.mut.locked { animation: mutGlow 2.4s var(--ease) .1s infinite; }
+  @keyframes mutGlow { 0%,100% { box-shadow: 0 0 0 5px rgba(244,166,35,.28); } 50% { box-shadow: 0 0 0 13px rgba(244,166,35,0); } }
+  @keyframes mutBurst { 0% { transform: scale(1); } 35% { transform: scale(1.35); } 100% { transform: scale(1); } }
+  .strip .b.mut.burst { animation: mutBurst .6s var(--ease); }
+  .callout { display: flex; flex-direction: column; align-items: center; margin-top: 14px; opacity: 0; transform: translateY(10px); transition: opacity .5s var(--ease), transform .5s var(--ease); }
+  .callout.show { opacity: 1; transform: none; }
+  .callout .cline { width: 1.5px; height: 28px; background: linear-gradient(to bottom, var(--signal), transparent); }
+  .callout .clabel { margin-top: 10px; font-family: "JetBrains Mono", monospace; font-size: clamp(12px, 1.4vw, 14px); color: rgba(255,255,255,.85); border: 1px solid rgba(244,166,35,.45); border-radius: var(--r-pill); padding: 7px 15px; }
+  .callout .clabel b { color: var(--signal); }
 
-  /* mobile overlay */
-  .overlay { position: fixed; inset: 0; z-index: 95; background: rgba(243, 244, 247, 0.86); backdrop-filter: blur(26px); -webkit-backdrop-filter: blur(26px); display: flex; flex-direction: column; justify-content: center; padding: 0 32px; opacity: 0; pointer-events: none; transition: opacity 0.5s var(--ease); }
-  body.menu-open .overlay { opacity: 1; pointer-events: auto; }
-  .overlay a { font-family: "Fraunces", serif; font-size: 34px; font-weight: 600; letter-spacing: -0.02em; padding: 12px 0; color: var(--ink); border-bottom: 1px solid var(--line); opacity: 0; transform: translateY(24px); transition: opacity 0.6s var(--ease) var(--d), transform 0.6s var(--ease) var(--d); }
-  body.menu-open .overlay a { opacity: 1; transform: translateY(0); }
-  .overlay .ov-cta { margin-top: 28px; }
-
-  /* ---------- HERO ---------- */
-  /* ---------- HERO (large banner) ---------- */
-  .hero { position: relative; z-index: 1; padding: 104px 0 40px; }
-  .hero-banner { position: relative; overflow: hidden; border-radius: var(--r-xl); min-height: clamp(440px, 64vh, 600px); display: flex; align-items: flex-end; box-shadow: var(--shadow-card); background: linear-gradient(115deg, #002240 0%, #003057 26%, #562b97 66%, #0095a9 110%); }
-  .hero-banner::before { content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none; background: radial-gradient(42% 52% at 86% 16%, rgba(0,149,169,0.42), transparent 60%), radial-gradient(46% 56% at 10% 96%, rgba(86,43,151,0.5), transparent 64%); }
-  .hero-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 30%; z-index: 1; }
-  .hero-banner::after { content: ""; position: absolute; inset: 0; z-index: 2; pointer-events: none; background: linear-gradient(to top, rgba(48,22,84,0.74) 0%, rgba(52,26,92,0.46) 30%, rgba(60,32,104,0.18) 56%, transparent 82%); }
-  .hero-content { position: relative; z-index: 3; padding: clamp(28px, 4.5vw, 60px); max-width: 680px; }
-  .hero-content h1 { color: #fff; font-size: clamp(2.2rem, 4.6vw, 4rem); text-shadow: 0 2px 26px rgba(12,5,22,0.55); }
-  .hero-content .lead { color: #fff; font-size: clamp(16px, 1.5vw, 19px); max-width: 50ch; margin-top: 22px; text-shadow: 0 1px 16px rgba(12,5,22,0.6); }
-  .hero-content .hero-cta { display: flex; gap: 13px; margin-top: 30px; flex-wrap: wrap; }
-  .hero-banner .accent { color: #7fe0ec; white-space: nowrap; font-style: italic; position: relative; }
-  .hero-banner .accent::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0.02em; height: 0.09em; background: rgba(127,224,236,0.55); border-radius: 2px; }
-  .eyebrow-on-dark { background: rgba(14,7,24,0.5); border-color: rgba(255,255,255,0.5); color: #fff; -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
-  .hero-photo-note { position: absolute; top: 16px; right: 16px; z-index: 3; display: inline-flex; align-items: center; gap: 7px; font-family: "Plus Jakarta Sans", sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.04em; color: #fff; background: rgba(0,0,0,0.24); border: 1px solid rgba(255,255,255,0.28); padding: 7px 12px; border-radius: var(--r-pill); -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); }
-  .hero-photo-note svg { width: 15px; height: 15px; }
-
-  .facts { display: flex; flex-wrap: wrap; gap: 0; margin-top: 26px; }
-  .fact { padding: 6px 26px 4px 0; margin-right: 26px; border-right: 1px solid var(--line); }
-  .fact:last-child { border-right: none; }
-  .fact .k { font-family: "Plus Jakarta Sans", sans-serif; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--faint); }
-  .fact .v { font-family: "Fraunces", serif; font-weight: 600; font-size: 16px; color: var(--ink); margin-top: 4px; }
-  .fact .v.acc { color: var(--teal); }
-
-  .btn-outline-light { background: rgba(255,255,255,0.08); color: #fff; border-color: rgba(255,255,255,0.55); }
-  .btn-outline-light .ico { background: rgba(255,255,255,0.18); }
-  .btn-outline-light:hover { background: rgba(255,255,255,0.16); transform: translateY(-2px); }
-  .btn-outline-light:hover .ico { transform: translate(3px,-2px); }
-  #helix { width: 100%; height: auto; }
-
-  /* ---------- SECTION SHELL ---------- */
-  section { position: relative; z-index: 1; }
-  .anchor { display: block; width: 0; height: 0; scroll-margin-top: 100px; pointer-events: none; }
-  #top { scroll-margin-top: 100px; }
-  .sec { padding: clamp(54px, 7vw, 88px) 0; }
-  .sec-head { max-width: 760px; }
-  .sec-head h2 { font-size: clamp(2rem, 3.6vw, 3.1rem); margin-top: 20px; }
-  .sec-head p { color: var(--muted); font-size: 18px; margin-top: 18px; max-width: 58ch; }
-
-  /* reveal */
-  .reveal { opacity: 0; transform: translateY(28px); filter: blur(6px); transition: opacity 0.9s var(--ease-soft), transform 0.9s var(--ease-soft), filter 0.9s var(--ease-soft); transition-delay: var(--rd, 0ms); }
-  .reveal.in { opacity: 1; transform: translateY(0); filter: blur(0); }
-
-  /* ---------- MISSION ---------- */
-  .mission { position: relative; }
-  .mission-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 60px; align-items: start; }
-  .mission h2 { font-size: clamp(2.1rem, 4vw, 3.4rem); }
-  .mission h2 .hl { color: var(--teal); font-style: italic; }
-  .mission .support { color: var(--muted); font-size: 18px; }
-  .mission .support strong { color: var(--ink); font-weight: 600; }
-  .mission .support + .support { margin-top: 20px; }
-  .pull { font-family: "Fraunces", serif; font-weight: 500; font-size: 22px; line-height: 1.4; color: var(--ink-2); padding-left: 24px; border-left: 3px solid var(--accent); }
-
-  /* ---------- SCIENCE BENTO ---------- */
-  .bento { display: grid; grid-template-columns: repeat(12, 1fr); gap: 18px; margin-top: 40px; }
-  .card { background: var(--surface); border: 1px solid transparent; border-radius: var(--r-lg); padding: 32px; box-shadow: 0 1px 2px rgba(120,72,40,0.04), 0 18px 38px -24px rgba(110,60,50,0.16); transition: transform 0.5s var(--ease), box-shadow 0.5s var(--ease); position: relative; overflow: hidden; }
-  .card:hover { transform: translateY(-3px); box-shadow: 0 2px 6px rgba(120,72,40,0.05), 0 26px 50px -26px rgba(110,60,50,0.2); }
-  .card .idx { font-family: "Plus Jakarta Sans", sans-serif; font-size: 12px; letter-spacing: 0.1em; color: var(--accent); }
-  .card .c-ico { width: 52px; height: 52px; border-radius: 14px; background: var(--accent-tint); border: 1px solid var(--accent-line); display: grid; place-items: center; margin-bottom: 22px; }
-  .card .c-ico svg { width: 26px; height: 26px; stroke: var(--accent-deep); }
-  .card h3 { font-size: 22px; margin-bottom: 12px; }
-  .card p { color: var(--muted); font-size: 15.5px; }
-  .card .tag { display: inline-block; margin-top: 18px; font-family: "Plus Jakarta Sans", sans-serif; font-size: 10.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent-deep); background: var(--accent-soft); padding: 5px 11px; border-radius: var(--r-pill); }
-  .span-6 { grid-column: span 6; }
-  .span-4 { grid-column: span 4; }
-  .span-8 { grid-column: span 8; }
-  .pillar { background: linear-gradient(170deg, #ffffff 0%, #fbf9fd 100%); }
-  .pillar .glow { position: absolute; top: -40%; right: -20%; width: 300px; height: 300px; background: radial-gradient(circle, rgba(112,48,160,0.10), transparent 68%); pointer-events: none; }
-  .bridge { background: linear-gradient(162deg, #562b97 0%, #7c3a86 100%); color: #fff; display: flex; flex-direction: column; justify-content: space-between; }
-  .bridge h3 { color: #fff; }
-  .bridge p { color: rgba(255,255,255,0.66); }
-  .bridge .idx { color: #b98fdc; }
-  .bridge .c-ico { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.14); }
-  .bridge .c-ico svg { stroke: #cdb0e8; }
+  /* ---------- generic head ---------- */
+  .head { max-width: 640px; }
+  .head h2 { font-size: clamp(2rem, 4vw, 3rem); margin-top: 16px; }
+  .head p { color: var(--ink-2); font-size: 18px; margin-top: 18px; }
 
   /* ---------- KCNH5 ---------- */
-  .kcnh { position: relative; }
-  .kcnh-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 56px; align-items: center; }
-  .spec { border-top: 1px solid var(--line); }
-  .spec .row { display: grid; grid-template-columns: 1fr 1.4fr; gap: 20px; padding: 20px 4px; border-bottom: 1px solid var(--line); align-items: baseline; }
-  .spec .row .k { font-family: "Plus Jakarta Sans", sans-serif; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--faint); }
-  .spec .row .v { font-family: "Fraunces", serif; font-weight: 500; font-size: 17px; color: var(--ink); }
-  .eeg-shell { padding: 10px; background: var(--surface); border: 1px solid transparent; border-radius: var(--r-xl); box-shadow: 0 1px 2px rgba(120,72,40,0.04), 0 18px 38px -24px rgba(110,60,50,0.16); }
-  .eeg-inner { border-radius: calc(var(--r-xl) - 9px); background: radial-gradient(120% 120% at 50% 0%, #fbf9fd, #f4f0fa); border: 1px solid var(--line-soft); padding: 18px; }
-  .eeg-inner .lab { display: flex; justify-content: space-between; font-family: "Plus Jakarta Sans", sans-serif; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--faint); margin-bottom: 8px; }
-  #eeg { width: 100%; height: 104px; }
+  .kcnh { display: grid; grid-template-columns: 1.05fr 1fr; gap: 56px; align-items: center; }
+  .spec { margin-top: 30px; border-top: 1px solid var(--line); }
+  .spec .row { display: grid; grid-template-columns: 150px 1fr; gap: 18px; padding: 14px 0; border-bottom: 1px solid var(--line); }
+  .spec .k { font-family: "JetBrains Mono", monospace; font-size: 12px; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); padding-top: 2px; }
+  .spec .v { font-weight: 600; color: var(--ink); }
+  .eeg-card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-lg); padding: 26px; box-shadow: var(--shadow); }
+  .eeg-lab { display: flex; justify-content: space-between; font-family: "JetBrains Mono", monospace; font-size: 11px; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); }
+  .eeg-lab .hl { color: var(--teal-deep); }
+  #eeg { width: 100%; height: auto; margin: 14px 0; }
+  .eeg-intro { color: var(--ink-2); max-width: 42ch; margin: 12px 0 22px; }
+  .eeg-legend { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--line); font-size: 13px; color: var(--ink-2); }
+  .eeg-legend span { display: inline-flex; align-items: center; gap: 8px; }
+  .eeg-legend i { width: 11px; height: 11px; border-radius: 50%; display: inline-block; flex: none; }
+  .eeg-legend i.calm { background: #b7a9dd; }
+  .eeg-legend i.burst { background: var(--purple); }
+  .eeg-legend i.treat { background: var(--teal); }
+  #eeg path.draw { stroke-dasharray: 100; stroke-dashoffset: 100; }
+  #eeg.go path.draw { animation: eegDraw 1s var(--ease) forwards; }
+  #eeg.go path.d1 { animation-delay: 0s; }
+  #eeg.go path.d2 { animation-delay: .55s; }
+  #eeg.go path.d3 { animation-delay: 1.25s; }
+  @keyframes eegDraw { to { stroke-dashoffset: 0; } }
+  #eeg path.treat { opacity: 0; }
+  #eeg.go path.treat { animation: eegFade .7s var(--ease) 1.7s forwards; }
+  @keyframes eegFade { to { opacity: 1; } }
 
-  /* ---------- STORY ---------- */
-  .story-card { background: transparent; border: none; box-shadow: none; padding: 0; position: relative; overflow: hidden; display: grid; grid-template-columns: 1.05fr 0.95fr; gap: clamp(28px, 4vw, 56px); align-items: center; }
-  .story-card .glow { position: absolute; bottom: -50%; left: 30%; width: 420px; height: 420px; background: radial-gradient(circle, rgba(0,149,169,0.10), transparent 70%); pointer-events: none; }
-  .story-card h2 { font-size: clamp(2rem, 4vw, 3rem); }
-  .story-card p { color: var(--muted); font-size: 18px; margin-top: 18px; max-width: 52ch; }
-  .soon-pill { display: inline-block; font-family: "Plus Jakarta Sans", sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal); background: var(--teal-tint); border: 1px solid var(--teal-line); padding: 9px 16px; border-radius: var(--r-pill); white-space: nowrap; }
-  .photo-frame { border-radius: var(--r-xl); background: linear-gradient(150deg, var(--purple-tint), var(--teal-tint)); border: none; box-shadow: var(--shadow-soft); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; color: var(--purple); text-align: center; padding: 44px 24px; min-height: 260px; }
-  .photo-frame svg { width: 40px; height: 40px; }
-  .photo-frame .cap { font-family: "Plus Jakarta Sans", sans-serif; font-size: 11.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+  /* ---------- MISSION (full-bleed band) ---------- */
+  .mission { background: var(--purple); color: #fff; position: relative; overflow: hidden; }
+  .mission::before { content: ""; position: absolute; inset: 0; pointer-events: none; background: radial-gradient(46% 70% at 92% 0%, rgba(255,255,255,.14), transparent 60%), radial-gradient(40% 60% at 0% 100%, rgba(0,0,0,.12), transparent 70%); }
+  .mission-grid { position: relative; z-index: 2; display: grid; grid-template-columns: 1fr 1.3fr; gap: 48px; align-items: center; }
+  .mission h2 { color: #fff; font-size: clamp(2rem, 4vw, 3rem); }
+  .mission h2 .u { color: var(--signal); }
+  .mission .support { color: rgba(255,255,255,.88); margin-bottom: 16px; }
+  .mission .support strong { color: #fff; }
+  .mission .pull { font-family: "Bricolage Grotesque", sans-serif; font-weight: 600; font-size: 1.3rem; color: #fff; margin-top: 26px; line-height: 1.25; }
+
+  /* ---------- RESEARCH ---------- */
+  .paths { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 48px; }
+  .path { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-lg); padding: 34px; position: relative; overflow: hidden; }
+  .paths .path { transition: transform .5s var(--ease), box-shadow .5s var(--ease); }
+  .paths .path:hover { transform: translateY(-8px); box-shadow: var(--shadow-lift); }
+  .path .idx { font-family: "JetBrains Mono", monospace; font-size: 13px; font-weight: 600; color: var(--purple); letter-spacing: .04em; }
+  .path .pico { width: 46px; height: 46px; border-radius: 12px; display: grid; place-items: center; margin: 18px 0 20px; background: var(--purple-tint); color: var(--purple); }
+  .path.teal .pico { background: var(--teal-tint); color: var(--teal); }
+  .path .pico svg { width: 24px; height: 24px; stroke: currentColor; }
+  .path h3 { font-size: 1.5rem; }
+  .path p { color: var(--ink-2); margin-top: 12px; }
+  .path .tag { display: inline-block; margin-top: 20px; font-family: "JetBrains Mono", monospace; font-size: 12px; color: var(--signal-deep); background: var(--signal-tint); padding: 6px 13px; border-radius: var(--r-pill); }
+
+  /* ---------- STORY (open, no box) ---------- */
+  .story { display: grid; grid-template-columns: 1.15fr 1fr; gap: clamp(36px, 5vw, 64px); align-items: center; }
+  .story h2 { font-size: clamp(1.9rem, 3.6vw, 2.7rem); margin-top: 16px; }
+  .story p { color: var(--ink-2); margin-top: 16px; max-width: 52ch; }
+  .soon { display: inline-flex; align-items: center; gap: 9px; margin-top: 24px; font-family: "JetBrains Mono", monospace; font-size: 12px; text-transform: uppercase; letter-spacing: .05em; color: var(--purple-deep); border: 1px dashed var(--purple-bright); border-radius: var(--r-pill); padding: 8px 15px; }
+  .frame { aspect-ratio: 4/3; border-radius: var(--r-lg); border: 1.5px dashed var(--purple-bright); background: linear-gradient(135deg, var(--purple-tint) 0%, var(--teal-tint) 100%); display: grid; place-items: center; gap: 12px; color: var(--purple); text-align: center; padding: 24px; }
+  .frame .mono { font-size: 12px; letter-spacing: .03em; color: var(--ink-2); }
 
   /* ---------- GET INVOLVED ---------- */
-  .involve-list { margin-top: 36px; border-top: 1px solid var(--line); }
-  .ivrow { display: flex; align-items: center; gap: 28px; padding: 28px 0; border-bottom: 1px solid var(--line); }
-  .ivrow-icon { width: 52px; height: 52px; border-radius: 16px; background: var(--th-tint, var(--purple-tint)); border: 1px solid var(--th-line, var(--purple-line)); display: grid; place-items: center; flex: 0 0 52px; transition: transform 0.4s var(--ease); }
-  .ivrow:hover .ivrow-icon { transform: translateY(-3px); }
-  .ivrow-icon svg { width: 25px; height: 25px; stroke: var(--th, var(--purple)); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
-  .ivrow-body { flex: 1; min-width: 0; }
-  .ivrow-body h3 { font-size: 21px; margin-bottom: 8px; }
-  .ivrow-body p { color: var(--muted); font-size: 15.5px; max-width: 52ch; }
-  .ivrow-cta { display: inline-flex; align-items: center; gap: 8px; font-weight: 600; font-size: 14px; color: var(--th, var(--accent-deep)); white-space: nowrap; flex: 0 0 auto; }
-  .ivrow-cta svg { width: 16px; height: 16px; transition: transform 0.4s var(--ease); }
-  .ivrow:hover .ivrow-cta svg { transform: translateX(4px); }
+  .involve { display: grid; gap: 16px; margin-top: 44px; }
+  .iv { display: grid; grid-template-columns: 54px 1fr auto; gap: 22px; align-items: center; background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-md); padding: 26px 28px; transition: border-color .25s, transform .25s var(--ease); }
+  .involve .iv:hover { border-color: var(--purple); transform: translateX(4px); }
+  .iv .ivic { width: 54px; height: 54px; border-radius: 13px; background: var(--purple-tint); color: var(--purple); display: grid; place-items: center; }
+  .iv.warm .ivic { background: var(--signal-tint); color: var(--signal-deep); }
+  .iv.teal .ivic { background: var(--teal-tint); color: var(--teal); }
+  .iv .ivic svg { width: 26px; height: 26px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+  .iv h3 { font-size: 1.25rem; }
+  .iv p { color: var(--ink-2); font-size: 15.5px; margin-top: 4px; max-width: 60ch; }
+  .iv .ivcta { display: inline-flex; align-items: center; gap: 8px; font-weight: 600; font-size: 15px; color: var(--purple); white-space: nowrap; }
+  .iv .ivcta svg { width: 18px; height: 18px; transition: transform .25s var(--ease); }
+  .iv:hover .ivcta svg { transform: translateX(4px); }
 
-  /* ---------- CTA BAND ---------- */
-  .band { background: linear-gradient(120deg, #003057 0%, #562b97 54%, #0095a9 120%); border-radius: var(--r-xl); padding: clamp(48px, 6vw, 80px); position: relative; overflow: hidden; box-shadow: var(--shadow-pop); }
-  .band::before { content: ""; position: absolute; inset: 0; pointer-events: none; background: radial-gradient(55% 75% at 86% 12%, rgba(255,255,255,0.22), transparent 62%), radial-gradient(50% 65% at 8% 106%, rgba(0,149,169,0.4), transparent 70%); }
-  .band-grid { position: relative; z-index: 2; display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
-  .band .eyebrow { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2); color: #e8d8f6; }
-  .band .eyebrow .dot { background: #d9bdf2; box-shadow: 0 0 0 4px rgba(255,255,255,0.12); }
-  .band h2 { color: #fff; font-size: clamp(2rem, 3.6vw, 2.9rem); margin-top: 20px; }
-  .band p { color: rgba(255,255,255,0.74); font-size: 17px; margin-top: 16px; max-width: 44ch; }
-  .form { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14); border-radius: var(--r-lg); padding: 26px; backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); }
-  .form label { display: block; font-family: "Plus Jakarta Sans", sans-serif; font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.7); margin-bottom: 9px; }
-  .form .field { display: flex; gap: 10px; }
-  .form input { flex: 1; background: rgba(255,255,255,0.95); border: 1px solid transparent; border-radius: var(--r-pill); padding: 13px 18px; font-family: inherit; font-size: 15px; color: var(--ink); outline: none; transition: box-shadow 0.3s var(--ease); }
-  .form input:focus { box-shadow: 0 0 0 3px rgba(217, 189, 242, 0.5); }
-  .form .help { font-size: 12.5px; color: rgba(255,255,255,0.55); margin-top: 12px; }
-  .form .ok { display: none; font-size: 14px; color: #e9d9f7; margin-top: 14px; align-items: center; gap: 8px; }
-  .form .ok svg { width: 16px; height: 16px; flex: 0 0 auto; }
-  .form.done .ok { display: flex; }
-  .band .donate-row { display: flex; align-items: center; gap: 14px; margin-top: 26px; flex-wrap: wrap; }
-  .band .donate-note { font-family: "Plus Jakarta Sans", sans-serif; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.55); }
-  .btn-on-dark { background: #fff; color: var(--ink); }
-  .btn-on-dark .ico { background: var(--accent-soft); color: var(--accent-deep); }
-  .btn-on-dark:hover { transform: translateY(-2px); box-shadow: 0 14px 30px -10px rgba(0,0,0,0.4); }
-  .btn-on-dark:hover .ico { transform: translate(3px,-2px); }
+  /* ---------- DONATE (the bluish-purple gradient) ---------- */
+  .donate { background: linear-gradient(120deg, var(--g-navy) 0%, var(--g-purple) 54%, var(--g-teal) 120%); border-radius: var(--r-xl); padding: clamp(46px, 6vw, 82px); text-align: center; position: relative; overflow: hidden; box-shadow: var(--shadow-pop); }
+  .donate::before { content: ""; position: absolute; inset: 0; pointer-events: none; background: radial-gradient(55% 75% at 86% 12%, rgba(255,255,255,.22), transparent 62%), radial-gradient(50% 65% at 8% 106%, rgba(0,149,169,.4), transparent 70%); }
+  .donate .shell-narrow { position: relative; z-index: 2; max-width: 640px; margin: 0 auto; }
+  .donate .eyebrow { color: #fff; justify-content: center; }
+  .donate .eyebrow::before { background: var(--teal-glow); }
+  .donate h2 { color: #fff; font-size: clamp(2.1rem, 4.2vw, 3.1rem); margin-top: 14px; }
+  .donate p { color: rgba(255,255,255,.9); margin: 18px auto 30px; max-width: 46ch; }
+  .donate-row { display: inline-flex; align-items: center; gap: 16px; flex-wrap: wrap; justify-content: center; }
+  .donate-note { font-family: "JetBrains Mono", monospace; font-size: 12px; letter-spacing: .04em; color: rgba(255,255,255,.85); }
 
   /* ---------- CONTACT ---------- */
-  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
-  .contact h2 { font-size: clamp(2rem, 3.6vw, 3rem); }
-  .contact p { color: var(--muted); font-size: 18px; margin-top: 18px; max-width: 46ch; }
-  .channels { display: flex; flex-direction: column; gap: 12px; }
-  .channel { display: flex; align-items: center; gap: 16px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-md); padding: 16px 20px; box-shadow: var(--shadow-soft); transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease), border-color 0.4s var(--ease); }
-  .channel:hover { transform: translateX(4px); box-shadow: var(--shadow-card); border-color: var(--accent-line); }
-  .channel .ci { width: 42px; height: 42px; border-radius: 11px; background: var(--accent-tint); border: 1px solid var(--accent-line); display: grid; place-items: center; flex: 0 0 auto; }
-  .channel .ci svg { width: 20px; height: 20px; }
-  .channel .ct { flex: 1; }
-  .channel .ct .t { font-family: "Fraunces", serif; font-weight: 600; font-size: 15px; }
-  .channel .ct .s { font-size: 13px; color: var(--faint); margin-left: 6px; }
-  .channel .arr { width: 18px; height: 18px; color: var(--faint); transition: transform 0.4s var(--ease), color 0.4s var(--ease); }
-  .channel:hover .arr { transform: translateX(3px); color: var(--accent-deep); }
+  .contact { display: grid; grid-template-columns: 1fr 1.05fr; gap: 56px; align-items: center; }
+  .channels { display: grid; gap: 12px; }
+  .channel { display: grid; grid-template-columns: 46px 1fr auto; gap: 16px; align-items: center; background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-md); padding: 16px 20px; transition: border-color .25s, transform .25s var(--ease); }
+  .channel:hover { border-color: var(--purple); transform: translateY(-2px); }
+  .channel .ci { width: 46px; height: 46px; border-radius: 11px; background: var(--purple-tint); display: grid; place-items: center; }
+  .channel .ci svg { width: 22px; height: 22px; }
+  .channel .t { display: block; font-weight: 600; }
+  .channel .s { display: block; font-size: 13px; color: var(--muted); }
+  .channel .arr { width: 18px; height: 18px; color: var(--purple); }
+
+  /* ---------- SIGNUP ---------- */
+  .signup { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-xl); padding: clamp(32px, 5vw, 52px); display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; box-shadow: var(--shadow); }
+  .signup h3 { font-size: 1.7rem; }
+  .signup .sd { color: var(--ink-2); margin-top: 12px; }
+  .field { display: flex; gap: 10px; flex-wrap: wrap; }
+  .field input { flex: 1 1 220px; padding: 14px 18px; border: 1.5px solid var(--line-2); border-radius: var(--r-pill); font-family: inherit; font-size: 16px; color: var(--ink); background: var(--paper); }
+  .field input::placeholder { color: var(--muted); }
+  .formnote { font-size: 13px; color: var(--muted); margin-top: 12px; }
+  .ok { display: none; align-items: center; gap: 8px; color: var(--purple); font-weight: 600; margin-top: 14px; }
+  .ok svg { width: 20px; height: 20px; }
+  .ok.show { display: flex; }
 
   /* ---------- FOOTER ---------- */
-  footer { background: var(--ink); color: rgba(255,255,255,0.7); position: relative; z-index: 1; padding: 72px 0 36px; margin-top: 0; }
-  .foot-top { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 40px; padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,0.1); }
-  footer .brand { color: #fff; font-size: 18px; }
-  footer .brand .mark { box-shadow: none; }
-  footer .tag { margin-top: 18px; font-size: 14.5px; color: rgba(255,255,255,0.6); max-width: 34ch; }
-  footer .status { margin-top: 18px; display: inline-flex; align-items: center; gap: 8px; font-family: "Plus Jakarta Sans", sans-serif; font-size: 10.5px; letter-spacing: 0.12em; text-transform: uppercase; color: #c9a9e6; }
-  footer .status .dot { width: 7px; height: 7px; border-radius: 50%; background: #9b6bce; box-shadow: 0 0 0 4px rgba(155,107,206,0.2); }
-  .foot-col h4 { color: #fff; font-family: "Plus Jakarta Sans", sans-serif; font-size: 10.5px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 18px; }
-  .foot-col a { display: block; font-size: 14.5px; color: rgba(255,255,255,0.72); padding: 6px 0; transition: color 0.3s var(--ease); }
-  .foot-col a:hover { color: #fff; }
-  .socials { display: flex; gap: 10px; flex-wrap: wrap; }
-  .socials a { width: 40px; height: 40px; border-radius: 11px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); display: grid; place-items: center; transition: background 0.3s var(--ease), transform 0.3s var(--ease), border-color 0.3s var(--ease); }
-  .socials a svg { width: 18px; height: 18px; fill: rgba(255,255,255,0.8); }
-  .socials a:hover { background: var(--accent); transform: translateY(-3px); border-color: var(--accent); }
-  .socials a:hover svg { fill: #fff; }
-  .socials a.soon { opacity: 0.4; }
-  .foot-bottom { display: flex; justify-content: space-between; align-items: center; gap: 18px; padding-top: 28px; flex-wrap: wrap; }
-  .foot-bottom .copy { font-size: 13px; color: rgba(255,255,255,0.5); }
-  .foot-bottom .loc { font-family: "Plus Jakarta Sans", sans-serif; font-size: 11px; letter-spacing: 0.1em; color: rgba(255,255,255,0.4); }
+  footer { background: linear-gradient(160deg, #00263f 0%, #3a1c6b 100%); color: rgba(255,255,255,.72); padding: 72px 0 36px; }
+  .foot-top { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; padding-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,.12); }
+  .foot-brand { display: inline-flex; align-items: center; gap: 11px; color: #fff; font-family: "Bricolage Grotesque", sans-serif; font-weight: 700; font-size: 18px; }
+  .foot-brand .mk { background: rgba(255,255,255,.1); width: 34px; height: 34px; border-radius: 9px; display: grid; place-items: center; flex: none; }
+  .foot-brand .mk svg { width: 22px; height: 22px; }
+  .foot-tag { margin: 18px 0; max-width: 44ch; font-size: 15px; line-height: 1.6; }
+  .foot-status { display: inline-flex; align-items: center; gap: 9px; font-family: "JetBrains Mono", monospace; font-size: 12px; color: var(--signal); }
+  .foot-status .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--signal); }
+  .foot-col h4 { color: #fff; font-size: 13px; font-family: "JetBrains Mono", monospace; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; margin-bottom: 16px; }
+  .foot-col a { display: block; padding: 5px 0; font-size: 15px; color: rgba(255,255,255,.72); transition: color .2s; }
+  .foot-col a:hover { color: var(--signal); }
+  .socials { display: flex; gap: 10px; margin-bottom: 16px; }
+  .socials a { width: 38px; height: 38px; border-radius: 10px; border: 1px solid rgba(255,255,255,.16); display: grid; place-items: center; }
+  .socials a svg { width: 18px; height: 18px; fill: rgba(255,255,255,.82); }
+  .socials a:hover { border-color: var(--signal); }
+  .foot-bottom { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; padding-top: 28px; font-family: "JetBrains Mono", monospace; font-size: 11px; letter-spacing: .04em; color: rgba(255,255,255,.5); text-transform: uppercase; }
 
-  /* ---------- BRAND-COLOR THEMING ---------- */
-  .c-navy { --th: var(--navy); --th-tint: var(--navy-tint); --th-line: var(--navy-line); }
-  .c-purple { --th: var(--purple); --th-tint: var(--purple-tint); --th-line: var(--purple-line); }
-  .c-teal { --th: var(--teal); --th-tint: var(--teal-tint); --th-line: var(--teal-line); }
-  .sec[class*="c-"] .eyebrow { background: var(--th-tint); border: 1px solid var(--th-line); color: var(--th); }
-  .sec[class*="c-"] .eyebrow .dot { background: var(--th); box-shadow: 0 0 0 4px var(--th-tint); }
-  .sec[class*="c-"] h2 { color: var(--th); }
-  .sec.bg-soft { background: var(--th-tint); }
-  .sec[class*="c-"] .c-ico { background: var(--th-tint); border-color: var(--th-line); }
-  .sec[class*="c-"] .c-ico svg { stroke: var(--th); }
-  .sec[class*="c-"] .card .idx { color: var(--th); }
-  .sec[class*="c-"] .card .tag { color: var(--th); background: var(--th-tint); }
-  .sec[class*="c-"] .ivcard .link { color: var(--th); }
+  /* ---------- reveal ---------- */
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s var(--ease), transform .7s var(--ease); transition-delay: var(--rd, 0ms); }
+  .reveal.in { opacity: 1; transform: none; }
 
-  /* prominent donate band */
-  .donate-band { text-align: center; }
-  .donate-band .band-inner { position: relative; z-index: 2; max-width: 660px; margin: 0 auto; }
-  .donate-band h2 { color: #fff; font-size: clamp(2.2rem, 4.4vw, 3.3rem); margin-top: 16px; }
-  .donate-band p { color: rgba(255,255,255,0.9); font-size: 18px; margin: 16px auto 0; max-width: 44ch; }
-  .donate-band .eyebrow { background: rgba(255,255,255,0.18); border-color: rgba(255,255,255,0.34); color: #fff; }
-  .donate-band .eyebrow .dot { background: #fff; box-shadow: 0 0 0 4px rgba(255,255,255,0.2); }
-  .donate-band .donate-row { display: flex; align-items: center; justify-content: center; gap: 16px; margin-top: 28px; flex-wrap: wrap; }
-  .donate-band .donate-note { font-family: "Plus Jakarta Sans", sans-serif; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.7); }
-  .btn-lg { font-size: 16px; padding: 16px 18px 16px 28px; }
-  .btn-lg .ico { width: 32px; height: 32px; }
-
-  /* small email signup strip */
-  .family-inner { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 28px; align-items: center; background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-lg); padding: clamp(24px, 3.5vw, 38px); box-shadow: var(--shadow-soft); }
-  .family-inner .ft h3 { font-size: clamp(1.4rem, 2.6vw, 1.9rem); }
-  .family-inner .ft p { color: var(--muted); font-size: 15px; margin-top: 8px; }
-  .form-lite .field { display: flex; gap: 10px; }
-  .form-lite input { flex: 1; min-width: 0; background: var(--bg); border: 1px solid var(--line); border-radius: var(--r-pill); padding: 13px 18px; font-family: inherit; font-size: 15px; color: var(--ink); outline: none; transition: box-shadow 0.3s var(--ease), border-color 0.3s var(--ease); }
-  .form-lite input:focus { border-color: var(--accent-line); box-shadow: 0 0 0 3px var(--accent-soft); }
-  .form-lite .ok { display: none; font-size: 13.5px; color: var(--accent-deep); margin-top: 12px; align-items: center; gap: 8px; }
-  .form-lite .ok svg { width: 16px; height: 16px; flex: 0 0 auto; stroke: var(--accent-deep); }
-  .form-lite.done .ok { display: flex; }
-
-  /* ---------- RESPONSIVE ---------- */
-  @media (max-width: 980px) {
-    .hero-grid, .mission-grid, .kcnh-grid, .band-grid, .contact-grid, .family-inner { grid-template-columns: 1fr; gap: 28px; }
-    .bento { grid-template-columns: repeat(6, 1fr); }
-    .span-6, .span-8, .span-4 { grid-column: span 6; }
-    .visual-shell { max-width: 460px; }
-    .story-card { grid-template-columns: 1fr; }
+  /* ---------- responsive ---------- */
+  @media (max-width: 900px) {
+    .nav-links, .nav-right .btn { display: none; }
+    .burger { display: flex; }
+    .kcnh, .mission-grid, .story, .contact, .signup, .paths { grid-template-columns: 1fr; }
+    .mission-grid, .story { gap: 28px; }
     .foot-top { grid-template-columns: 1fr 1fr; }
-    .ivrow-cta { font-size: 13.5px; }
+    .iv { grid-template-columns: 44px 1fr; }
+    .iv .ivcta { grid-column: 2; justify-self: start; }
+    .hero-content .hero-cta .btn { flex: 1 1 auto; justify-content: center; }
   }
-  @media (max-width: 768px) {
-    body { font-size: 16px; }
-    .wrap { padding: 0 20px; }
-    .nav-links { display: none; }
-    .nav-right .nav-badge { display: none; }
-    .burger { display: block; }
-    .nav-shell { padding: 12px 14px; }
-    .nav { padding: 8px 8px 8px 16px; gap: 10px; }
-    .brand { font-size: 15px; gap: 9px; }
-    .brand .mark { width: 28px; height: 28px; }
-    .hero { padding: 92px 0 36px; }
-    .hero-banner { min-height: clamp(420px, 76vh, 540px); border-radius: var(--r-lg); }
-    .hero-art { display: none; }
-    .hero-content { padding: 30px 24px; }
-    .hero-content h1 { font-size: clamp(1.8rem, 7.4vw, 2.6rem); }
-    .hero-content .lead { font-size: 16px; margin-top: 18px; max-width: none; }
-    .hero-content .hero-cta { gap: 10px; margin-top: 24px; width: 100%; }
-    .hero-content .hero-cta .btn { width: 100%; justify-content: space-between; padding: 14px 16px 14px 22px; font-size: 15px; }
-    .facts { gap: 0 14px; margin-top: 22px; }
-    .fact { border-right: none; padding: 14px 0 0; margin-right: 0; width: 46%; }
-    .sec-head p { font-size: 16px; }
-    .bento { grid-template-columns: 1fr; gap: 14px; }
-    .span-6, .span-8, .span-4 { grid-column: span 1; }
-    .card { padding: 26px; }
-    .involve-list { margin-top: 20px; }
-    .ivrow { flex-wrap: wrap; gap: 14px; padding: 20px 0; }
-    .ivrow-icon { width: 44px; height: 44px; flex: 0 0 44px; border-radius: 13px; }
-    .ivrow-body { flex: 1 1 60%; min-width: 0; }
-    .ivrow-body h3 { font-size: 18px; }
-    .ivrow-body p { font-size: 15px; max-width: none; }
-    .ivrow-cta { flex: 0 0 100%; padding-left: 58px; font-size: 13.5px; }
-    .kcnh-grid { gap: 28px; }
-    .spec .row { grid-template-columns: 1fr; gap: 4px; padding: 14px 2px; }
-    .band-grid { gap: 30px; }
-    .form { padding: 20px; }
-    .form .field { flex-direction: column; }
-    .form input { width: 100%; }
-    .form .field .btn { width: 100%; justify-content: center; }
-    .family-inner { padding: 24px 20px; }
-    .form-lite .field { flex-direction: column; }
-    .form-lite .field .btn { width: 100%; justify-content: center; }
-    .channels { gap: 10px; }
-    .story-card { gap: 24px; }
-    .foot-top { grid-template-columns: 1fr; gap: 32px; }
-    .foot-bottom { flex-direction: column; align-items: flex-start; gap: 8px; }
-  }
-  @media (max-width: 420px) {
-    .wrap { padding: 0 16px; }
-    .brand sup { display: none; }
-    .fact { width: 100%; }
-    .eyebrow { font-size: 10px; letter-spacing: 0.12em; }
-    #helix { height: 250px; }
+  @media (max-width: 560px) {
+    .foot-top { grid-template-columns: 1fr; }
+    .spec .row { grid-template-columns: 1fr; gap: 2px; }
   }
 
   @media (prefers-reduced-motion: reduce) {
-    * { animation: none !important; transition-duration: 0.01ms !important; }
-    .reveal { opacity: 1; transform: none; filter: none; }
+    * { animation: none !important; scroll-behavior: auto !important; }
+    .reveal { opacity: 1; transform: none; transition: none; }
+    .strip .b { opacity: 1; color: rgba(255,255,255,.6); }
+    .callout { opacity: 1; transform: none; }
+    #eeg path.draw { stroke-dashoffset: 0 !important; }
+    #eeg path.treat { opacity: 1 !important; }
+  }
+
+  /* ---------- accessibility widget ---------- */
+  .a11y-fab { position: fixed; left: 20px; bottom: 20px; z-index: 300; width: 54px; height: 54px; border-radius: 50%; background: var(--purple); color: #fff; border: 2px solid #fff; box-shadow: 0 10px 26px -8px rgba(90,38,130,.55); cursor: pointer; display: grid; place-items: center; transition: transform .3s var(--ease); }
+  .a11y-fab:hover { transform: scale(1.06); }
+  .a11y-fab svg { width: 28px; height: 28px; fill: none; stroke: #fff; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+  .a11y-panel { position: fixed; left: 20px; bottom: 86px; z-index: 301; width: min(346px, calc(100vw - 40px)); max-height: min(78vh, 660px); overflow-y: auto; background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-lg); box-shadow: var(--shadow-pop); padding: 18px; opacity: 0; transform: translateY(10px) scale(.98); transform-origin: bottom left; pointer-events: none; transition: opacity .3s var(--ease), transform .3s var(--ease); }
+  .a11y-panel.open { opacity: 1; transform: none; pointer-events: auto; }
+  .a11y-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; }
+  .a11y-head h2 { font-size: 19px; }
+  .a11y-close { width: 32px; height: 32px; border-radius: 50%; border: 1px solid var(--line); background: var(--paper); cursor: pointer; display: grid; place-items: center; }
+  .a11y-close svg { width: 16px; height: 16px; fill: none; stroke: var(--ink); stroke-width: 2; stroke-linecap: round; }
+  .a11y-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .a11y-opt { display: flex; flex-direction: column; align-items: center; gap: 7px; text-align: center; padding: 15px 8px 12px; border-radius: var(--r-md); border: 1.5px solid var(--line); background: var(--paper); color: var(--ink); font-family: inherit; font-size: 12.5px; font-weight: 600; cursor: pointer; transition: border-color .2s var(--ease), background .2s var(--ease), transform .2s var(--ease); }
+  .a11y-opt svg { width: 24px; height: 24px; fill: none; stroke: var(--purple-deep); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+  .a11y-opt:hover { transform: translateY(-2px); border-color: var(--purple-bright); }
+  .a11y-opt[aria-pressed="true"] { background: var(--purple-tint); border-color: var(--purple); color: var(--purple-deep); }
+  .a11y-opt .state { font-size: 10px; font-weight: 700; color: var(--muted); letter-spacing: .06em; text-transform: uppercase; }
+  .a11y-opt[aria-pressed="true"] .state { color: var(--purple); }
+  .a11y-reset { width: 100%; margin-top: 12px; padding: 13px; border-radius: var(--r-pill); border: none; background: var(--ink); color: #fff; font-family: inherit; font-weight: 600; font-size: 14px; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 9px; }
+  .a11y-reset svg { width: 17px; height: 17px; fill: none; stroke: #fff; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+  .a11y-reset:hover { background: #2c2230; }
+  .a11y-note { font-size: 11px; color: var(--muted); text-align: center; margin-top: 11px; line-height: 1.5; }
+
+  html.a11y-text1 { zoom: 1.1; }
+  html.a11y-text2 { zoom: 1.22; }
+  html.a11y-line p, html.a11y-line li, html.a11y-line .lead, html.a11y-line .support, html.a11y-line .path p, html.a11y-line .iv p, html.a11y-line .spec .row { line-height: 2 !important; }
+  html.a11y-letter p, html.a11y-letter li, html.a11y-letter .lead, html.a11y-letter .support, html.a11y-letter .path p, html.a11y-letter .iv p { letter-spacing: .06em !important; word-spacing: .16em !important; }
+  html.a11y-links a:not(.btn):not(.a11y-fab):not(.a11y-close):not(.a11y-reset):not(.brand):not(.foot-brand) { text-decoration: underline !important; text-decoration-thickness: 2px !important; text-underline-offset: 2px; outline: 1px dashed currentColor; outline-offset: 3px; border-radius: 3px; }
+  html.a11y-contrast { --paper:#ffffff; --surface:#ffffff; --ink:#000000; --ink-2:#161616; --muted:#242424; --line:#444444; --line-2:#777777; --navy:#001a30; --purple:#3c1060; --purple-deep:#2a0b46; --purple-bright:#6a3aa0; --purple-tint:#efe6f6; --teal:#005c6b; --teal-deep:#004551; --teal-tint:#d9eef1; --signal:#8a5e00; --signal-deep:#6e4a00; --signal-tint:#f3e6c8; }
+  html.a11y-contrast a:not(.btn) { text-decoration: underline; }
+  html.a11y-noanim *, html.a11y-noanim *::before, html.a11y-noanim *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+  html.a11y-noanim .reveal { opacity: 1 !important; transform: none !important; }
+  html.a11y-noanim .strip .b { opacity: 1 !important; }
+  html.a11y-noanim .callout { opacity: 1 !important; transform: none !important; }
+  html.a11y-noanim #eeg path.draw { stroke-dashoffset: 0 !important; }
+  html.a11y-noanim #eeg path.treat { opacity: 1 !important; }
+  html.a11y-dyslexia, html.a11y-dyslexia h1, html.a11y-dyslexia h2, html.a11y-dyslexia h3, html.a11y-dyslexia h4, html.a11y-dyslexia p, html.a11y-dyslexia a, html.a11y-dyslexia span, html.a11y-dyslexia div, html.a11y-dyslexia label, html.a11y-dyslexia button, html.a11y-dyslexia input, html.a11y-dyslexia li { font-family: 'Atkinson Hyperlegible', 'Inter', sans-serif !important; letter-spacing: .01em; }
+  html.a11y-cursor, html.a11y-cursor * { cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cpath d='M7 4l24 13-10.5 2.2L16 32z' fill='%23ffffff' stroke='%23000000' stroke-width='2.5' stroke-linejoin='round'/%3E%3C/svg%3E") 5 3, auto !important; }
+
+  @media (max-width: 520px) {
+    .a11y-fab { width: 50px; height: 50px; left: 14px; bottom: 14px; }
+    .a11y-panel { left: 14px; right: 14px; width: auto; bottom: 74px; }
   }
 </style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-<div class="grid-bg" aria-hidden="true"></div>
 
 <!-- NAV -->
 <div class="nav-shell">
   <nav class="nav" id="nav" aria-label="Primary">
     <a class="brand" href="#top" aria-label="Code to Cure home">
-      <span class="mark" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none"><path d="M8 3c0 5 8 5 8 9s-8 4-8 9M16 3c0 5-8 5-8 9s8 4 8 9" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/><path d="M9 7h6M8.4 11h7.2M8.4 13h7.2M9 17h6" stroke="#fff" stroke-width="1.3" stroke-linecap="round" opacity="0.85"/></svg>
-      </span>
+      <span class="mk" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M8 3c0 5 8 5 8 9s-8 4-8 9M16 3c0 5-8 5-8 9s8 4 8 9" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/><path d="M9 7h6M8.4 11h7.2M8.4 13h7.2M9 17h6" stroke="#fff" stroke-width="1.3" stroke-linecap="round" opacity="0.85"/></svg></span>
       <span>Code to Cure<sup>TM</sup></span>
     </a>
     <div class="nav-links">
-      <a href="#top">Home</a>
+      <a href="#kcnh5">KCNH5</a>
       <a href="#science">Research</a>
       <a href="#involve">Get Involved</a>
       <a href="#contact">Contact</a>
     </div>
     <div class="nav-right">
-      <a class="btn btn-primary" href="#join" aria-label="Donate">
-        <span>Donate</span>
-        <span class="ico"><svg viewBox="0 0 24 24" fill="none"><path d="M12 20s-7-4.3-7-9.2A3.8 3.8 0 0 1 12 8a3.8 3.8 0 0 1 7 2.8C19 15.7 12 20 12 20Z" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/></svg></span>
-      </a>
-      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+      <a class="btn btn-purple" href="#join">Donate</a>
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </nav>
 </div>
 
-<!-- MOBILE OVERLAY -->
 <div class="overlay" id="overlay">
-  <a href="#top" style="--d:0.08s">Home</a>
-  <a href="#science" style="--d:0.16s">Research</a>
-  <a href="#involve" style="--d:0.24s">Get Involved</a>
-  <a href="#contact" style="--d:0.32s">Contact</a>
-  <a class="btn btn-primary ov-cta" href="#join" style="--d:0.40s; width:max-content;">Donate <span class="ico"><svg viewBox="0 0 24 24" fill="none"><path d="M12 20s-7-4.3-7-9.2A3.8 3.8 0 0 1 12 8a3.8 3.8 0 0 1 7 2.8C19 15.7 12 20 12 20Z" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/></svg></span></a>
+  <a href="#kcnh5">KCNH5</a>
+  <a href="#science">Research</a>
+  <a href="#involve">Get Involved</a>
+  <a href="#contact">Contact</a>
+  <a class="btn btn-signal" href="#join">Donate</a>
 </div>
 
 <main id="main">
 <span id="top"></span>
 
-<!-- HERO -->
+<!-- HERO (full screen) -->
 <header class="hero">
-  <div class="wrap">
-    <div class="hero-banner reveal">
-      <img class="hero-photo" src="assets/hero.jpg" alt="A joyful young child laughing outdoors, hands covered in bright finger paint" onerror="this.remove()" />
-      <div class="hero-content">
-        <span class="eyebrow eyebrow-on-dark reveal"><span class="dot"></span> Code to Cure KCNH5 Epilepsy Foundation</span>
-        <h1 class="reveal" style="--rd:80ms; margin-top:18px;">Hope for every child, born from a family's <span class="accent">love</span>.</h1>
-        <p class="lead reveal" style="--rd:160ms;">A family-founded foundation raising awareness and support to find a cure for KCNH5 genetic epilepsy, for every child waiting.</p>
-        <div class="hero-cta reveal" style="--rd:240ms;">
-          <a class="btn btn-on-dark" href="#join">Donate <span class="ico"><svg viewBox="0 0 24 24" fill="none"><path d="M12 20s-7-4.3-7-9.2A3.8 3.8 0 0 1 12 8a3.8 3.8 0 0 1 7 2.8C19 15.7 12 20 12 20Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></span></a>
-          <a class="btn btn-outline-light" href="#contact">Get in touch <span class="ico"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
-        </div>
+  <img class="hero-photo" src="assets/hero.jpg" alt="A young child being gently examined during a check-up, smiling" onerror="this.remove()" />
+  <div class="hero-shell shell">
+    <div class="hero-content">
+      <span class="eyebrow">Code to Cure · KCNH5 Epilepsy Foundation</span>
+      <h1>A single gene change causes KCNH5 epilepsy. We're funding the <span class="accent">cure</span>.</h1>
+      <p class="lead">A family-founded foundation raising awareness and support to find a cure for KCNH5 genetic epilepsy, for every child still waiting.</p>
+      <div class="hero-cta">
+        <a class="btn btn-signal btn-lg" href="#join">Donate
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none"><path d="M12 20s-7-4.3-7-9.2A3.8 3.8 0 0 1 12 8a3.8 3.8 0 0 1 7 2.8C19 15.7 12 20 12 20Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></span>
+        </a>
+        <a class="btn btn-ghost-light btn-lg" href="#contact">Get in touch
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </a>
       </div>
     </div>
   </div>
+  <span class="scroll-cue" aria-hidden="true">Scroll<svg viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
 </header>
 
+<!-- GENOME: the single change (signature, animated) -->
+<section class="section genome">
+  <div class="shell">
+    <div class="genome-inner">
+      <span class="eyebrow on-dark center">KCNH5 · potassium channel gene</span>
+      <h2>The single change we're decoding.</h2>
+      <p class="genome-sub">A change in one base of the KCNH5 gene can reshape a child's earliest years. Find it, and we can begin to correct it.</p>
+      <div class="strip mono" id="strip" role="img" aria-label="An illustrative KCNH5 DNA sequence with a single highlighted variant base at its center"></div>
+      <div class="callout" id="callout">
+        <span class="cline" aria-hidden="true"></span>
+        <span class="clabel"><b>c.1019&nbsp;G→A</b> · the KCNH5 variant</span>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- WHAT IS KCNH5 -->
-<section class="sec c-teal">
-  <div class="wrap">
+<section class="section">
+  <div class="shell">
     <span class="anchor" id="kcnh5"></span>
-    <div class="kcnh-grid">
+    <div class="kcnh">
       <div>
-        <span class="eyebrow reveal"><span class="dot"></span> What is KCNH5?</span>
-        <h2 class="reveal" style="--rd:80ms; margin-top:18px; font-size:clamp(2rem,3.6vw,3rem);">What our children are up against.</h2>
-        <p class="reveal" style="--rd:140ms; color:var(--muted); font-size:17px; margin-top:16px; max-width:46ch;">KCNH5 epilepsy is rare and severe. A change in a single gene can reshape a child's earliest years with seizures and developmental delays. Understanding it is the first step toward changing it.</p>
-        <div class="spec reveal" style="--rd:200ms; margin-top:30px;">
+        <span class="eyebrow reveal">What is KCNH5?</span>
+        <h2 class="reveal" style="--rd:80ms; margin-top:16px; font-size:clamp(2rem,4vw,3rem);">What our children are up against.</h2>
+        <p class="reveal" style="--rd:140ms; color:var(--ink-2); margin-top:16px; max-width:46ch;">KCNH5 epilepsy is rare and severe. A change in a single gene can reshape a child's earliest years with seizures and developmental delays. Understanding it is the first step toward changing it.</p>
+        <div class="spec reveal" style="--rd:200ms;">
           <div class="row"><div class="k">What it is</div><div class="v">Rare genetic epilepsy</div></div>
           <div class="row"><div class="k">When it starts</div><div class="v">Early childhood</div></div>
           <div class="row"><div class="k">What it brings</div><div class="v">Recurrent seizures, developmental delay</div></div>
@@ -525,12 +485,15 @@
         </div>
       </div>
       <div class="reveal" style="--rd:160ms;">
-        <p style="font-size:15px; color:var(--muted); margin-bottom:18px; max-width:36ch; line-height:1.65;">How a KCNH5 seizure disrupts normal brain activity, and where gene-targeted treatment can step in.</p>
-        <div class="eeg-shell">
-          <div class="eeg-inner">
-            <div class="lab"><span>Illustrative neural activity</span><span>KCNH5</span></div>
-            <svg id="eeg" viewBox="0 0 520 150" aria-label="Illustrative neural activity waveform with one highlighted burst" role="img"></svg>
-            <div class="lab" style="margin-top:8px; margin-bottom:0;"><span>Seizure burst</span><span style="color:var(--teal);">Where treatment steps in</span></div>
+        <span class="eyebrow">Seeing the seizure</span>
+        <p class="eeg-intro">A simplified illustration of how a seizure breaks up normal brain rhythm, and what gene-targeted therapy aims to prevent.</p>
+        <div class="eeg-card">
+          <div class="eeg-lab"><span>Illustrative EEG trace</span><span class="hl">KCNH5</span></div>
+          <svg id="eeg" viewBox="0 0 520 160" role="img" aria-label="A simplified EEG trace: a low-amplitude normal rhythm interrupted by a high-amplitude seizure burst, then returning to baseline, with a dashed line showing the calmer rhythm gene-targeted therapy aims to preserve"></svg>
+          <div class="eeg-legend">
+            <span><i class="calm"></i> Normal rhythm</span>
+            <span><i class="burst"></i> Seizure burst</span>
+            <span><i class="treat"></i> Therapy's goal</span>
           </div>
         </div>
       </div>
@@ -538,46 +501,44 @@
   </div>
 </section>
 
-<!-- MISSION -->
-<section class="sec mission c-purple">
-  <div class="wrap">
+<!-- MISSION (full-bleed band) -->
+<section class="section mission">
+  <div class="shell">
     <span class="anchor" id="mission"></span>
-    <div class="mission-grid">
+    <div class="mission-grid reveal">
       <div>
-        <span class="eyebrow reveal"><span class="dot"></span> Our Mission</span>
-        <h2 class="reveal" style="--rd:80ms; margin-top:22px;">We refuse to wait <span class="hl">for a cure</span>.</h2>
+        <span class="eyebrow on-dark">Our Mission</span>
+        <h2 style="margin-top:18px;">We refuse to wait <span class="u">for a cure</span>.</h2>
       </div>
       <div>
-        <p class="support reveal" style="--rd:120ms;">As a <strong>501(c)(3) public charity in formation</strong>, we exist to raise awareness for KCNH5 epilepsy and rally the support that brings a cure closer for the children who need it.</p>
-        <p class="support reveal" style="--rd:200ms;">We bring families, advocates, and donors together, so no family has to face this alone, and so a community's love becomes real progress.</p>
-        <p class="pull reveal" style="--rd:280ms; margin-top:30px;">Born from one family's resolve, built for every family waiting.</p>
+        <p class="support">As a <strong>501(c)(3) public charity in formation</strong>, we exist to raise awareness for KCNH5 epilepsy and rally the support that brings a cure closer for the children who need it.</p>
+        <p class="support">We bring families, advocates, and donors together, so no family has to face this alone, and so a community's love becomes real progress.</p>
+        <p class="pull">Born from one family's resolve, built for every family waiting.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- RESEARCH -->
-<section class="sec c-navy">
-  <div class="wrap">
+<section class="section">
+  <div class="shell">
     <span class="anchor" id="science"></span>
-    <div class="sec-head">
-      <span class="eyebrow reveal"><span class="dot"></span> Research</span>
-      <h2 class="reveal" style="--rd:80ms;">Two paths to a cure.</h2>
-      <p class="reveal" style="--rd:140ms;">Your support helps fund research that goes after the root cause of KCNH5 epilepsy, not just the symptoms, so children have a real chance at a healthier future.</p>
+    <div class="head reveal">
+      <span class="eyebrow">Research</span>
+      <h2>Two paths to a cure.</h2>
+      <p>Your support helps fund research that goes after the root cause of KCNH5 epilepsy, not just the symptoms, so children have a real chance at a healthier future.</p>
     </div>
-    <div class="bento">
-      <div class="card pillar span-6 c-purple reveal">
-        <div class="glow" aria-hidden="true"></div>
-        <div class="idx">Approach one</div>
-        <div class="c-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7c4 0 4 10 8 10s4-10 8-10"/><path d="M4 17c4 0 4-10 8-10s4 10 8 10" opacity="0.45"/><circle cx="12" cy="12" r="1.6" fill="currentColor" stroke="none"/></svg></div>
+    <div class="paths">
+      <div class="path reveal">
+        <div class="idx">Approach 01</div>
+        <div class="pico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7c4 0 4 10 8 10s4-10 8-10"/><path d="M4 17c4 0 4-10 8-10s4 10 8 10" opacity="0.45"/><circle cx="12" cy="12" r="1.6" fill="currentColor" stroke="none"/></svg></div>
         <h3>Antisense oligonucleotide (ASO) therapy</h3>
         <p>A medicine designed to quiet the faulty genetic instructions behind KCNH5 seizures before they ever start, treating the cause instead of masking it.</p>
         <span class="tag">Silence the signal</span>
       </div>
-      <div class="card pillar span-6 c-teal reveal" style="--rd:90ms;">
-        <div class="glow" aria-hidden="true"></div>
-        <div class="idx">Approach two</div>
-        <div class="c-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3v7M7 14v7M17 3v7M17 14v7"/><path d="M7 8h10M7 16h10"/><circle cx="7" cy="12" r="1.4" fill="currentColor" stroke="none"/><circle cx="17" cy="12" r="1.4" fill="currentColor" stroke="none"/></svg></div>
+      <div class="path teal reveal" style="--rd:90ms;">
+        <div class="idx">Approach 02</div>
+        <div class="pico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3v7M7 14v7M17 3v7M17 14v7"/><path d="M7 8h10M7 16h10"/><circle cx="7" cy="12" r="1.4" fill="currentColor" stroke="none"/><circle cx="17" cy="12" r="1.4" fill="currentColor" stroke="none"/></svg></div>
         <h3>CRISPR gene correction</h3>
         <p>Research working toward gently rewriting the changed gene itself, restoring healthy function right where the disorder begins.</p>
         <span class="tag">Rewrite the code</span>
@@ -586,73 +547,76 @@
   </div>
 </section>
 
-<!-- STORY -->
-<section class="sec c-teal" id="story" style="padding-top:0;">
-  <div class="wrap">
-    <div class="story-card reveal">
+<!-- STORY (open layout) -->
+<section class="section">
+  <div class="shell">
+    <span class="anchor" id="story"></span>
+    <div class="story reveal">
       <div>
-        <span class="eyebrow"><span class="dot"></span> Our Story</span>
-        <h2 style="margin-top:20px;">The family behind the mission.</h2>
+        <span class="eyebrow">Our Story</span>
+        <h2>The family behind the mission.</h2>
         <p>Every fight for a cure starts with a reason. Ours has names and faces. The full story of how Code to Cure began is on its way, and we can't wait to share it with you.</p>
-        <span class="soon-pill" style="margin-top:24px;">Our story, coming soon</span>
+        <span class="soon">Our story · coming soon</span>
       </div>
-      <div class="photo-frame" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none"><path d="M12 20s-7-4.3-7-9.2A3.8 3.8 0 0 1 12 8a3.8 3.8 0 0 1 7 2.8C19 15.7 12 20 12 20Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
-        <span class="cap">A family photo will live here</span>
+      <div class="frame" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" width="34" height="34"><path d="M12 20s-7-4.3-7-9.2A3.8 3.8 0 0 1 12 8a3.8 3.8 0 0 1 7 2.8C19 15.7 12 20 12 20Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+        <span class="mono">a family photo will live here</span>
       </div>
     </div>
   </div>
 </section>
 
 <!-- GET INVOLVED -->
-<section class="sec c-purple">
-  <div class="wrap">
+<section class="section">
+  <div class="shell">
     <span class="anchor" id="involve"></span>
-    <div class="sec-head">
-      <span class="eyebrow reveal"><span class="dot"></span> Get Involved</span>
-      <h2 class="reveal" style="--rd:80ms;">Join the families fighting for a cure.</h2>
-      <p class="reveal" style="--rd:140ms;">Whether you're ready to give, living this every day, or researching it, you belong here. No one should have to do this alone.</p>
+    <div class="head reveal">
+      <span class="eyebrow">Get Involved</span>
+      <h2>Join the families fighting for a cure.</h2>
+      <p>Whether you're ready to give, living this every day, or researching it, you belong here. No one should have to do this alone.</p>
     </div>
-    <div class="involve-list">
-      <div class="ivrow c-teal reveal">
-        <div class="ivrow-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.3-7-9.2A3.8 3.8 0 0 1 12 8a3.8 3.8 0 0 1 7 2.8C19 15.7 12 20 12 20Z"/></svg></div>
-        <div class="ivrow-body">
+    <div class="involve">
+      <div class="iv warm reveal">
+        <span class="ivic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.3-7-9.2A3.8 3.8 0 0 1 12 8a3.8 3.8 0 0 1 7 2.8C19 15.7 12 20 12 20Z"/></svg></span>
+        <div>
           <h3>Donors</h3>
           <p>Your gift goes straight to the research that brings a cure closer for children waiting right now. No amount is too small.</p>
         </div>
-        <a class="ivrow-cta" href="#join">Donate now <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a class="ivcta" href="#join">Donate now <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       </div>
-      <div class="ivrow c-navy reveal" style="--rd:90ms;">
-        <div class="ivrow-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M16 18a4 4 0 0 0-8 0"/><circle cx="12" cy="8" r="3.2"/><path d="M3.5 19a3.3 3.3 0 0 1 5-3M20.5 19a3.3 3.3 0 0 0-5-3"/></svg></div>
-        <div class="ivrow-body">
+      <div class="iv reveal" style="--rd:90ms;">
+        <span class="ivic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M16 18a4 4 0 0 0-8 0"/><circle cx="12" cy="8" r="3.2"/><path d="M3.5 19a3.3 3.3 0 0 1 5-3M20.5 19a3.3 3.3 0 0 0-5-3"/></svg></span>
+        <div>
           <h3>KCNH5 families</h3>
           <p>Looking for community? Connect with other families and advocates walking the same path, and find people who understand.</p>
         </div>
-        <a class="ivrow-cta" href="#contact">Find your community <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a class="ivcta" href="#contact">Find your community <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       </div>
-      <div class="ivrow c-purple reveal" style="--rd:180ms;">
-        <div class="ivrow-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 3v5.5L4.5 17a2 2 0 0 0 1.8 3h11.4a2 2 0 0 0 1.8-3L15 8.5V3"/><path d="M8 3h8M9 13h6"/></svg></div>
-        <div class="ivrow-body">
+      <div class="iv teal reveal" style="--rd:180ms;">
+        <span class="ivic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 3v5.5L4.5 17a2 2 0 0 0 1.8 3h11.4a2 2 0 0 0 1.8-3L15 8.5V3"/><path d="M8 3h8M9 13h6"/></svg></span>
+        <div>
           <h3>Researchers</h3>
           <p>Have a collaborative pipeline to pitch? We want to help connect promising science with the awareness and support to move it forward.</p>
         </div>
-        <a class="ivrow-cta" href="#contact">Pitch your pipeline <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a class="ivcta" href="#contact">Pitch your pipeline <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- DONATE (prominent) -->
-<section class="sec">
-  <div class="wrap">
+<!-- DONATE -->
+<section class="section-tight">
+  <div class="shell">
     <span class="anchor" id="join"></span>
-    <div class="band donate-band reveal">
-      <div class="band-inner">
-        <span class="eyebrow"><span class="dot"></span> Donate</span>
+    <div class="donate reveal">
+      <div class="shell-narrow">
+        <span class="eyebrow">Donate</span>
         <h2>Every gift brings a cure closer.</h2>
         <p>Your donation will fund the research that can change a child's life. Donations open with our public launch this Fall 2026.</p>
         <div class="donate-row">
-          <button type="button" class="btn btn-on-dark btn-lg" style="cursor:default;">Donate <span class="ico"><svg viewBox="0 0 24 24" fill="none"><path d="M12 20s-7-4.3-7-9.2A3.8 3.8 0 0 1 12 8a3.8 3.8 0 0 1 7 2.8C19 15.7 12 20 12 20Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></span></button>
+          <button type="button" class="btn btn-signal btn-lg" style="cursor:default;">Donate
+            <span class="ico"><svg viewBox="0 0 24 24" fill="none"><path d="M12 20s-7-4.3-7-9.2A3.8 3.8 0 0 1 12 8a3.8 3.8 0 0 1 7 2.8C19 15.7 12 20 12 20Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></span>
+          </button>
           <span class="donate-note">Opening Fall 2026</span>
         </div>
       </div>
@@ -661,29 +625,29 @@
 </section>
 
 <!-- CONTACT -->
-<section class="sec c-teal" style="padding-top:0;">
-  <div class="wrap">
+<section class="section">
+  <div class="shell">
     <span class="anchor" id="contact"></span>
-    <div class="contact-grid">
-      <div class="contact">
-        <span class="eyebrow reveal"><span class="dot"></span> Get in Touch</span>
-        <h2 class="reveal" style="--rd:80ms; margin-top:22px;">We want to hear from you.</h2>
-        <p class="reveal" style="--rd:140ms;">A family looking for community, a researcher with a pipeline to pitch, or someone ready to help. However you found us, we're so glad you're here.</p>
+    <div class="contact">
+      <div>
+        <span class="eyebrow reveal">Get in Touch</span>
+        <h2 class="reveal" style="--rd:80ms; margin-top:16px; font-size:clamp(2rem,4vw,3rem);">We want to hear from you.</h2>
+        <p class="reveal" style="--rd:140ms; color:var(--ink-2); margin-top:16px; max-width:44ch;">A family looking for community, a researcher with a pipeline to pitch, or someone ready to help. However you found us, we're so glad you're here.</p>
       </div>
       <div class="channels reveal" style="--rd:160ms;">
         <a class="channel" href="https://www.instagram.com/codetocureorg" target="_blank" rel="noopener">
           <span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="#562b97" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1.1" fill="#562b97" stroke="none"/></svg></span>
-          <span class="ct"><span class="t">Instagram</span><span class="s">@codetocureorg</span></span>
+          <span><span class="t">Instagram</span><span class="s">@codetocureorg</span></span>
           <svg class="arr" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M9 7h8v8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
-        <a class="channel" href="https://www.facebook.com/people/Code-to-Cure/61590799396182/?mibextid=wwXIfr&amp;rdid=CYi9gRs99Em7S5QY" target="_blank" rel="noopener">
+        <a class="channel" href="https://www.facebook.com/people/Code-to-Cure/61590799396182/" target="_blank" rel="noopener">
           <span class="ci"><svg viewBox="0 0 24 24" fill="#562b97"><path d="M13.5 21v-7h2.4l.4-2.9h-2.8V9.2c0-.84.26-1.42 1.47-1.42h1.43V5.18A20 20 0 0 0 14.2 5c-2.07 0-3.5 1.27-3.5 3.6v2.5H8.3V14h2.4v7h2.8Z"/></svg></span>
-          <span class="ct"><span class="t">Facebook</span><span class="s">Follow our page</span></span>
+          <span><span class="t">Facebook</span><span class="s">Follow our page</span></span>
           <svg class="arr" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M9 7h8v8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
         <a class="channel" href="https://www.facebook.com/groups/250204047029924" target="_blank" rel="noopener">
           <span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="#562b97" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="9" r="3"/><path d="M3 19a6 6 0 0 1 12 0"/><circle cx="17" cy="10" r="2.2"/><path d="M15.5 19a4.5 4.5 0 0 1 6.5-4"/></svg></span>
-          <span class="ct"><span class="t">Facebook Group</span><span class="s">Connect with families</span></span>
+          <span><span class="t">Facebook Group</span><span class="s">Connect with families</span></span>
           <svg class="arr" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M9 7h8v8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
       </div>
@@ -691,38 +655,39 @@
   </div>
 </section>
 
-<!-- JOIN OUR FAMILY (email signup) -->
-<section class="sec" style="padding-top:0;">
-  <div class="wrap">
+<!-- SIGNUP -->
+<section class="section-tight" style="padding-top:0;">
+  <div class="shell">
     <span class="anchor" id="family"></span>
-    <div class="family-inner">
-      <div class="ft">
+    <div class="signup reveal">
+      <div>
         <h3>Join our family</h3>
-        <p>Be the first to hear about our story, milestones, and our launch this Fall 2026.</p>
+        <p class="sd">Be the first to hear about our story, milestones, and our launch this Fall 2026.</p>
       </div>
-      <form class="form-lite" id="subscribe" novalidate>
+      <form id="subscribe" novalidate>
         <div class="field">
           <input id="email" name="email" type="email" placeholder="you@email.com" autocomplete="email" required aria-label="Email address" />
-          <button class="btn btn-primary" type="submit">Subscribe <span class="ico"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+          <button class="btn btn-purple" type="submit">Subscribe
+            <span class="ico"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </button>
         </div>
-        <p class="ok"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Thank you. Sign-ups go live at our Fall 2026 launch, and we'll be in touch.</p>
+        <p class="formnote">Sign-ups go live at launch. We'll never share your email.</p>
+        <p class="ok" id="ok"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> You're on the list. We'll be in touch.</p>
       </form>
     </div>
   </div>
 </section>
+
 </main>
 
 <!-- FOOTER -->
 <footer>
-  <div class="wrap">
+  <div class="shell">
     <div class="foot-top">
       <div>
-        <div class="brand">
-          <span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M8 3c0 5 8 5 8 9s-8 4-8 9M16 3c0 5-8 5-8 9s8 4 8 9" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/><path d="M9 7h6M8.4 11h7.2M8.4 13h7.2M9 17h6" stroke="#fff" stroke-width="1.3" stroke-linecap="round" opacity="0.85"/></svg></span>
-          <span>Code to Cure<sup style="color:rgba(255,255,255,0.5)">TM</sup></span>
-        </div>
-        <p class="tag">Decoding the mutation. Accelerating the science. Finding the cure for KCNH5-related genetic epilepsy.</p>
-        <span class="status"><span class="dot"></span> 501(c)(3) public charity in formation</span>
+        <span class="foot-brand"><span class="mk" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M8 3c0 5 8 5 8 9s-8 4-8 9M16 3c0 5-8 5-8 9s8 4 8 9" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/><path d="M9 7h6M8.4 11h7.2M8.4 13h7.2M9 17h6" stroke="#fff" stroke-width="1.3" stroke-linecap="round" opacity="0.85"/></svg></span> Code to Cure<sup style="font-size:9px;">TM</sup></span>
+        <p class="foot-tag">Decoding the mutation. Accelerating the science. Finding the cure for KCNH5-related genetic epilepsy.</p>
+        <span class="foot-status"><span class="dot"></span> 501(c)(3) public charity in formation</span>
       </div>
       <div class="foot-col">
         <h4>Explore</h4>
@@ -734,269 +699,21 @@
       <div class="foot-col">
         <h4>Connect</h4>
         <div class="socials">
-          <a href="https://www.instagram.com/codetocureorg" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s0 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58 0-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.2 15.58 2.2 15.2 2.2 12s0-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.2 8.8 2.2 12 2.2Zm0 1.8c-3.14 0-3.51.01-4.75.07-.9.04-1.38.19-1.7.32-.43.16-.74.36-1.06.68-.32.32-.52.63-.68 1.06-.13.32-.28.8-.32 1.7C3.21 8.49 3.2 8.86 3.2 12s.01 3.51.07 4.75c.04.9.19 1.38.32 1.7.16.43.36.74.68 1.06.32.32.63.52 1.06.68.32.13.8.28 1.7.32 1.24.06 1.61.07 4.75.07s3.51-.01 4.75-.07c.9-.04 1.38-.19 1.7-.32.43-.16.74-.36 1.06-.68.32-.32.52-.63.68-1.06.13-.32.28-.8.32-1.7.06-1.24.07-1.61.07-4.75s-.01-3.51-.07-4.75c-.04-.9-.19-1.38-.32-1.7a2.85 2.85 0 0 0-.68-1.06 2.85 2.85 0 0 0-1.06-.68c-.32-.13-.8-.28-1.7-.32C15.51 4.01 15.14 4 12 4Zm0 3.06A4.94 4.94 0 1 1 12 16.94 4.94 4.94 0 0 1 12 7.06Zm0 1.8a3.14 3.14 0 1 0 0 6.28 3.14 3.14 0 0 0 0-6.28Zm5.13-.33a1.15 1.15 0 1 1-2.3 0 1.15 1.15 0 0 1 2.3 0Z"/></svg></a>
-          <a href="https://www.facebook.com/people/Code-to-Cure/61590799396182/?mibextid=wwXIfr&amp;rdid=CYi9gRs99Em7S5QY" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M13.5 21v-7h2.4l.4-2.9h-2.8V9.2c0-.84.26-1.42 1.47-1.42h1.43V5.18A20 20 0 0 0 14.2 5c-2.07 0-3.5 1.27-3.5 3.6v2.5H8.3V14h2.4v7h2.8Z"/></svg></a>
+          <a href="https://www.instagram.com/codetocureorg" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s0 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58 0-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.2 15.58 2.2 15.2 2.2 12s0-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.2 8.8 2.2 12 2.2Zm0 4.86A4.94 4.94 0 1 0 12 16.94 4.94 4.94 0 0 0 12 7.06Zm0 1.8a3.14 3.14 0 1 1 0 6.28 3.14 3.14 0 0 1 0-6.28Zm5.13-.33a1.15 1.15 0 1 1-2.3 0 1.15 1.15 0 0 1 2.3 0Z"/></svg></a>
+          <a href="https://www.facebook.com/people/Code-to-Cure/61590799396182/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M13.5 21v-7h2.4l.4-2.9h-2.8V9.2c0-.84.26-1.42 1.47-1.42h1.43V5.18A20 20 0 0 0 14.2 5c-2.07 0-3.5 1.27-3.5 3.6v2.5H8.3V14h2.4v7h2.8Z"/></svg></a>
           <a href="https://www.facebook.com/groups/250204047029924" target="_blank" rel="noopener" aria-label="Facebook Group"><svg viewBox="0 0 24 24"><path d="M9 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm8 .5a2.3 2.3 0 1 0 0-4.6 2.3 2.3 0 0 0 0 4.6ZM3 18.5a6 6 0 0 1 12 0V20H3v-1.5Zm13.2-3.2A4.5 4.5 0 0 1 22 19.5V20h-5v-1.5c0-1.2-.32-2.33-.8-3.2Z"/></svg></a>
-          <a class="soon" href="#contact" aria-label="LinkedIn (coming soon)"><svg viewBox="0 0 24 24"><path d="M4.98 3.5A2 2 0 1 1 5 7.5a2 2 0 0 1-.02-4ZM3.5 9h3v11.5h-3V9Zm5 0h2.87v1.57h.04c.4-.76 1.38-1.57 2.84-1.57 3.04 0 3.6 2 3.6 4.6v6.9h-3v-6.12c0-1.46-.03-3.34-2.03-3.34-2.03 0-2.34 1.59-2.34 3.23v6.23h-3V9Z"/></svg></a>
-          <a class="soon" href="#contact" aria-label="X (coming soon)"><svg viewBox="0 0 24 24"><path d="M17.7 3h3.3l-7.2 8.2L22 21h-6.6l-5.2-6.8L4.3 21H1l7.7-8.8L2 3h6.8l4.7 6.2L17.7 3Zm-1.16 16h1.83L7.5 4.9H5.55L16.54 19Z"/></svg></a>
-          <a class="soon" href="#contact" aria-label="TikTok (coming soon)"><svg viewBox="0 0 24 24"><path d="M16.5 3c.3 2.2 1.55 3.6 3.7 3.74v2.5c-1.25.12-2.34-.28-3.6-1.04v4.96c0 4.3-3.2 6.6-6.3 5.86-3.34-.8-4.44-4.86-2.2-7.2 1-1.05 2.5-1.5 4-1.27v2.6c-.4-.13-.83-.16-1.26-.05-1.1.27-1.7 1.35-1.4 2.42.3 1.1 1.74 1.6 2.74.85.62-.46.82-1.12.82-2.06V3h3.3Z"/></svg></a>
         </div>
-        <a href="#join" style="margin-top:18px;">Donate (Fall 2026)</a>
+        <a href="#join">Donate (Fall 2026)</a>
       </div>
     </div>
     <div class="foot-bottom">
-      <span class="copy">&copy; 2026 Code to Cure KCNH5 Epilepsy Foundation. All Rights Reserved.</span>
-      <span class="loc">BASED IN FLORIDA, USA</span>
+      <span>© 2026 Code to Cure KCNH5 Epilepsy Foundation · All Rights Reserved</span>
+      <span>Based in Florida, USA</span>
     </div>
   </div>
 </footer>
 
-<script>
-(function () {
-  "use strict";
-  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-  /* nav scroll state */
-  var nav = document.getElementById("nav");
-  function onScroll() {
-    if (window.scrollY > 20) nav.classList.add("scrolled");
-    else nav.classList.remove("scrolled");
-  }
-  window.addEventListener("scroll", onScroll, { passive: true });
-  onScroll();
-
-  /* mobile menu */
-  var burger = document.getElementById("burger");
-  var overlay = document.getElementById("overlay");
-  function closeMenu() { document.body.classList.remove("menu-open"); burger.setAttribute("aria-expanded", "false"); burger.setAttribute("aria-label", "Open menu"); }
-  burger.addEventListener("click", function () {
-    var open = document.body.classList.toggle("menu-open");
-    burger.setAttribute("aria-expanded", open ? "true" : "false");
-    burger.setAttribute("aria-label", open ? "Close menu" : "Open menu");
-  });
-  overlay.querySelectorAll("a").forEach(function (a) { a.addEventListener("click", closeMenu); });
-
-  /* reveal on scroll */
-  var reveals = document.querySelectorAll(".reveal");
-  if (reduce || !("IntersectionObserver" in window)) {
-    reveals.forEach(function (el) { el.classList.add("in"); });
-  } else {
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
-    }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
-    reveals.forEach(function (el) { io.observe(el); });
-  }
-
-  /* subscribe form (presentational, coming soon) */
-  var form = document.getElementById("subscribe");
-  if (form) {
-    form.addEventListener("submit", function (ev) {
-      ev.preventDefault();
-      var email = document.getElementById("email");
-      if (!email.value || email.value.indexOf("@") === -1) { email.focus(); return; }
-      form.classList.add("done");
-      email.value = "";
-      email.setAttribute("placeholder", "Subscribed");
-    });
-  }
-
-  /* build DNA helix */
-  var helix = document.getElementById("helix");
-  if (helix) {
-    var W = 320, H = 420, cx = 160, amp = 96, turns = 2.15, N = 26;
-    var svgns = "http://www.w3.org/2000/svg";
-    var ptsA = [], ptsB = [];
-    for (var i = 0; i < N; i++) {
-      var t = i / (N - 1);
-      var y = 24 + t * (H - 48);
-      var ang = t * turns * Math.PI * 2;
-      var xA = cx + Math.sin(ang) * amp;
-      var xB = cx - Math.sin(ang) * amp;
-      ptsA.push([xA, y]); ptsB.push([xB, y]);
-    }
-    function pathFrom(pts) {
-      var d = "M" + pts[0][0].toFixed(1) + " " + pts[0][1].toFixed(1);
-      for (var k = 1; k < pts.length; k++) {
-        var p0 = pts[k - 1], p1 = pts[k];
-        var my = (p0[1] + p1[1]) / 2;
-        d += " C" + p0[0].toFixed(1) + " " + my.toFixed(1) + " " + p1[0].toFixed(1) + " " + my.toFixed(1) + " " + p1[0].toFixed(1) + " " + p1[1].toFixed(1);
-      }
-      return d;
-    }
-    var mutationIndex = Math.round(N * 0.5);
-    // rungs
-    for (var j = 0; j < N; j++) {
-      var a = ptsA[j], b = ptsB[j];
-      var isMut = (j === mutationIndex);
-      var depth = (Math.sin(j / (N - 1) * turns * Math.PI * 2) + 1) / 2; // 0..1 front/back
-      var line = document.createElementNS(svgns, "line");
-      line.setAttribute("x1", a[0].toFixed(1)); line.setAttribute("y1", a[1].toFixed(1));
-      line.setAttribute("x2", b[0].toFixed(1)); line.setAttribute("y2", b[1].toFixed(1));
-      line.setAttribute("stroke", isMut ? "#0095a9" : "#c9c6d4");
-      line.setAttribute("stroke-width", isMut ? "3.4" : "1.6");
-      line.setAttribute("stroke-linecap", "round");
-      line.setAttribute("opacity", isMut ? "1" : (0.28 + depth * 0.5).toFixed(2));
-      if (!reduce) {
-        line.style.animation = "rungpulse 3.6s ease-in-out infinite";
-        line.style.animationDelay = (j * 0.09).toFixed(2) + "s";
-      }
-      helix.appendChild(line);
-    }
-    // strands
-    [ptsA, ptsB].forEach(function (pts, idx) {
-      var p = document.createElementNS(svgns, "path");
-      p.setAttribute("d", pathFrom(pts));
-      p.setAttribute("fill", "none");
-      p.setAttribute("stroke", idx === 0 ? "#0095a9" : "#a07cc4");
-      p.setAttribute("stroke-width", "3");
-      p.setAttribute("stroke-linecap", "round");
-      p.setAttribute("opacity", idx === 0 ? "0.92" : "0.62");
-      helix.appendChild(p);
-    });
-    // nodes
-    [ptsA, ptsB].forEach(function (pts, idx) {
-      pts.forEach(function (pt, j2) {
-        var c = document.createElementNS(svgns, "circle");
-        c.setAttribute("cx", pt[0].toFixed(1)); c.setAttribute("cy", pt[1].toFixed(1));
-        c.setAttribute("r", j2 === mutationIndex ? "4.2" : "2.6");
-        c.setAttribute("fill", j2 === mutationIndex ? "#0095a9" : (idx === 0 ? "#7e58aa" : "#b6a0d2"));
-        helix.appendChild(c);
-      });
-    });
-    // mutation marker ring
-    var mr = document.createElementNS(svgns, "circle");
-    mr.setAttribute("cx", cx); mr.setAttribute("cy", ptsA[mutationIndex][1].toFixed(1));
-    mr.setAttribute("r", "16"); mr.setAttribute("fill", "none");
-    mr.setAttribute("stroke", "#0095a9"); mr.setAttribute("stroke-width", "1.4");
-    mr.setAttribute("opacity", "0.5");
-    if (!reduce) mr.style.animation = "ring 3s ease-in-out infinite";
-    helix.appendChild(mr);
-    // scan line
-    if (!reduce) {
-      var scan = document.createElementNS(svgns, "rect");
-      scan.setAttribute("x", "30"); scan.setAttribute("width", "260"); scan.setAttribute("height", "2");
-      scan.setAttribute("y", "24"); scan.setAttribute("rx", "1");
-      scan.setAttribute("fill", "#0095a9"); scan.setAttribute("opacity", "0.22");
-      scan.setAttribute("class", "scanline");
-      scan.style.animation = "scan 5.5s cubic-bezier(0.45,0,0.55,1) infinite";
-      helix.appendChild(scan);
-    }
-  }
-
-  /* build EEG waveform */
-  var eeg = document.getElementById("eeg");
-  if (eeg) {
-    var ew = 520, eh = 150, mid = 78, svn = "http://www.w3.org/2000/svg";
-    // baseline grid
-    for (var gx = 0; gx <= ew; gx += 40) {
-      var gl = document.createElementNS(svn, "line");
-      gl.setAttribute("x1", gx); gl.setAttribute("y1", 14); gl.setAttribute("x2", gx); gl.setAttribute("y2", eh - 14);
-      gl.setAttribute("stroke", "#d6edf0"); gl.setAttribute("stroke-width", "1");
-      eeg.appendChild(gl);
-    }
-    var d = "M0 " + mid;
-    var x = 0;
-    function seg(dx, dy) { x += dx; d += " L" + x + " " + (mid - dy); }
-    // calm
-    for (var s = 0; s < 5; s++) { seg(10, 6); seg(10, -6); seg(12, 3); seg(8, -3); }
-    // burst (highlighted region starts ~ x=190)
-    var burstStart = x;
-    seg(8, 40); seg(8, -52); seg(7, 46); seg(8, -44); seg(7, 50); seg(8, -40); seg(8, 44); seg(7, -48);
-    var burstEnd = x;
-    // settle after intervention
-    seg(14, 10); seg(14, -10); seg(16, 5); seg(16, -5);
-    for (var s2 = 0; s2 < 6; s2++) { seg(14, 4); seg(14, -4); }
-    d += " L" + ew + " " + mid;
-
-    // highlight band under burst
-    var band = document.createElementNS(svn, "rect");
-    band.setAttribute("x", burstStart); band.setAttribute("y", "14");
-    band.setAttribute("width", (burstEnd - burstStart)); band.setAttribute("height", eh - 28);
-    band.setAttribute("fill", "rgba(0,149,169,0.10)"); band.setAttribute("rx", "6");
-    eeg.appendChild(band);
-
-    var path = document.createElementNS(svn, "path");
-    path.setAttribute("d", d);
-    path.setAttribute("fill", "none");
-    path.setAttribute("stroke", "#0095a9");
-    path.setAttribute("stroke-width", "2.4");
-    path.setAttribute("stroke-linecap", "round");
-    path.setAttribute("stroke-linejoin", "round");
-    eeg.appendChild(path);
-
-    if (!reduce) {
-      var len = path.getTotalLength();
-      path.style.setProperty("--len", len);
-      path.style.strokeDasharray = len;
-      path.style.strokeDashoffset = len;
-      path.style.animation = "draw 4.5s ease-in-out infinite";
-    }
-    // moving pulse dot
-    if (!reduce) {
-      var dot = document.createElementNS(svn, "circle");
-      dot.setAttribute("r", "3.5"); dot.setAttribute("fill", "#0095a9");
-      var mp = document.createElementNS(svn, "animateMotion");
-      mp.setAttribute("dur", "4.5s"); mp.setAttribute("repeatCount", "indefinite");
-      mp.setAttribute("path", d); mp.setAttribute("keyPoints", "0;1"); mp.setAttribute("keyTimes", "0;1"); mp.setAttribute("calcMode", "linear");
-      dot.appendChild(mp);
-      eeg.appendChild(dot);
-    }
-  }
-})();
-</script>
-<style>
-  @keyframes rungpulse { 0%, 100% { opacity: 0.3; } 50% { opacity: 0.85; } }
-  @keyframes ring { 0%, 100% { transform: scale(1); opacity: 0.5; } 50% { transform: scale(1.25); opacity: 0.15; } }
-  #helix .scanline { transform-origin: center; }
-  @keyframes scan { 0% { transform: translateY(0); opacity: 0; } 12% { opacity: 0.28; } 50% { transform: translateY(372px); opacity: 0.28; } 62% { opacity: 0; } 100% { transform: translateY(0); opacity: 0; } }
-  @keyframes draw { 0% { stroke-dashoffset: var(--len, 1600); } 55% { stroke-dashoffset: 0; } 100% { stroke-dashoffset: 0; } }
-  #helix circle, #helix line, #helix path { transform-box: fill-box; }
-</style>
-
-<!-- ===================== ACCESSIBILITY WIDGET ===================== -->
-<style>
-  .a11y-fab { position: fixed; left: 20px; bottom: 20px; z-index: 300; width: 54px; height: 54px; border-radius: 50%; background: var(--accent); color: #fff; border: 2px solid #fff; box-shadow: 0 10px 26px -8px rgba(90,38,130,0.55); cursor: pointer; display: grid; place-items: center; transition: transform 0.3s var(--ease); }
-  .a11y-fab:hover { transform: scale(1.06); }
-  .a11y-fab svg { width: 28px; height: 28px; fill: none; stroke: #fff; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
-  .a11y-panel { position: fixed; left: 20px; bottom: 86px; z-index: 301; width: min(346px, calc(100vw - 40px)); max-height: min(78vh, 660px); overflow-y: auto; background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-lg); box-shadow: var(--shadow-pop); padding: 18px; opacity: 0; transform: translateY(10px) scale(0.98); transform-origin: bottom left; pointer-events: none; transition: opacity 0.3s var(--ease), transform 0.3s var(--ease); }
-  .a11y-panel.open { opacity: 1; transform: none; pointer-events: auto; }
-  .a11y-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; }
-  .a11y-head h2 { font-size: 19px; }
-  .a11y-close { width: 32px; height: 32px; border-radius: 50%; border: 1px solid var(--line); background: var(--bg); cursor: pointer; display: grid; place-items: center; }
-  .a11y-close svg { width: 16px; height: 16px; fill: none; stroke: var(--ink); stroke-width: 2; stroke-linecap: round; }
-  .a11y-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-  .a11y-opt { display: flex; flex-direction: column; align-items: center; gap: 7px; text-align: center; padding: 15px 8px 12px; border-radius: var(--r-md); border: 1.5px solid var(--line); background: var(--bg); color: var(--ink); font-family: inherit; font-size: 12.5px; font-weight: 600; cursor: pointer; transition: border-color 0.2s var(--ease), background 0.2s var(--ease), transform 0.2s var(--ease); }
-  .a11y-opt svg { width: 24px; height: 24px; fill: none; stroke: var(--accent-deep); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
-  .a11y-opt:hover { transform: translateY(-2px); border-color: var(--accent-line); }
-  .a11y-opt[aria-pressed="true"] { background: var(--accent-tint); border-color: var(--accent); color: var(--accent-deep); }
-  .a11y-opt .state { font-size: 10px; font-weight: 700; color: var(--faint); letter-spacing: 0.06em; text-transform: uppercase; }
-  .a11y-opt[aria-pressed="true"] .state { color: var(--accent); }
-  .a11y-reset { width: 100%; margin-top: 12px; padding: 13px; border-radius: var(--r-pill); border: none; background: var(--ink); color: #fff; font-family: inherit; font-weight: 600; font-size: 14px; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 9px; }
-  .a11y-reset svg { width: 17px; height: 17px; fill: none; stroke: #fff; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
-  .a11y-reset:hover { background: #2c2230; }
-  .a11y-note { font-size: 11px; color: var(--faint); text-align: center; margin-top: 11px; line-height: 1.5; }
-
-  /* accessibility state styles */
-  html.a11y-text1 { zoom: 1.1; }
-  html.a11y-text2 { zoom: 1.22; }
-  html.a11y-line p, html.a11y-line li, html.a11y-line .lead, html.a11y-line .support, html.a11y-line .card p, html.a11y-line .ivcard p, html.a11y-line .spec .row { line-height: 2 !important; }
-  html.a11y-letter p, html.a11y-letter li, html.a11y-letter .lead, html.a11y-letter .support, html.a11y-letter .card p, html.a11y-letter .ivcard p { letter-spacing: 0.06em !important; word-spacing: 0.16em !important; }
-  html.a11y-links a:not(.btn):not(.a11y-fab):not(.a11y-close):not(.a11y-reset):not(.brand) { text-decoration: underline !important; text-decoration-thickness: 2px !important; text-underline-offset: 2px; outline: 1px dashed currentColor; outline-offset: 3px; border-radius: 3px; }
-  html.a11y-contrast { --bg:#ffffff; --bg-2:#ededed; --surface:#ffffff; --ink:#000000; --ink-2:#161616; --muted:#242424; --faint:#3a3a3a; --line:#444444; --line-soft:#777777; --accent:#56198a; --accent-deep:#3c1060; --accent-tint:#efe6f6; --accent-line:#8f63ba; --coral:#a8311c; --coral-deep:#7c1f11; --coral-tint:#f7e3df; --coral-line:#d2a195; --teal:#0e6b62; --gold:#9a6912; }
-  html.a11y-contrast a:not(.btn) { text-decoration: underline; }
-  html.a11y-noanim *, html.a11y-noanim *::before, html.a11y-noanim *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
-  html.a11y-noanim .reveal { opacity: 1 !important; transform: none !important; filter: none !important; }
-  html.a11y-dyslexia, html.a11y-dyslexia h1, html.a11y-dyslexia h2, html.a11y-dyslexia h3, html.a11y-dyslexia h4, html.a11y-dyslexia p, html.a11y-dyslexia a, html.a11y-dyslexia span, html.a11y-dyslexia div, html.a11y-dyslexia label, html.a11y-dyslexia button, html.a11y-dyslexia input, html.a11y-dyslexia li { font-family: 'Atkinson Hyperlegible', 'Plus Jakarta Sans', sans-serif !important; letter-spacing: 0.01em; }
-  html.a11y-cursor, html.a11y-cursor * { cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cpath d='M7 4l24 13-10.5 2.2L16 32z' fill='%23ffffff' stroke='%23000000' stroke-width='2.5' stroke-linejoin='round'/%3E%3C/svg%3E") 5 3, auto !important; }
-
-  a:focus-visible, button:focus-visible, input:focus-visible, [tabindex]:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; border-radius: 6px; }
-
-  @media (max-width: 520px) {
-    .a11y-fab { width: 50px; height: 50px; left: 14px; bottom: 14px; }
-    .a11y-panel { left: 14px; right: 14px; width: auto; bottom: 74px; }
-  }
-</style>
-
+<!-- ACCESSIBILITY WIDGET -->
 <button class="a11y-fab" id="a11yFab" aria-label="Accessibility options" aria-expanded="false" aria-controls="a11yPanel" title="Accessibility options">
   <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="4" r="2"/><path d="M3.5 8.4c2.5 1 5.4 1.5 8.5 1.5s6-.5 8.5-1.5M12 9.5V15M12 15l-3.5 5.5M12 15l3.5 5.5"/></svg>
 </button>
@@ -1018,54 +735,203 @@
   <button class="a11y-reset" id="a11yReset"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4v5h5M20 20v-5h-5"/><path d="M19 9a8 8 0 0 0-14.3-2.3M5 15a8 8 0 0 0 14.3 2.3"/></svg> Reset all</button>
   <p class="a11y-note">Your settings are saved on this device.</p>
 </div>
+
 <script>
 (function () {
   "use strict";
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* nav scroll state */
+  var nav = document.getElementById("nav");
+  function onScroll() { nav.classList.toggle("scrolled", window.scrollY > 24); }
+  window.addEventListener("scroll", onScroll, { passive: true }); onScroll();
+
+  /* mobile menu */
+  var burger = document.getElementById("burger");
+  var overlay = document.getElementById("overlay");
+  function toggle(open) {
+    overlay.classList.toggle("open", open);
+    burger.setAttribute("aria-expanded", open ? "true" : "false");
+    document.body.style.overflow = open ? "hidden" : "";
+  }
+  burger.addEventListener("click", function () { toggle(!overlay.classList.contains("open")); });
+  overlay.querySelectorAll("a").forEach(function (a) { a.addEventListener("click", function () { toggle(false); }); });
+
+  /* reveal on scroll */
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
+  }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
+  document.querySelectorAll(".reveal").forEach(function (el) {
+    if (reduce) { el.classList.add("in"); } else { io.observe(el); }
+  });
+
+  /* ---- signature gene strip with animated variant base ---- */
+  var BASES = ["A", "T", "C", "G"];
+  function randBase() { return BASES[Math.floor(Math.random() * 4)]; }
+  var strip = document.getElementById("strip");
+  var callout = document.getElementById("callout");
+
+  function buildStrip() {
+    strip.innerHTML = "";
+    var w = window.innerWidth;
+    var count = w < 480 ? 13 : (w < 760 ? 19 : 25);
+    if (count % 2 === 0) count++;
+    var center = Math.floor(count / 2);
+    var spans = [];
+    for (var i = 0; i < count; i++) {
+      var s = document.createElement("span");
+      s.className = "b";
+      if (i === center) { s.classList.add("mut"); s.textContent = randBase(); s.id = "mutBase"; }
+      else { s.textContent = randBase(); }
+      strip.appendChild(s);
+      spans.push(s);
+    }
+    return { spans: spans, center: center };
+  }
+
+  function animateStrip(data) {
+    var spans = data.spans, center = data.center;
+    if (reduce) {
+      spans.forEach(function (s) { if (!s.classList.contains("mut")) s.classList.add("lit"); });
+      callout.classList.add("show");
+      return;
+    }
+    var order = [];
+    for (var d = 1; d <= center; d++) { order.push(center - d); order.push(center + d); }
+    order.forEach(function (idx, n) {
+      setTimeout(function () { if (spans[idx] && !spans[idx].classList.contains("mut")) spans[idx].classList.add("lit"); }, 200 + n * 55);
+    });
+    var doneAt = 200 + order.length * 55;
+    var mut = document.getElementById("mutBase");
+    var shuffle = setInterval(function () { mut.textContent = randBase(); }, 70);
+    setTimeout(function () {
+      clearInterval(shuffle);
+      mut.textContent = "A";
+      mut.classList.add("locked", "burst");
+      callout.classList.add("show");
+      setTimeout(function () { mut.classList.remove("burst"); }, 650);
+    }, doneAt + 300);
+  }
+
+  if (strip) {
+    var data = buildStrip();
+    var played = false;
+    var sio = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting && !played) { played = true; animateStrip(data); sio.disconnect(); }
+      });
+    }, { threshold: 0.4 });
+    sio.observe(strip);
+    var rt;
+    window.addEventListener("resize", function () {
+      if (played) return;
+      clearTimeout(rt);
+      rt = setTimeout(function () { data = buildStrip(); }, 200);
+    });
+  }
+
+  /* ---- EEG trace ----
+     Honest, simplified illustration:
+       - a low-amplitude NORMAL background rhythm,
+       - interrupted by a high-amplitude rhythmic SEIZURE BURST (the ictal event),
+       - then returning to baseline,
+       - plus a dashed line over the burst showing the calmer rhythm gene-targeted
+         therapy AIMS to preserve (labelled as a goal, not a claim). */
+  var eeg = document.getElementById("eeg");
+  if (eeg) {
+    var W = 520, H = 160, mid = H / 2, bStart = 200, bEnd = 340;
+    // low-amplitude background rhythm (mixed slow + faster components)
+    function calm(x) { return mid + Math.sin(x / 8) * 4 + Math.sin(x / 19) * 6; }
+    // high-amplitude rhythmic ictal discharge; envelope rises and falls so it
+    // joins the baseline smoothly at both ends (no false discontinuity)
+    function burst(x) {
+      var t = (x - bStart) / (bEnd - bStart);          // 0..1 across the burst
+      var env = Math.sin(t * Math.PI);                 // 0 at edges, 1 in middle
+      var sharp = Math.sin(x / 3) + 0.5 * Math.sin(x / 1.3); // spiky waveform
+      return mid + sharp * 38 * env;
+    }
+    // the rhythm therapy aims to preserve: the SAME calm baseline carried across
+    // the burst window, so it meets the normal rhythm seamlessly at both ends
+    function goal(x) { return calm(x); }
+    function seg(fn, x0, x1) {
+      var d = "", x;
+      for (x = x0; x <= x1; x += 2) d += (x === x0 ? "M" : "L") + x + " " + fn(x).toFixed(1) + " ";
+      return d;
+    }
+    var nav1 = seg(calm, 0, bStart), bzn = seg(burst, bStart, bEnd), nav2 = seg(calm, bEnd, W), gl = seg(goal, bStart, bEnd);
+    eeg.innerHTML =
+      '<rect x="' + bStart + '" y="12" width="' + (bEnd - bStart) + '" height="' + (H - 24) + '" fill="#efeafa" rx="8"/>' +
+      '<path class="draw d1" pathLength="100" d="' + nav1 + '" fill="none" stroke="#b7a9dd" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>' +
+      '<path class="draw d2" pathLength="100" d="' + bzn + '" fill="none" stroke="#562b97" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>' +
+      '<path class="draw d3" pathLength="100" d="' + nav2 + '" fill="none" stroke="#b7a9dd" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>' +
+      '<path class="treat" d="' + gl + '" fill="none" stroke="#0095a9" stroke-width="2" stroke-dasharray="5 6" stroke-linecap="round" stroke-linejoin="round"/>';
+    // play the draw animation when it scrolls into view
+    if (reduce) { eeg.classList.add("go"); }
+    else {
+      var eio = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) { if (e.isIntersecting) { eeg.classList.add("go"); eio.disconnect(); } });
+      }, { threshold: 0.4 });
+      eio.observe(eeg);
+    }
+  }
+
+  /* ---- signup (presentational) ---- */
+  var form = document.getElementById("subscribe");
+  if (form) {
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var email = document.getElementById("email");
+      if (!email.value || email.value.indexOf("@") < 1) { email.focus(); return; }
+      document.getElementById("ok").classList.add("show");
+      form.querySelector(".field").style.display = "none";
+      form.querySelector(".formnote").style.display = "none";
+    });
+  }
+
+  /* ---- accessibility widget ---- */
   var root = document.documentElement;
   var KEY = "c2c_a11y_v1";
   var toggles = { line: "a11y-line", letter: "a11y-letter", links: "a11y-links", contrast: "a11y-contrast", noanim: "a11y-noanim", dyslexia: "a11y-dyslexia", cursor: "a11y-cursor" };
   var state = {};
   try { state = JSON.parse(localStorage.getItem(KEY) || "{}") || {}; } catch (e) { state = {}; }
-
   var fab = document.getElementById("a11yFab");
   var panel = document.getElementById("a11yPanel");
-  if (!fab || !panel) return;
-
-  function save() { try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {} }
-  var dysLoaded = false;
-  function loadDys() { if (dysLoaded) return; dysLoaded = true; var l = document.createElement("link"); l.rel = "stylesheet"; l.href = "https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap"; document.head.appendChild(l); }
-  function applyText(n) { root.classList.remove("a11y-text1", "a11y-text2"); if (n === 1) root.classList.add("a11y-text1"); else if (n === 2) root.classList.add("a11y-text2"); }
-  function updateUI() {
-    panel.querySelectorAll("[data-opt]").forEach(function (b) {
-      var k = b.getAttribute("data-opt"), on = k === "text" ? (state.text || 0) > 0 : !!state[k];
-      b.setAttribute("aria-pressed", on ? "true" : "false");
-      var s = b.querySelector(".state");
-      if (s) s.textContent = k === "text" ? ["Off", "Large", "Larger"][state.text || 0] : (on ? "On" : "Off");
+  if (fab && panel) {
+    var save = function () { try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {} };
+    var dysLoaded = false;
+    var loadDys = function () { if (dysLoaded) return; dysLoaded = true; var l = document.createElement("link"); l.rel = "stylesheet"; l.href = "https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap"; document.head.appendChild(l); };
+    var applyText = function (n) { root.classList.remove("a11y-text1", "a11y-text2"); if (n === 1) root.classList.add("a11y-text1"); else if (n === 2) root.classList.add("a11y-text2"); };
+    var updateUI = function () {
+      panel.querySelectorAll("[data-opt]").forEach(function (b) {
+        var k = b.getAttribute("data-opt"), on = k === "text" ? (state.text || 0) > 0 : !!state[k];
+        b.setAttribute("aria-pressed", on ? "true" : "false");
+        var s = b.querySelector(".state");
+        if (s) s.textContent = k === "text" ? ["Off", "Large", "Larger"][state.text || 0] : (on ? "On" : "Off");
+      });
+    };
+    var apply = function () {
+      Object.keys(toggles).forEach(function (k) { root.classList.toggle(toggles[k], !!state[k]); });
+      applyText(state.text || 0);
+      if (state.dyslexia) loadDys();
+      updateUI();
+    };
+    panel.addEventListener("click", function (e) {
+      var b = e.target.closest("[data-opt]"); if (!b) return;
+      var k = b.getAttribute("data-opt");
+      if (k === "text") { state.text = ((state.text || 0) + 1) % 3; applyText(state.text); }
+      else { state[k] = !state[k]; root.classList.toggle(toggles[k], !!state[k]); if (k === "dyslexia" && state[k]) loadDys(); }
+      save(); updateUI();
     });
+    document.getElementById("a11yReset").addEventListener("click", function () {
+      state = {}; Object.keys(toggles).forEach(function (k) { root.classList.remove(toggles[k]); }); applyText(0); save(); updateUI();
+    });
+    var openPanel = function (o) { panel.classList.toggle("open", o); fab.setAttribute("aria-expanded", o ? "true" : "false"); };
+    fab.addEventListener("click", function () { openPanel(!panel.classList.contains("open")); });
+    document.getElementById("a11yClose").addEventListener("click", function () { openPanel(false); fab.focus(); });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape" && panel.classList.contains("open")) { openPanel(false); fab.focus(); } });
+    document.addEventListener("click", function (e) { if (panel.classList.contains("open") && !panel.contains(e.target) && !fab.contains(e.target)) openPanel(false); });
+    apply();
   }
-  function apply() {
-    Object.keys(toggles).forEach(function (k) { root.classList.toggle(toggles[k], !!state[k]); });
-    applyText(state.text || 0);
-    if (state.dyslexia) loadDys();
-    updateUI();
-  }
-  panel.addEventListener("click", function (e) {
-    var b = e.target.closest("[data-opt]"); if (!b) return;
-    var k = b.getAttribute("data-opt");
-    if (k === "text") { state.text = ((state.text || 0) + 1) % 3; applyText(state.text); }
-    else { state[k] = !state[k]; root.classList.toggle(toggles[k], !!state[k]); if (k === "dyslexia" && state[k]) loadDys(); }
-    save(); updateUI();
-  });
-  document.getElementById("a11yReset").addEventListener("click", function () {
-    state = {}; Object.keys(toggles).forEach(function (k) { root.classList.remove(toggles[k]); }); applyText(0); save(); updateUI();
-  });
-  function openPanel(o) { panel.classList.toggle("open", o); fab.setAttribute("aria-expanded", o ? "true" : "false"); }
-  fab.addEventListener("click", function () { openPanel(!panel.classList.contains("open")); });
-  document.getElementById("a11yClose").addEventListener("click", function () { openPanel(false); fab.focus(); });
-  document.addEventListener("keydown", function (e) { if (e.key === "Escape" && panel.classList.contains("open")) { openPanel(false); fab.focus(); } });
-  document.addEventListener("click", function (e) { if (panel.classList.contains("open") && !panel.contains(e.target) && !fab.contains(e.target)) openPanel(false); });
-
-  apply();
 })();
 </script>
 </body>
