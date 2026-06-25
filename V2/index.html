@@ -12,8 +12,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23562B97'/%3E%3Cpath d='M11 7c0 5 10 5 10 10s-10 5-10 10M21 7c0 5-10 5-10 10s10 5 10 10' fill='none' stroke='white' stroke-width='1.6' stroke-linecap='round'/%3E%3C/svg%3E" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
-<style>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" /><style>
   :root {
     --bg: #fbf5ee;
     --bg-2: #f6ece0;
@@ -106,7 +105,7 @@
     background: var(--accent-tint); border: 1px solid var(--accent-line);
     padding: 7px 13px; border-radius: var(--r-pill);
   }
-  .eyebrow .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--coral); box-shadow: 0 0 0 4px var(--coral-tint); }
+  .eyebrow .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--teal); box-shadow: 0 0 0 4px var(--teal-tint); }
 
   .mono { font-family: "Plus Jakarta Sans", sans-serif; letter-spacing: 0.04em; }
 
@@ -193,7 +192,7 @@
   .fact:last-child { border-right: none; }
   .fact .k { font-family: "Plus Jakarta Sans", sans-serif; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--faint); }
   .fact .v { font-family: "Fraunces", serif; font-weight: 600; font-size: 16px; color: var(--ink); margin-top: 4px; }
-  .fact .v.acc { color: var(--coral-deep); }
+  .fact .v.acc { color: var(--teal); }
 
   .btn-outline-light { background: rgba(255,255,255,0.08); color: #fff; border-color: rgba(255,255,255,0.55); }
   .btn-outline-light .ico { background: rgba(255,255,255,0.18); }
@@ -226,8 +225,8 @@
 
   /* ---------- SCIENCE BENTO ---------- */
   .bento { display: grid; grid-template-columns: repeat(12, 1fr); gap: 18px; margin-top: 40px; }
-  .card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-lg); padding: 34px; box-shadow: var(--shadow-soft); transition: transform 0.5s var(--ease), box-shadow 0.5s var(--ease), border-color 0.5s var(--ease); position: relative; overflow: hidden; }
-  .card:hover { transform: translateY(-4px); box-shadow: var(--shadow-card); border-color: var(--accent-line); }
+  .card { background: var(--surface); border: 1px solid transparent; border-radius: var(--r-lg); padding: 32px; box-shadow: 0 1px 2px rgba(120,72,40,0.04), 0 18px 38px -24px rgba(110,60,50,0.16); transition: transform 0.5s var(--ease), box-shadow 0.5s var(--ease); position: relative; overflow: hidden; }
+  .card:hover { transform: translateY(-3px); box-shadow: 0 2px 6px rgba(120,72,40,0.05), 0 26px 50px -26px rgba(110,60,50,0.2); }
   .card .idx { font-family: "Plus Jakarta Sans", sans-serif; font-size: 12px; letter-spacing: 0.1em; color: var(--accent); }
   .card .c-ico { width: 52px; height: 52px; border-radius: 14px; background: var(--accent-tint); border: 1px solid var(--accent-line); display: grid; place-items: center; margin-bottom: 22px; }
   .card .c-ico svg { width: 26px; height: 26px; stroke: var(--accent-deep); }
@@ -248,37 +247,39 @@
 
   /* ---------- KCNH5 ---------- */
   .kcnh { position: relative; }
-  .kcnh-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 56px; align-items: center; }
+  .kcnh-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 56px; align-items: center; }
   .spec { border-top: 1px solid var(--line); }
   .spec .row { display: grid; grid-template-columns: 1fr 1.4fr; gap: 20px; padding: 20px 4px; border-bottom: 1px solid var(--line); align-items: baseline; }
   .spec .row .k { font-family: "Plus Jakarta Sans", sans-serif; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--faint); }
   .spec .row .v { font-family: "Fraunces", serif; font-weight: 500; font-size: 17px; color: var(--ink); }
-  .eeg-shell { padding: 10px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-xl); box-shadow: var(--shadow-card); }
-  .eeg-inner { border-radius: calc(var(--r-xl) - 9px); background: radial-gradient(120% 120% at 50% 0%, #fbf9fd, #f4f0fa); border: 1px solid var(--line-soft); padding: 26px; }
+  .eeg-shell { padding: 10px; background: var(--surface); border: 1px solid transparent; border-radius: var(--r-xl); box-shadow: 0 1px 2px rgba(120,72,40,0.04), 0 18px 38px -24px rgba(110,60,50,0.16); }
+  .eeg-inner { border-radius: calc(var(--r-xl) - 9px); background: radial-gradient(120% 120% at 50% 0%, #fbf9fd, #f4f0fa); border: 1px solid var(--line-soft); padding: 18px; }
   .eeg-inner .lab { display: flex; justify-content: space-between; font-family: "Plus Jakarta Sans", sans-serif; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--faint); margin-bottom: 8px; }
   #eeg { width: 100%; height: 104px; }
 
+
   /* ---------- STORY ---------- */
-  .story-card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-xl); padding: clamp(36px, 5vw, 60px); box-shadow: var(--shadow-card); position: relative; overflow: hidden; display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 44px; align-items: center; }
+  .story-card { background: transparent; border: none; box-shadow: none; padding: 0; position: relative; overflow: hidden; display: grid; grid-template-columns: 1.05fr 0.95fr; gap: clamp(28px, 4vw, 56px); align-items: center; }
   .story-card .glow { position: absolute; bottom: -50%; left: 30%; width: 420px; height: 420px; background: radial-gradient(circle, rgba(0,149,169,0.10), transparent 70%); pointer-events: none; }
   .story-card h2 { font-size: clamp(2rem, 4vw, 3rem); }
   .story-card p { color: var(--muted); font-size: 18px; margin-top: 18px; max-width: 52ch; }
-  .soon-pill { display: inline-block; font-family: "Plus Jakarta Sans", sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--coral-deep); background: var(--coral-tint); border: 1px solid var(--coral-line); padding: 9px 16px; border-radius: var(--r-pill); white-space: nowrap; }
-  .photo-frame { border-radius: var(--r-lg); background: linear-gradient(150deg, var(--coral-tint), var(--accent-tint)); border: 1.5px dashed var(--coral-line); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; color: var(--coral-deep); text-align: center; padding: 40px 24px; min-height: 250px; }
+  .soon-pill { display: inline-block; font-family: "Plus Jakarta Sans", sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal); background: var(--teal-tint); border: 1px solid var(--teal-line); padding: 9px 16px; border-radius: var(--r-pill); white-space: nowrap; }
+  .photo-frame { border-radius: var(--r-xl); background: linear-gradient(150deg, var(--purple-tint), var(--teal-tint)); border: none; box-shadow: var(--shadow-soft); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; color: var(--purple); text-align: center; padding: 44px 24px; min-height: 260px; }
   .photo-frame svg { width: 40px; height: 40px; }
   .photo-frame .cap { font-family: "Plus Jakarta Sans", sans-serif; font-size: 11.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
 
   /* ---------- GET INVOLVED ---------- */
-  .involve-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 40px; }
-  .ivcard { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-lg); padding: 34px; box-shadow: var(--shadow-soft); display: flex; flex-direction: column; transition: transform 0.5s var(--ease), box-shadow 0.5s var(--ease), border-color 0.5s var(--ease); }
-  .ivcard:hover { transform: translateY(-4px); box-shadow: var(--shadow-card); border-color: var(--accent-line); }
-  .ivcard .c-ico { width: 52px; height: 52px; border-radius: 16px; background: var(--coral-tint); border: 1px solid var(--coral-line); display: grid; place-items: center; margin-bottom: 22px; }
-  .ivcard .c-ico svg { width: 25px; height: 25px; stroke: var(--coral-deep); }
-  .ivcard h3 { font-size: 21px; margin-bottom: 10px; }
-  .ivcard p { color: var(--muted); font-size: 15px; flex: 1; }
-  .ivcard .link { margin-top: 22px; display: inline-flex; align-items: center; gap: 8px; font-weight: 600; font-size: 14px; color: var(--accent-deep); }
-  .ivcard .link svg { width: 16px; height: 16px; transition: transform 0.4s var(--ease); }
-  .ivcard:hover .link svg { transform: translateX(4px); }
+  .involve-list { margin-top: 36px; border-top: 1px solid var(--line); }
+  .ivrow { display: flex; align-items: center; gap: 28px; padding: 28px 0; border-bottom: 1px solid var(--line); }
+  .ivrow-icon { width: 52px; height: 52px; border-radius: 16px; background: var(--th-tint, var(--purple-tint)); border: 1px solid var(--th-line, var(--purple-line)); display: grid; place-items: center; flex: 0 0 52px; transition: transform 0.4s var(--ease); }
+  .ivrow:hover .ivrow-icon { transform: translateY(-3px); }
+  .ivrow-icon svg { width: 25px; height: 25px; stroke: var(--th, var(--purple)); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+  .ivrow-body { flex: 1; min-width: 0; }
+  .ivrow-body h3 { font-size: 21px; margin-bottom: 8px; }
+  .ivrow-body p { color: var(--muted); font-size: 15.5px; max-width: 52ch; }
+  .ivrow-cta { display: inline-flex; align-items: center; gap: 8px; font-weight: 600; font-size: 14px; color: var(--th, var(--accent-deep)); white-space: nowrap; flex: 0 0 auto; }
+  .ivrow-cta svg { width: 16px; height: 16px; transition: transform 0.4s var(--ease); }
+  .ivrow:hover .ivrow-cta svg { transform: translateX(4px); }
 
   /* ---------- CTA BAND ---------- */
   .band { background: linear-gradient(120deg, #003057 0%, #562b97 54%, #0095a9 120%); border-radius: var(--r-xl); padding: clamp(48px, 6vw, 80px); position: relative; overflow: hidden; box-shadow: var(--shadow-pop); }
@@ -344,7 +345,7 @@
   .c-navy { --th: var(--navy); --th-tint: var(--navy-tint); --th-line: var(--navy-line); }
   .c-purple { --th: var(--purple); --th-tint: var(--purple-tint); --th-line: var(--purple-line); }
   .c-teal { --th: var(--teal); --th-tint: var(--teal-tint); --th-line: var(--teal-line); }
-  .sec[class*="c-"] .eyebrow { background: transparent; border: none; padding: 0; color: var(--th); }
+  .sec[class*="c-"] .eyebrow { background: var(--th-tint); border: 1px solid var(--th-line); color: var(--th); }
   .sec[class*="c-"] .eyebrow .dot { background: var(--th); box-shadow: 0 0 0 4px var(--th-tint); }
   .sec[class*="c-"] h2 { color: var(--th); }
   .sec.bg-soft { background: var(--th-tint); }
@@ -377,15 +378,17 @@
   .form-lite .ok svg { width: 16px; height: 16px; flex: 0 0 auto; stroke: var(--accent-deep); }
   .form-lite.done .ok { display: flex; }
 
+  /* ---------- SUBSCRIBE STATE ---------- */
+  #subscribe .err-msg { display: none; font-size: 13.5px; color: var(--coral-deep); margin-top: 8px; }
   /* ---------- RESPONSIVE ---------- */
   @media (max-width: 980px) {
     .hero-grid, .mission-grid, .kcnh-grid, .band-grid, .contact-grid, .family-inner { grid-template-columns: 1fr; gap: 28px; }
-    .involve-grid { grid-template-columns: 1fr; }
     .bento { grid-template-columns: repeat(6, 1fr); }
     .span-6, .span-8, .span-4 { grid-column: span 6; }
     .visual-shell { max-width: 460px; }
     .story-card { grid-template-columns: 1fr; }
     .foot-top { grid-template-columns: 1fr 1fr; }
+    .ivrow-cta { font-size: 13.5px; }
   }
   @media (max-width: 768px) {
     body { font-size: 16px; }
@@ -410,8 +413,14 @@
     .sec-head p { font-size: 16px; }
     .bento { grid-template-columns: 1fr; gap: 14px; }
     .span-6, .span-8, .span-4 { grid-column: span 1; }
-    .card, .ivcard { padding: 26px; }
-    .involve-grid { gap: 14px; }
+    .card { padding: 26px; }
+    .involve-list { margin-top: 20px; }
+    .ivrow { flex-wrap: wrap; gap: 14px; padding: 20px 0; }
+    .ivrow-icon { width: 44px; height: 44px; flex: 0 0 44px; border-radius: 13px; }
+    .ivrow-body { flex: 1 1 60%; min-width: 0; }
+    .ivrow-body h3 { font-size: 18px; }
+    .ivrow-body p { font-size: 15px; max-width: none; }
+    .ivrow-cta { flex: 0 0 100%; padding-left: 58px; font-size: 13.5px; }
     .kcnh-grid { gap: 28px; }
     .spec .row { grid-template-columns: 1fr; gap: 4px; padding: 14px 2px; }
     .band-grid { gap: 30px; }
@@ -419,6 +428,9 @@
     .form .field { flex-direction: column; }
     .form input { width: 100%; }
     .form .field .btn { width: 100%; justify-content: center; }
+    .family-inner { padding: 24px 20px; }
+    .form-lite .field { flex-direction: column; }
+    .form-lite .field .btn { width: 100%; justify-content: center; }
     .channels { gap: 10px; }
     .story-card { gap: 24px; }
     .foot-top { grid-template-columns: 1fr; gap: 32px; }
@@ -515,11 +527,12 @@
         </div>
       </div>
       <div class="reveal" style="--rd:160ms;">
+        <p style="font-size:15px; color:var(--muted); margin-bottom:18px; max-width:36ch; line-height:1.65;">How a KCNH5 seizure disrupts normal brain activity, and where gene-targeted treatment can step in.</p>
         <div class="eeg-shell">
           <div class="eeg-inner">
             <div class="lab"><span>Illustrative neural activity</span><span>KCNH5</span></div>
             <svg id="eeg" viewBox="0 0 520 150" aria-label="Illustrative neural activity waveform with one highlighted burst" role="img"></svg>
-            <div class="lab" style="margin-top:8px; margin-bottom:0;"><span>Seizure</span><span style="color:var(--teal);">Where treatment steps in</span></div>
+            <div class="lab" style="margin-top:8px; margin-bottom:0;"><span>Seizure burst</span><span style="color:var(--teal);">Where treatment steps in</span></div>
           </div>
         </div>
       </div>
@@ -579,7 +592,6 @@
 <section class="sec c-teal" id="story" style="padding-top:0;">
   <div class="wrap">
     <div class="story-card reveal">
-      <div class="glow" aria-hidden="true"></div>
       <div>
         <span class="eyebrow"><span class="dot"></span> Our Story</span>
         <h2 style="margin-top:20px;">The family behind the mission.</h2>
@@ -603,24 +615,30 @@
       <h2 class="reveal" style="--rd:80ms;">Join the families fighting for a cure.</h2>
       <p class="reveal" style="--rd:140ms;">Whether you're ready to give, living this every day, or researching it, you belong here. No one should have to do this alone.</p>
     </div>
-    <div class="involve-grid">
-      <div class="ivcard c-teal reveal">
-        <div class="c-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.3-7-9.2A3.8 3.8 0 0 1 12 8a3.8 3.8 0 0 1 7 2.8C19 15.7 12 20 12 20Z"/></svg></div>
-        <h3>Donors</h3>
-        <p>Your gift goes straight to the research that brings a cure closer for children waiting right now. No amount is too small.</p>
-        <a class="link" href="#join">Donate now <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    <div class="involve-list">
+      <div class="ivrow c-teal reveal">
+        <div class="ivrow-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.3-7-9.2A3.8 3.8 0 0 1 12 8a3.8 3.8 0 0 1 7 2.8C19 15.7 12 20 12 20Z"/></svg></div>
+        <div class="ivrow-body">
+          <h3>Donors</h3>
+          <p>Your gift goes straight to the research that brings a cure closer for children waiting right now. No amount is too small.</p>
+        </div>
+        <a class="ivrow-cta" href="#join">Donate now <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       </div>
-      <div class="ivcard c-navy reveal" style="--rd:90ms;">
-        <div class="c-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 18a4 4 0 0 0-8 0"/><circle cx="12" cy="8" r="3.2"/><path d="M3.5 19a3.3 3.3 0 0 1 5-3M20.5 19a3.3 3.3 0 0 0-5-3"/></svg></div>
-        <h3>KCNH5 families</h3>
-        <p>Looking for community? Connect with other families and advocates walking the same path, and find people who understand.</p>
-        <a class="link" href="#contact">Find your community <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <div class="ivrow c-navy reveal" style="--rd:90ms;">
+        <div class="ivrow-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M16 18a4 4 0 0 0-8 0"/><circle cx="12" cy="8" r="3.2"/><path d="M3.5 19a3.3 3.3 0 0 1 5-3M20.5 19a3.3 3.3 0 0 0-5-3"/></svg></div>
+        <div class="ivrow-body">
+          <h3>KCNH5 families</h3>
+          <p>Looking for community? Connect with other families and advocates walking the same path, and find people who understand.</p>
+        </div>
+        <a class="ivrow-cta" href="#contact">Find your community <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       </div>
-      <div class="ivcard c-purple reveal" style="--rd:180ms;">
-        <div class="c-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3v5.5L4.5 17a2 2 0 0 0 1.8 3h11.4a2 2 0 0 0 1.8-3L15 8.5V3"/><path d="M8 3h8M9 13h6"/></svg></div>
-        <h3>Researchers</h3>
-        <p>Have a collaborative pipeline to pitch? We want to help connect promising science with the awareness and support to move it forward.</p>
-        <a class="link" href="#contact">Pitch your pipeline <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <div class="ivrow c-purple reveal" style="--rd:180ms;">
+        <div class="ivrow-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 3v5.5L4.5 17a2 2 0 0 0 1.8 3h11.4a2 2 0 0 0 1.8-3L15 8.5V3"/><path d="M8 3h8M9 13h6"/></svg></div>
+        <div class="ivrow-body">
+          <h3>Researchers</h3>
+          <p>Have a collaborative pipeline to pitch? We want to help connect promising science with the awareness and support to move it forward.</p>
+        </div>
+        <a class="ivrow-cta" href="#contact">Pitch your pipeline <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       </div>
     </div>
   </div>
@@ -636,7 +654,7 @@
         <h2>Every gift brings a cure closer.</h2>
         <p>Your donation will fund the research that can change a child's life. Donations open with our public launch this Fall 2026.</p>
         <div class="donate-row">
-          <a class="btn btn-on-dark btn-lg" href="#family">Donate <span class="ico"><svg viewBox="0 0 24 24" fill="none"><path d="M12 20s-7-4.3-7-9.2A3.8 3.8 0 0 1 12 8a3.8 3.8 0 0 1 7 2.8C19 15.7 12 20 12 20Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></span></a>
+          <button type="button" class="btn btn-on-dark btn-lg" style="cursor:default;">Donate <span class="ico"><svg viewBox="0 0 24 24" fill="none"><path d="M12 20s-7-4.3-7-9.2A3.8 3.8 0 0 1 12 8a3.8 3.8 0 0 1 7 2.8C19 15.7 12 20 12 20Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></span></button>
           <span class="donate-note">Opening Fall 2026</span>
         </div>
       </div>
@@ -687,9 +705,10 @@
       <form class="form-lite" id="subscribe" novalidate>
         <div class="field">
           <input id="email" name="email" type="email" placeholder="you@email.com" autocomplete="email" required aria-label="Email address" />
-          <button class="btn btn-primary" type="submit">Subscribe <span class="ico"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+          <button class="btn btn-primary" type="submit" id="subscribeBtn">Subscribe <span class="ico"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
         </div>
-        <p class="ok"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Thank you. Sign-ups go live at our Fall 2026 launch, and we'll be in touch.</p>
+        <p class="ok"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> You're on the list. We'll be in touch.</p>
+        <p class="err-msg" id="subscribeErr"></p>
       </form>
     </div>
   </div>
@@ -771,16 +790,11 @@
     reveals.forEach(function (el) { io.observe(el); });
   }
 
-  /* subscribe form (presentational, coming soon) */
-  var form = document.getElementById("subscribe");
-  if (form) {
-    form.addEventListener("submit", function (ev) {
+  /* subscribe form — no-op (wire up worker URL when ready) */
+  var subscribeForm = document.getElementById("subscribe");
+  if (subscribeForm) {
+    subscribeForm.addEventListener("submit", function(ev) {
       ev.preventDefault();
-      var email = document.getElementById("email");
-      if (!email.value || email.value.indexOf("@") === -1) { email.focus(); return; }
-      form.classList.add("done");
-      email.value = "";
-      email.setAttribute("placeholder", "Subscribed");
     });
   }
 
