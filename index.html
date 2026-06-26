@@ -182,7 +182,7 @@
 
   /* gene strip: two straight strands of bases with connecting rungs */
   .strip { display: grid; grid-auto-flow: column; grid-template-rows: auto auto auto; justify-content: center; align-items: center; gap: 5px clamp(2px, 1vw, 10px); margin: 46px auto 0; font-family: "JetBrains Mono", monospace; font-weight: 600; font-size: clamp(15px, 3.2vw, 32px); }
-  .strip .b { color: rgba(255,255,255,.40); transition: color .4s var(--ease); text-align: center; }
+  .strip .b { color: rgba(255,255,255,.26); transition: color .4s var(--ease); text-align: center; }
   .strip .b.lit { color: rgba(255,255,255,.86); }
   .strip .rung { width: 2px; height: clamp(9px, 1.5vw, 16px); background: rgba(255,255,255,.22); justify-self: center; border-radius: 2px; }
   .strip .rung.mut { background: var(--signal); width: 3px; }
@@ -847,12 +847,14 @@
     function play() { if (played) return; played = true; animateStrip(data); }
     var sio = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) { if (e.isIntersecting) play(); });
-    }, { threshold: 0.25, rootMargin: "0px 0px -5% 0px" });
+    }, { threshold: 0.2, rootMargin: "0px 0px -10% 0px" });
     sio.observe(strip);
+    // fallback only if the strip is already actually on screen (e.g. landed deep-linked)
     setTimeout(function () {
       var r = strip.getBoundingClientRect();
-      if (!played && r.top < (window.innerHeight || 800) * 1.5) play();
-    }, 2500);
+      var vh = window.innerHeight || 800;
+      if (!played && r.top < vh * 0.85 && r.bottom > vh * 0.15) play();
+    }, 1200);
     var rt;
     window.addEventListener("resize", function () {
       if (played) return;
