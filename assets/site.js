@@ -37,17 +37,25 @@
   var TOP_SEQ = ["A", "T", "A", "G", "T", "G", "C", "A", "T", "G", "C", "A", "G", "A", "C", "A", "T", "T", "G", "A", "C", "T", "G", "A", "C"];
   var BOT_SEQ = ["T", "A", "T", "C", "A", "C", "G", "T", "A", "C", "G", "T", "C", "T", "G", "T", "A", "A", "C", "T", "G", "A", "C", "T", "G"];
 
+  var SEQ_MID = Math.floor(BOT_SEQ.length / 2); // index of the variant pair in the full sequence
+
   function buildStrip() {
     strip.innerHTML = "";
-    var count = BOT_SEQ.length;
-    var center = Math.floor(count / 2);
+    var w = window.innerWidth;
+    // how many pairs to show on each side of the variant (fits the viewport)
+    var half = w < 480 ? 6 : (w < 760 ? 9 : SEQ_MID);
+    if (half > SEQ_MID) half = SEQ_MID;
+    var start = SEQ_MID - half;
+    var count = half * 2 + 1;
+    var center = half;
     var cols = [];
-    for (var i = 0; i < count; i++) {
+    for (var k = 0; k < count; k++) {
+      var i = start + k;
       var top = document.createElement("span");
       var rung = document.createElement("span");
       var bot = document.createElement("span");
       top.className = "b top"; rung.className = "rung"; bot.className = "b bottom";
-      if (i === center) {
+      if (k === center) {
         bot.textContent = BOT_SEQ[i]; bot.classList.add("mut"); bot.id = "mutBase";
         top.textContent = TOP_SEQ[i]; top.classList.add("mut"); top.id = "mutTop";
         rung.classList.add("mut");
