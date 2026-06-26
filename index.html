@@ -406,6 +406,10 @@
     .a11y-fab { width: 50px; height: 50px; left: 14px; bottom: 14px; }
     .a11y-panel { left: 14px; right: 14px; width: auto; bottom: 74px; }
   }
+  /* Big Cursor is meaningless on touch devices with no pointer */
+  @media (hover: none) and (pointer: coarse) {
+    .a11y-opt[data-opt="cursor"] { display: none; }
+  }
 </style>
 </head>
 <body>
