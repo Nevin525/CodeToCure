@@ -84,13 +84,13 @@
     });
     var doneAt = 200 + order.length * 55;
     var mb = document.getElementById("mutBase"), mt = document.getElementById("mutTop");
-    var shuffle = setInterval(function () { var r = randBase(); mt.textContent = r; mb.textContent = COMP[r]; }, 70);
+    var shuffle = setInterval(function () { var r = randBase(); mb.textContent = r; mt.textContent = COMP[r]; }, 70);
     setTimeout(function () {
       clearInterval(shuffle);
-      mt.textContent = "G"; mb.textContent = "C";
-      mt.classList.add("locked", "burst");
+      mb.textContent = "C"; mt.textContent = "G";
+      mb.classList.add("locked", "burst");
       callout.classList.add("show");
-      setTimeout(function () { mt.classList.remove("burst"); }, 650);
+      setTimeout(function () { mb.classList.remove("burst"); }, 650);
     }, doneAt + 300);
   }
 
